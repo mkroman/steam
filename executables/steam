@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+$:.unshift File.dirname(__FILE__) + '/../library'
+require 'steam'
+require 'bundler'
+
+Bundler.setup :default
+
+Steam.connect email: "mk@maero.dk", password: "mypassword" do
+  puts "-> Steam #{Steam::Version}"
+  puts "--> Connecting to steam servers…"
+
+  servers = Steam.servers.map{|server| "#{server['host']}:#{server['port']}" }
+  puts "Steam servers: #{servers}"
+end
