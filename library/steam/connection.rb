@@ -19,28 +19,23 @@ module Steam
     def receive_data data
       @buffer << data
 
-      while @buffer.length >= HeaderSize
-      end
-
-      unless @packet.header?
-        if @buffer.length >= HeaderSize
-          @packet.header = @buffer.slice! 0, HeaderSize
+      while @buffer.size >= HeaderSize
+        unless @packet.header?
+          @packet.header = @buffer.slice 0, HeaderSize
         end
-      end
 
-      parse_body if @packet.header?
-    end
+        if @buffer.length >= HeaderSize + @packet.length
+          @buffer.slice! 0, HeaderSize
+          @packet.body = @buffer.slice! 0, @packet.length
 
-    def parse_body
-      if @buffer.length >= @packet.length
-        @packet.body = @buffer.slice! 0, @packet.length
+          puts "New packet!"
+          puts "Header: #{@packet.magic} (length: #{@packet.length})"
+          puts "Body: #{@packet.body.inspect} (length: #{@packet.body.length})"
+          body = @packet.body.unpack ?V
+          puts "Body type: #{body[0]}"
 
-        puts "New packet!"
-        puts "Header: #{@packet.magic} (length: #{@packet.length})"
-        puts "Body: #{@packet.body.inspect} (length: #{@packet.body.length})"
-
-        @packet = Packet.new
-        p @buffer
+          @packet = Packet.new
+        end
       end
     end
   end
