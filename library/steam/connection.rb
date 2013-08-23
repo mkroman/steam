@@ -24,6 +24,8 @@ module Steam
           return constant
         end
       end
+
+      nil
     end
 
     def receive_data data

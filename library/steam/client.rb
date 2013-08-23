@@ -32,13 +32,29 @@ module Steam
 
         log.debug "Received a channel encryption request"
         log.debug "Protocol version: #{rmessage.protocol_version} universe: #{rmessage.universe}"
+
         handle_channel_encrypt_request packet
+      when EMsg::ChannelEncryptResult
+        handle_channel_encrypt_result packet
       else
-        if constant = get_constant_for_packet(message)
+        if constant = @connection.get_constant_for_packet(message)
           log.debug "Received unhandled packet EMsg::#{constant}"
         else
           log.debug "Received unknown packet"
         end
+      end
+    end
+
+    def handle_channel_encrypt_result packet
+      log.debug "Received channel encryption result"
+
+      header = MessageHeader.read packet.body.slice! 0, MessageHeader::BaseSize
+      message = ChannelEncryptResultMessage.read packet.body
+
+      if message.result == EResult::OK
+        log.debug "Channel encryption was successfully established"
+      else
+        log.error "Channel encryption failed"
       end
     end
 

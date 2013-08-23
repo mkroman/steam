@@ -12,6 +12,7 @@ require 'steam/packet'
 require 'steam/client'
 require 'steam/connection'
 require 'steam/data/emsg'
+require 'steam/data/eresult'
 require 'steam/protobuf/steammessages_base'
 require 'steam/data/steam_language'
 

@@ -32,4 +32,12 @@ module Steam
     uint32 :checksum
     uint32 :padding
   end
+
+  class ChannelEncryptResultMessage < BinData::Record
+    BaseSize = 4
+
+    endian :little
+
+    int32 :result
+  end
 end
