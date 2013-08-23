@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 require 'yaml'
+require 'zlib'
 require 'majic'
+require 'openssl'
 require 'bindata'
 require 'eventmachine'
 

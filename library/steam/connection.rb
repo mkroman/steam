@@ -18,21 +18,10 @@ module Steam
       log.debug "Connection established"
     end
 
-    def receive_packet packet
-      message = packet.body.unpack(?V).first
+    def send data
+      send_data [data.size, 'VT01', data].pack "Va4a*"
 
-      case message
-      when EMsg::ChannelEncryptRequest
-        header = MessageHeader.read packet.body
-
-        log.debug "Received a channel encryption request"
-      else
-        if constant = get_constant_for_packet(message)
-          log.debug "Received unhandled packet EMsg::#{constant}"
-        else
-          log.debug "Received unknown packet"
-        end
-      end
+      puts ">> #{data.inspect}"
     end
 
     def get_constant_for_packet message
@@ -46,6 +35,8 @@ module Steam
     def receive_data data
       @buffer << data
 
+      log.debug "<< #{data.inspect}"
+
       while @buffer.size >= HeaderSize
         unless @packet.header?
           @packet.header = @buffer.slice 0, HeaderSize
@@ -55,7 +46,7 @@ module Steam
           @buffer.slice! 0, HeaderSize
           @packet.body = @buffer.slice! 0, @packet.length
 
-          receive_packet @packet
+          @client.receive_packet @packet
 
           @packet = Packet.new
         end
