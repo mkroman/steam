@@ -4,9 +4,11 @@ module Steam
   class Client
     include Majic::Logging
 
+    attr_accessor :username, :password
+
     def initialize options
-      @email = options[:email]
-      @password = options[:password]
+      @username = options[:username] or raise "Field :username is required"
+      @password = options[:password] or raise "Field :password is required"
 
       @options = options
     end
