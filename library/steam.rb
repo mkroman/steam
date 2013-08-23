@@ -1,11 +1,16 @@
 # encoding: utf-8
 
 require 'yaml'
+require 'majic'
+require 'bindata'
 require 'eventmachine'
 
-require 'steam/client'
 require 'steam/packet'
+require 'steam/client'
 require 'steam/connection'
+require 'steam/data/emsg'
+require 'steam/protobuf/steammessages_base'
+require 'steam/data/steam_language'
 
 module Steam
   Version = "0.1"

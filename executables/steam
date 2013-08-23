@@ -8,9 +8,6 @@ require 'bundler'
 Bundler.setup :default
 
 Steam.connect email: "mk@maero.dk", password: "mypassword" do
-  puts "-> Steam #{Steam::Version}"
-  puts "--> Connecting to steam servers…"
-
-  servers = Steam.servers.map{|server| "#{server['host']}:#{server['port']}" }
-  puts "Steam servers: #{servers}"
+  log.info "Steam #{Steam::Version}" ^ :bold
+  log.info "Connecting to steam servers…"
 end

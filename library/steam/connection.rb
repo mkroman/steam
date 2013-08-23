@@ -2,6 +2,8 @@
 
 module Steam
   class Connection < EventMachine::Connection
+    include Majic::Logging
+
     attr_accessor :client, :buffer
 
     HeaderSize = 8
@@ -13,7 +15,32 @@ module Steam
     end
 
     def post_init
-      puts "Connected"
+      log.debug "Connection established"
+    end
+
+    def receive_packet packet
+      message = packet.body.unpack(?V).first
+
+      case message
+      when EMsg::ChannelEncryptRequest
+        header = MessageHeader.read packet.body
+
+        log.debug "Received a channel encryption request"
+      else
+        if constant = get_constant_for_packet(message)
+          log.debug "Received unhandled packet EMsg::#{constant}"
+        else
+          log.debug "Received unknown packet"
+        end
+      end
+    end
+
+    def get_constant_for_packet message
+      EMsg.constants.each do |constant|
+        if EMsg.const_get(constant) == message
+          return constant
+        end
+      end
     end
 
     def receive_data data
@@ -28,11 +55,7 @@ module Steam
           @buffer.slice! 0, HeaderSize
           @packet.body = @buffer.slice! 0, @packet.length
 
-          puts "New packet!"
-          puts "Header: #{@packet.magic} (length: #{@packet.length})"
-          puts "Body: #{@packet.body.inspect} (length: #{@packet.body.length})"
-          body = @packet.body.unpack ?V
-          puts "Body type: #{body[0]}"
+          receive_packet @packet
 
           @packet = Packet.new
         end

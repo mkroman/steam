@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
 # Project requirements
-gem "beefcake"
+gem "majic"
+gem "bindata"
+gem "beefcake", git: "https://github.com/protobuf-ruby/beefcake.git"
 gem "eventmachine"

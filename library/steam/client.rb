@@ -2,6 +2,8 @@
 
 module Steam
   class Client
+    include Majic::Logging
+
     def initialize options
       @email = options[:email]
       @password = options[:password]
