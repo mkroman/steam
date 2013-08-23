@@ -29,7 +29,7 @@ module Steam
     uint32 :protocol_version, initial_value: 1
     uint32 :key_size, initial_value: 128
     string :session_key, length: 128
-    int32  :checksum
+    uint32 :checksum
     uint32 :padding
   end
 end

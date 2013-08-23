@@ -18,12 +18,6 @@ module Steam
       log.debug "Connection established"
     end
 
-    def send data
-      send_data [data.size, 'VT01', data].pack "Va4a*"
-
-      puts ">> #{data.inspect}"
-    end
-
     def get_constant_for_packet message
       EMsg.constants.each do |constant|
         if EMsg.const_get(constant) == message

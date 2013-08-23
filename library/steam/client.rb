@@ -57,11 +57,13 @@ module Steam
 
         log.debug "Generating checksum for the session key"
         checksum = Zlib.crc32 crypted_session_key
+        log.debug "Checksum is #{checksum}"
 
         response = ChannelEncryptResponseMessage.new
         response.session_key = crypted_session_key
         response.checksum = checksum
 
+        log.debug "Sending channel encrypt response"
         send_packet EMsg::ChannelEncryptResponse, response.to_binary_s
       else
         log.error "Could not read the public key"
@@ -72,7 +74,9 @@ module Steam
       header = MessageHeader.new message: message
       header.jobid_source = increase_job_index if block_given?
 
-      @connection.send header.to_binary_s << body
+      data = header.to_binary_s << body
+
+      @connection.send_data [data.size, 'VT01', data].pack 'Va4a*'
     end
 
     def increase_job_index
