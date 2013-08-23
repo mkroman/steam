@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'zlib'
+require 'digest/crc32'
 require 'majic'
 require 'openssl'
 require 'bindata'

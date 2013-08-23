@@ -53,7 +53,7 @@ module Steam
         @session_key = OpenSSL::Random.random_bytes 32
 
         log.debug "Encrypting session key"
-        crypted_session_key = public_key.public_encrypt @session_key
+        crypted_session_key = public_key.public_encrypt @session_key, OpenSSL::PKey::RSA::PKCS1_OAEP_PADDING
 
         log.debug "Generating checksum for the session key"
         checksum = Zlib.crc32 crypted_session_key
@@ -63,7 +63,6 @@ module Steam
         response.session_key = crypted_session_key
         response.checksum = checksum
 
-        log.debug "Sending channel encrypt response"
         send_packet EMsg::ChannelEncryptResponse, response.to_binary_s
       else
         log.error "Could not read the public key"
