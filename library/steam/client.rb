@@ -4,6 +4,8 @@ module Steam
   class Client
     include Majic::Logging
 
+    DefaultPadding = OpenSSL::PKey::RSA::PKCS1_OAEP_PADDING
+
     attr_accessor :username, :password, :session_key, :job_index
 
     def initialize options
@@ -27,15 +29,11 @@ module Steam
 
       case message
       when EMsg::ChannelEncryptRequest
-        header = MessageHeader.read packet.body
-        rmessage = ChannelEncryptRequestMessage.read packet.body[MessageHeader::BaseSize..-1]
-
-        log.debug "Received a channel encryption request"
-        log.debug "Protocol version: #{rmessage.protocol_version} universe: #{rmessage.universe}"
-
         handle_channel_encrypt_request packet
+
       when EMsg::ChannelEncryptResult
         handle_channel_encrypt_result packet
+
       else
         if constant = @connection.get_constant_for_packet(message)
           log.debug "Received unhandled packet EMsg::#{constant}"
@@ -69,11 +67,10 @@ module Steam
         @session_key = OpenSSL::Random.random_bytes 32
 
         log.debug "Encrypting session key"
-        crypted_session_key = public_key.public_encrypt @session_key, OpenSSL::PKey::RSA::PKCS1_OAEP_PADDING
+        crypted_session_key = public_key.public_encrypt @session_key, DefaultPadding
 
         log.debug "Generating checksum for the session key"
         checksum = Zlib.crc32 crypted_session_key
-        log.debug "Checksum is #{checksum}"
 
         response = ChannelEncryptResponseMessage.new
         response.session_key = crypted_session_key
