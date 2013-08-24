@@ -40,8 +40,6 @@ module Steam
     def receive_data data
       @buffer << data
 
-      log.debug "<< #{data.inspect}"
-
       while @buffer.size >= HeaderSize
         unless @packet.header?
           @packet.header = @buffer.slice 0, HeaderSize
