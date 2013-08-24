@@ -7,13 +7,19 @@ require 'openssl'
 require 'bindata'
 require 'eventmachine'
 
+# Load all the protocol messages
+path = File.expand_path '../protocol/messages/*.rb', __FILE__
+
+Dir.glob(path).each do |file|
+  require file
+end
+
 require 'steam/packet'
 require 'steam/client'
 require 'steam/connection'
-require 'steam/data/emsg'
-require 'steam/data/eresult'
+require 'steam/protocol/result'
+require 'steam/protocol/messages'
 require 'steam/protobuf/steammessages_base'
-require 'steam/data/steam_language'
 
 module Steam
   Version = "0.1"
