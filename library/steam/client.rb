@@ -51,6 +51,8 @@ module Steam
 
       if message.result == EResult::OK
         log.debug "Channel encryption was successfully established"
+
+        @connection.session_key = @session_key
       else
         log.error "Channel encryption failed"
       end
@@ -83,12 +85,17 @@ module Steam
     end
 
     def send_packet message, body, &job
-      header = MessageHeader.new message: message
-      header.jobid_source = increase_job_index if block_given?
+      if message == EMsg::ChannelEncryptResponse
+        header = MessageHeader.new message: message
+        header.jobid_source = increase_job_index if block_given?
+      elsif message & 0x80000000
+        header = MessageProtoBufHeader.new message: message
+
+      end
 
       data = header.to_binary_s << body
 
-      @connection.send_data [data.size, 'VT01', data].pack 'Va4a*'
+      @connection.send data
     end
 
     def increase_job_index

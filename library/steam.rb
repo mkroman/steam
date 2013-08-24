@@ -9,6 +9,7 @@ require 'eventmachine'
 
 require 'steam/packet'
 require 'steam/client'
+require 'steam/encryption'
 require 'steam/connection'
 require 'steam/data/emsg'
 require 'steam/data/eresult'

@@ -2,9 +2,9 @@
 
 module Steam
   class Connection < EventMachine::Connection
-    include Majic::Logging
+    include Majic::Logging, Encryption
 
-    attr_accessor :client, :buffer
+    attr_accessor :client, :buffer, :session_key
 
     HeaderSize = 8
 
@@ -17,6 +17,15 @@ module Steam
     def post_init
       log.debug "Connection established"
     end
+
+    def send data
+      if @session_key
+        data = encrypt data, @session_key
+      end
+
+      send_data [data.size, 'VT01', data].pack 'Va4a*'
+    end
+
 
     def get_constant_for_packet message
       EMsg.constants.each do |constant|
@@ -40,7 +49,14 @@ module Steam
 
         if @buffer.length >= HeaderSize + @packet.length
           @buffer.slice! 0, HeaderSize
-          @packet.body = @buffer.slice! 0, @packet.length
+
+          if @session_key
+            log.debug "Decrypting packet"
+
+            @packet.body = decrypt @buffer.slice!(0, @packet.length), @session_key
+          else
+            @packet.body = @buffer.slice! 0, @packet.length
+          end
 
           @client.receive_packet @packet
 
