@@ -85,7 +85,7 @@ module Steam
     end
 
     def send_packet message, body, &job
-      if message == EMsg::ChannelEncryptResponse
+      if message == Messages::ChannelEncryptResponse
         header = MessageHeader.new message: message
         header.jobid_source = increase_job_index if block_given?
       elsif message & 0x80000000

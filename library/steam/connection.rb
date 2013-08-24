@@ -28,8 +28,8 @@ module Steam
 
 
     def get_constant_for_packet message
-      EMsg.constants.each do |constant|
-        if EMsg.const_get(constant) == message
+      Messages.constants.each do |constant|
+        if Messages.const_get(constant) == message
           return constant
         end
       end
@@ -49,8 +49,6 @@ module Steam
           @buffer.slice! 0, HeaderSize
 
           if @session_key
-            log.debug "Decrypting packet"
-
             @packet.body = decrypt @buffer.slice!(0, @packet.length), @session_key
           else
             @packet.body = @buffer.slice! 0, @packet.length
