@@ -9,13 +9,14 @@ require 'eventmachine'
 
 require 'steam/packet'
 require 'steam/client'
-require 'stema/steam_id'
+require 'steam/steam_id'
 require 'steam/encryption'
 require 'steam/connection'
 require 'steam/protocol/result'
 require 'steam/protocol/messages'
-require 'steam/protobuf/steammessages_base'
-require 'steam/protobuf/steammessages_clientserver'
+require 'steam/protobuf/encrypted_app_ticket.pb'
+require 'steam/protobuf/steammessages_base.pb'
+require 'steam/protobuf/steammessages_clientserver.pb'
 
 # Load all the protocol messages
 path = File.expand_path '../steam/protocol/messages/*.rb', __FILE__

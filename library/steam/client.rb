@@ -34,6 +34,9 @@ module Steam
       when Messages::ChannelEncryptResult
         handle_channel_encrypt_result packet
 
+      when Messages::ClientLogOnResponse
+        handle_client_log_on_response packet
+
       else
         if constant = @connection.get_constant_for_packet(message)
           log.debug "Received unhandled packet Messages::#{constant}"
@@ -82,6 +85,12 @@ module Steam
       else
         log.error "Could not read the public key"
       end
+    end
+
+    def handle_client_log_on_response packet
+      response = CMsgClientLogonResponse.decode packet.body
+
+      p response
     end
 
     def send_packet message, body, &job
