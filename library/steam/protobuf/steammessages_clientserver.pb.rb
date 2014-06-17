@@ -1,4417 +1,3347 @@
-## Generated from steammessages_clientserver.proto for 
-require "beefcake"
+##
+# This file is auto-generated. DO NOT EDIT!
+#
+require 'protobuf/message'
 
-module Steam
 
-  class CMsgClientHeartBeat
-    include Beefcake::Message
-  end
+##
+# Imports
+#
+require 'steam/protobuf/steammessages_base.pb'
+require 'steam/protobuf/encrypted_app_ticket.pb'
 
-  class CMsgClientSubscribeToPersonaFeed
-    include Beefcake::Message
 
-    class PersonaFeed
-      include Beefcake::Message
-    end
-  end
+##
+# Message Classes
+#
+class CMsgClientHeartBeat < ::Protobuf::Message; end
+class CMsgClientSubscribeToPersonaFeed < ::Protobuf::Message
+  class PersonaFeed < ::Protobuf::Message; end
 
-  class CMsgClientUDSP2PSessionStarted
-    include Beefcake::Message
-  end
-
-  class CMsgClientUDSP2PSessionEnded
-    include Beefcake::Message
-  end
-
-  class CMsgClientRegisterAuthTicketWithCM
-    include Beefcake::Message
-  end
-
-  class CMsgClientTicketAuthComplete
-    include Beefcake::Message
-  end
-
-  class CMsgClientLogon
-    include Beefcake::Message
-  end
-
-  class CMsgClientLogonResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestWebAPIAuthenticateUserNonce
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestWebAPIAuthenticateUserNonceResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientLogOff
-    include Beefcake::Message
-  end
-
-  class CMsgClientLoggedOff
-    include Beefcake::Message
-  end
-
-  class CMsgClientCMList
-    include Beefcake::Message
-  end
-
-  class CMsgClientP2PConnectionInfo
-    include Beefcake::Message
-  end
-
-  class CMsgClientP2PConnectionFailInfo
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetAppOwnershipTicket
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetAppOwnershipTicketResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientSessionToken
-    include Beefcake::Message
-  end
-
-  class CMsgClientGameConnectTokens
-    include Beefcake::Message
-  end
-
-  class CMsgGSServerType
-    include Beefcake::Message
-  end
-
-  class CMsgGSStatusReply
-    include Beefcake::Message
-  end
-
-  class CMsgGSPlayerList
-    include Beefcake::Message
-
-    class Player
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgGSUserPlaying
-    include Beefcake::Message
-  end
-
-  class CMsgGSDisconnectNotice
-    include Beefcake::Message
-  end
-
-  class CMsgClientGamesPlayed
-    include Beefcake::Message
-
-    class GamePlayed
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgGSApprove
-    include Beefcake::Message
-  end
-
-  class CMsgGSDeny
-    include Beefcake::Message
-  end
-
-  class CMsgGSKick
-    include Beefcake::Message
-  end
-
-  class CMsgClientAuthList
-    include Beefcake::Message
-  end
-
-  class CMsgClientAuthListAck
-    include Beefcake::Message
-  end
-
-  class CMsgClientFriendsList
-    include Beefcake::Message
-
-    class Friend
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientFriendsGroupsList
-    include Beefcake::Message
-
-    class FriendGroup
-      include Beefcake::Message
-    end
-
-    class FriendGroupsMembership
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientPlayerNicknameList
-    include Beefcake::Message
-
-    class PlayerNickname
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientSetPlayerNickname
-    include Beefcake::Message
-  end
-
-  class CMsgClientSetPlayerNicknameResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientLicenseList
-    include Beefcake::Message
-
-    class License
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientLBSSetScore
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSSetScoreResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSSetUGC
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSSetUGCResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSFindOrCreateLB
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSFindOrCreateLBResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSGetLBEntries
-    include Beefcake::Message
-  end
-
-  class CMsgClientLBSGetLBEntriesResponse
-    include Beefcake::Message
-
-    class Entry
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientAccountInfo
-    include Beefcake::Message
-  end
-
-  class CMsgClientAppMinutesPlayedData
-    include Beefcake::Message
-
-    class AppMinutesPlayedData
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientIsLimitedAccount
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestFriendData
-    include Beefcake::Message
-  end
-
-  class CMsgClientChangeStatus
-    include Beefcake::Message
-  end
-
-  class CMsgPersonaChangeResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientPersonaState
-    include Beefcake::Message
-
-    class Friend
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientFriendProfileInfo
-    include Beefcake::Message
-  end
-
-  class CMsgClientFriendProfileInfoResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientServerList
-    include Beefcake::Message
-
-    class Server
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientRequestedClientStats
-    include Beefcake::Message
-
-    class StatsToSend
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientStat2
-    include Beefcake::Message
-
-    class StatDetail
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientMMSCreateLobby
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSCreateLobbyResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSJoinLobby
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSJoinLobbyResponse
-    include Beefcake::Message
-
-    class Member
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientMMSLeaveLobby
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSLeaveLobbyResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSGetLobbyList
-    include Beefcake::Message
-
-    class Filter
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientMMSGetLobbyListResponse
-    include Beefcake::Message
-
-    class Lobby
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientMMSSetLobbyData
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSSetLobbyDataResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSGetLobbyData
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSLobbyData
-    include Beefcake::Message
-
-    class Member
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientMMSSendLobbyChatMsg
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSLobbyChatMsg
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSSetLobbyOwner
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSSetLobbyOwnerResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSSetLobbyLinked
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSSetLobbyGameServer
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSLobbyGameServerSet
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSUserJoinedLobby
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSUserLeftLobby
-    include Beefcake::Message
-  end
-
-  class CMsgClientMMSInviteToLobby
-    include Beefcake::Message
-  end
-
-  class CMsgClientUDSInviteToGame
-    include Beefcake::Message
-  end
-
-  class CMsgClientChatInvite
-    include Beefcake::Message
-  end
-
-  class CMsgClientConnectionStats
-    include Beefcake::Message
-
-    class Stats_Logon
-      include Beefcake::Message
-    end
-
-    class Stats_UDP
-      include Beefcake::Message
-    end
-
-    class Stats_VConn
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientServersAvailable
-    include Beefcake::Message
-
-    class Server_Types_Available
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientGetUserStats
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetUserStatsResponse
-    include Beefcake::Message
-
-    class Stats
-      include Beefcake::Message
-    end
-
-    class Achievement_Blocks
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientStoreUserStatsResponse
-    include Beefcake::Message
-
-    class Stats_Failed_Validation
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientStoreUserStats2
-    include Beefcake::Message
-
-    class Stats
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientStatsUpdated
-    include Beefcake::Message
-
-    class Updated_Stats
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientStoreUserStats
-    include Beefcake::Message
-
-    class Stats_To_Store
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientGetClientDetails
-    include Beefcake::Message
-  end
-
-  class CMsgClientReportOverlayDetourFailure
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetClientDetailsResponse
-    include Beefcake::Message
-
-    class Game
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientGetClientAppList
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetClientAppListResponse
-    include Beefcake::Message
-
-    class App
-      include Beefcake::Message
-
-      class DLC
-        include Beefcake::Message
-      end
-    end
-  end
-
-  class CMsgClientInstallClientApp
-    include Beefcake::Message
-  end
-
-  class CMsgClientInstallClientAppResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUninstallClientApp
-    include Beefcake::Message
-  end
-
-  class CMsgClientUninstallClientAppResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientSetClientAppUpdateState
-    include Beefcake::Message
-  end
-
-  class CMsgClientSetClientAppUpdateStateResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSUploadFileRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSUploadFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSUploadCommit
-    include Beefcake::Message
-
-    class File
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUFSUploadCommitResponse
-    include Beefcake::Message
-
-    class File
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUFSFileChunk
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSTransferHeartbeat
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSUploadFileFinished
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSDeleteFileRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSDeleteFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSGetFileListForApp
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSGetFileListForAppResponse
-    include Beefcake::Message
-
-    class File
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUFSDownloadRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSDownloadResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSLoginRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSLoginResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestEncryptedAppTicket
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestEncryptedAppTicketResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientWalletInfoUpdate
-    include Beefcake::Message
-  end
-
-  class CMsgClientAppInfoUpdate
-    include Beefcake::Message
-  end
-
-  class CMsgClientAppInfoChanges
-    include Beefcake::Message
-  end
-
-  class CMsgClientAppInfoRequest
-    include Beefcake::Message
-
-    class App
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientAppInfoResponse
-    include Beefcake::Message
-
-    class App
-      include Beefcake::Message
-
-      class Section
-        include Beefcake::Message
-      end
-    end
-  end
-
-  class CMsgClientPackageInfoRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientPackageInfoResponse
-    include Beefcake::Message
-
-    class Package
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientPICSChangesSinceRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientPICSChangesSinceResponse
-    include Beefcake::Message
-
-    class PackageChange
-      include Beefcake::Message
-    end
-
-    class AppChange
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientPICSProductInfoRequest
-    include Beefcake::Message
-
-    class AppInfo
-      include Beefcake::Message
-    end
-
-    class PackageInfo
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientPICSProductInfoResponse
-    include Beefcake::Message
-
-    class AppInfo
-      include Beefcake::Message
-    end
-
-    class PackageInfo
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientPICSAccessTokenRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientPICSAccessTokenResponse
-    include Beefcake::Message
-
-    class PackageToken
-      include Beefcake::Message
-    end
-
-    class AppToken
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUFSGetUGCDetails
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSGetUGCDetailsResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSGetSingleFileInfo
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSGetSingleFileInfoResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSShareFile
-    include Beefcake::Message
-  end
-
-  class CMsgClientUFSShareFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientNewLoginKey
-    include Beefcake::Message
-  end
-
-  class CMsgClientNewLoginKeyAccepted
-    include Beefcake::Message
-  end
-
-  class CMsgClientAMGetClanOfficers
-    include Beefcake::Message
-  end
-
-  class CMsgClientAMGetClanOfficersResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientAMGetPersonaNameHistory
-    include Beefcake::Message
-
-    class IdInstance
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientAMGetPersonaNameHistoryResponse
-    include Beefcake::Message
-
-    class NameTableInstance
-      include Beefcake::Message
-
-      class NameInstance
-        include Beefcake::Message
-      end
-    end
-  end
-
-  class CMsgClientDeregisterWithServer
-    include Beefcake::Message
-  end
-
-  class CMsgClientClanState
-    include Beefcake::Message
-
-    class NameInfo
-      include Beefcake::Message
-    end
-
-    class UserCounts
-      include Beefcake::Message
-    end
-
-    class Event
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientFriendMsg
-    include Beefcake::Message
-  end
-
-  class CMsgClientFriendMsgIncoming
-    include Beefcake::Message
-  end
-
-  class CMsgClientAddFriend
-    include Beefcake::Message
-  end
-
-  class CMsgClientAddFriendResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRemoveFriend
-    include Beefcake::Message
-  end
-
-  class CMsgClientHideFriend
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMAddScreenshot
-    include Beefcake::Message
-
-    class Tag
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUCMAddScreenshotResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMDeleteScreenshot
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMDeleteScreenshotResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMPublishFile
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMPublishFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMUpdatePublishedFile
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMUpdatePublishedFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMDeletePublishedFile
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMDeletePublishedFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumerateUserPublishedFiles
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumerateUserPublishedFilesResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUCMSubscribePublishedFile
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMSubscribePublishedFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFiles
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFilesResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUCMUnsubscribePublishedFile
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMUnsubscribePublishedFileResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMPublishedFileSubscribed
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMPublishedFileUnsubscribed
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMPublishedFileDeleted
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMPublishedFileUpdated
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMGetPublishedFilesForUser
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMGetPublishedFilesForUserResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUCMSetUserPublishedFileAction
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMSetUserPublishedFileActionResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumeratePublishedFilesByUserAction
-    include Beefcake::Message
-  end
-
-  class CMsgClientUCMEnumeratePublishedFilesByUserActionResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientScreenshotsChanged
-    include Beefcake::Message
-  end
-
-  class CMsgClientUpdateUserGameInfo
-    include Beefcake::Message
-  end
-
-  class CMsgClientRichPresenceUpload
-    include Beefcake::Message
-  end
-
-  class CMsgClientRichPresenceRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientRichPresenceInfo
-    include Beefcake::Message
-
-    class RichPresence
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientCheckFileSignature
-    include Beefcake::Message
-  end
-
-  class CMsgClientCheckFileSignatureResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientReadMachineAuth
-    include Beefcake::Message
-  end
-
-  class CMsgClientReadMachineAuthResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUpdateMachineAuth
-    include Beefcake::Message
-  end
-
-  class CMsgClientUpdateMachineAuthResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestMachineAuth
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestMachineAuthResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientChangeSteamGuardOptions
-    include Beefcake::Message
-  end
-
-  class CMsgClientChangeSteamGuardOptionsResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientCreateFriendsGroup
-    include Beefcake::Message
-  end
-
-  class CMsgClientCreateFriendsGroupResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientDeleteFriendsGroup
-    include Beefcake::Message
-  end
-
-  class CMsgClientDeleteFriendsGroupResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRenameFriendsGroup
-    include Beefcake::Message
-  end
-
-  class CMsgClientRenameFriendsGroupResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientAddFriendToGroup
-    include Beefcake::Message
-  end
-
-  class CMsgClientAddFriendToGroupResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRemoveFriendFromGroup
-    include Beefcake::Message
-  end
-
-  class CMsgClientRemoveFriendFromGroupResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientRegisterKey
-    include Beefcake::Message
-  end
-
-  class CMsgClientPurchaseResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientActivateOEMLicense
-    include Beefcake::Message
-  end
-
-  class CMsgClientRegisterOEMMachine
-    include Beefcake::Message
-  end
-
-  class CMsgClientRegisterOEMMachineResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientPurchaseWithMachineID
-    include Beefcake::Message
-  end
-
-  class CMsgTrading_InitiateTradeRequest
-    include Beefcake::Message
-  end
-
-  class CMsgTrading_InitiateTradeResponse
-    include Beefcake::Message
-  end
-
-  class CMsgTrading_CancelTradeRequest
-    include Beefcake::Message
-  end
-
-  class CMsgTrading_StartSession
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSInitDepotBuildRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSInitDepotBuildResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSInitWorkshopBuildRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSInitWorkshopBuildResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSLoginRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSLoginResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSUploadDepotChunks
-    include Beefcake::Message
-
-    class ChunkUploadData
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientMDSUploadDepotChunksResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSUploadRateTest
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSUploadRateTestResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSTransmitManifestDataChunk
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSUploadManifestRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSUploadManifestResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSGetDepotManifest
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSGetDepotManifestResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSGetDepotManifestChunk
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSRegisterAppBuild
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSRegisterAppBuildResponse
-    include Beefcake::Message
-  end
-
-  class CMsgMDSSetAppBuildLive
-    include Beefcake::Message
-  end
-
-  class CMsgMDSSetAppBuildLiveResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSSignInstallScript
-    include Beefcake::Message
-  end
-
-  class CMsgClientMDSSignInstallScriptResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientEmailChange
-    include Beefcake::Message
-  end
-
-  class CMsgClientEmailChangeResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetCDNAuthToken
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetDepotDecryptionKey
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetDepotDecryptionKeyResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetAppBetaPasswords
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetAppBetaPasswordsResponse
-    include Beefcake::Message
-
-    class BetaPassword
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientUpdateAppJobReport
-    include Beefcake::Message
-  end
-
-  class CMsgClientSteam2AppStarted
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetCDNAuthTokenResponse
-    include Beefcake::Message
-  end
-
-  class CMsgDownloadRateStatistics
-    include Beefcake::Message
-
-    class StatsInfo
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientRequestAccountData
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestAccountDataResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUGSGetGlobalStats
-    include Beefcake::Message
-  end
-
-  class CMsgClientUGSGetGlobalStatsResponse
-    include Beefcake::Message
-
-    class Day
-      include Beefcake::Message
-
-      class Stat
-        include Beefcake::Message
-      end
-    end
-  end
-
-  class CMsgGameServerData
-    include Beefcake::Message
-
-    class Player
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgGameServerRemove
-    include Beefcake::Message
-  end
-
-  class CMsgClientGMSServerQuery
-    include Beefcake::Message
-  end
-
-  class CMsgGMSClientServerQueryResponse
-    include Beefcake::Message
-
-    class Server
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgGameServerOutOfDate
-    include Beefcake::Message
-  end
-
-  class CMsgClientRedeemGuestPass
-    include Beefcake::Message
-  end
-
-  class CMsgClientRedeemGuestPassResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetClanActivityCounts
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetClanActivityCountsResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientOGSReportString
-    include Beefcake::Message
-  end
-
-  class CMsgClientOGSReportBug
-    include Beefcake::Message
-  end
-
-  class CMsgGSAssociateWithClan
-    include Beefcake::Message
-  end
-
-  class CMsgGSAssociateWithClanResponse
-    include Beefcake::Message
-  end
-
-  class CMsgGSComputeNewPlayerCompatibility
-    include Beefcake::Message
-  end
-
-  class CMsgGSComputeNewPlayerCompatibilityResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientSentLogs
-    include Beefcake::Message
-  end
-
-  class CMsgGCClient
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestFreeLicense
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestFreeLicenseResponse
-    include Beefcake::Message
-  end
-
-  class CMsgDRMDownloadRequestWithCrashData
-    include Beefcake::Message
-  end
-
-  class CMsgDRMDownloadResponse
-    include Beefcake::Message
-  end
-
-  class CMsgDRMFinalResult
-    include Beefcake::Message
-  end
-
-  class CMsgClientDPCheckSpecialSurvey
-    include Beefcake::Message
-  end
-
-  class CMsgClientDPCheckSpecialSurveyResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientDPSendSpecialSurveyResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientDPSendSpecialSurveyResponseReply
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestForgottenPasswordEmail
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestForgottenPasswordEmailResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientItemAnnouncements
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestItemAnnouncements
-    include Beefcake::Message
-  end
-
-  class CMsgClientUserNotifications
-    include Beefcake::Message
-
-    class Notification
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientCommentNotifications
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestCommentNotifications
-    include Beefcake::Message
-  end
-
-  class CMsgClientOfflineMessageNotification
-    include Beefcake::Message
-  end
-
-  class CMsgClientRequestOfflineMessageCount
-    include Beefcake::Message
-  end
-
-  class CMsgClientFSGetFriendMessageHistory
-    include Beefcake::Message
-  end
-
-  class CMsgClientFSGetFriendMessageHistoryResponse
-    include Beefcake::Message
-
-    class FriendMessage
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientFSGetFriendMessageHistoryForOfflineMessages
-    include Beefcake::Message
-  end
-
-  class CMsgClientFSGetFriendsSteamLevels
-    include Beefcake::Message
-  end
-
-  class CMsgClientFSGetFriendsSteamLevelsResponse
-    include Beefcake::Message
-
-    class Friend
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientEmailAddrInfo
-    include Beefcake::Message
-  end
-
-  class CMsgCREEnumeratePublishedFiles
-    include Beefcake::Message
-  end
-
-  class CMsgCREEnumeratePublishedFilesResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgCRERankByVote
-    include Beefcake::Message
-  end
-
-  class CMsgCRERankByVoteResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgCRERankByTrend
-    include Beefcake::Message
-  end
-
-  class CMsgCRERankByTrendResponse
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgCREItemVoteSummary
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgCREItemVoteSummaryResponse
-    include Beefcake::Message
-
-    class ItemVoteSummary
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgCREUpdateUserPublishedItemVote
-    include Beefcake::Message
-  end
-
-  class CMsgCREUpdateUserPublishedItemVoteResponse
-    include Beefcake::Message
-  end
-
-  class CMsgCREGetUserPublishedItemVoteDetails
-    include Beefcake::Message
-
-    class PublishedFileId
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgCREGetUserPublishedItemVoteDetailsResponse
-    include Beefcake::Message
-
-    class UserItemVoteDetail
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgGameServerPingSample
-    include Beefcake::Message
-
-    class Sample
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgFSGetFollowerCount
-    include Beefcake::Message
-  end
-
-  class CMsgFSGetFollowerCountResponse
-    include Beefcake::Message
-  end
-
-  class CMsgFSGetIsFollowing
-    include Beefcake::Message
-  end
-
-  class CMsgFSGetIsFollowingResponse
-    include Beefcake::Message
-  end
-
-  class CMsgFSEnumerateFollowingList
-    include Beefcake::Message
-  end
-
-  class CMsgFSEnumerateFollowingListResponse
-    include Beefcake::Message
-  end
-
-  class CMsgDPGetNumberOfCurrentPlayers
-    include Beefcake::Message
-  end
-
-  class CMsgDPGetNumberOfCurrentPlayersResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientFriendUserStatusPublished
-    include Beefcake::Message
-  end
-
-  class CMsgClientServiceMethod
-    include Beefcake::Message
-  end
-
-  class CMsgClientServiceMethodResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientUIMode
-    include Beefcake::Message
-  end
-
-  class CMsgClientVanityURLChangedNotification
-    include Beefcake::Message
-  end
-
-  class CMsgClientAuthorizeLocalDeviceRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientAuthorizeLocalDevice
-    include Beefcake::Message
-  end
-
-  class CMsgClientDeauthorizeDeviceRequest
-    include Beefcake::Message
-  end
-
-  class CMsgClientDeauthorizeDevice
-    include Beefcake::Message
-  end
-
-  class CMsgClientUseLocalDeviceAuthorizations
-    include Beefcake::Message
-
-    class DeviceToken
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientGetAuthorizedDevices
-    include Beefcake::Message
-  end
-
-  class CMsgClientGetAuthorizedDevicesResponse
-    include Beefcake::Message
-
-    class AuthorizedDevice
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientGetEmoticonList
-    include Beefcake::Message
-  end
-
-  class CMsgClientEmoticonList
-    include Beefcake::Message
-
-    class Emoticon
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientSharedLibraryLockStatus
-    include Beefcake::Message
-
-    class LockedLibrary
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientSharedLibraryStopPlaying
-    include Beefcake::Message
-
-    class StopApp
-      include Beefcake::Message
-    end
-  end
-
-  class CMsgClientServiceCall
-    include Beefcake::Message
-  end
-
-  class CMsgClientServiceModule
-    include Beefcake::Message
-  end
-
-  class CMsgClientServiceCallResponse
-    include Beefcake::Message
-  end
-
-  class CMsgAMUnlockStreaming
-    include Beefcake::Message
-  end
-
-  class CMsgAMUnlockStreamingResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientPlayingSessionState
-    include Beefcake::Message
-  end
-
-  class CMsgClientKickPlayingSession
-    include Beefcake::Message
-  end
-
-  class CMsgClientCreateAccount
-    include Beefcake::Message
-  end
-
-  class CMsgClientCreateAccountResponse
-    include Beefcake::Message
-  end
-
-  class CMsgClientHeartBeat
-  end
-
-  class CMsgClientSubscribeToPersonaFeed
-
-    class PersonaFeed
-      optional :steamID, :fixed64, 1
-      optional :subscribe, :bool, 2
-    end
-    repeated :persona_feeds, CMsgClientSubscribeToPersonaFeed::PersonaFeed, 1
-  end
-
-  class CMsgClientUDSP2PSessionStarted
-    optional :steamid_remote, :fixed64, 1
-    optional :appid, :int32, 2
-  end
-
-  class CMsgClientUDSP2PSessionEnded
-    optional :steamid_remote, :fixed64, 1
-    optional :appid, :int32, 2
-    optional :session_length_sec, :int32, 3
-    optional :session_error, :int32, 4
-    optional :nattype, :int32, 5
-    optional :bytes_recv, :int32, 6
-    optional :bytes_sent, :int32, 7
-    optional :bytes_sent_relay, :int32, 8
-    optional :bytes_recv_relay, :int32, 9
-    optional :time_to_connect_ms, :int32, 10
-  end
-
-  class CMsgClientRegisterAuthTicketWithCM
-    optional :protocol_version, :uint32, 1
-    optional :ticket, :bytes, 3
-    optional :client_instance_id, :uint64, 4
-  end
-
-  class CMsgClientTicketAuthComplete
-    optional :steam_id, :fixed64, 1
-    optional :game_id, :fixed64, 2
-    optional :estate, :uint32, 3
-    optional :eauth_session_response, :uint32, 4
-    optional :DEPRECATED_ticket, :bytes, 5
-    optional :ticket_crc, :uint32, 6
-    optional :ticket_sequence, :uint32, 7
-    optional :owner_steam_id, :fixed64, 8
-  end
-
-  class CMsgClientLogon
-    optional :protocol_version, :uint32, 1
-    optional :obfustucated_private_ip, :uint32, 2
-    optional :cell_id, :uint32, 3
-    optional :last_session_id, :uint32, 4
-    optional :client_package_version, :uint32, 5
-    optional :client_language, :string, 6
-    optional :client_os_type, :uint32, 7
-    optional :should_remember_password, :bool, 8, :default => false
-    optional :wine_version, :string, 9
-    optional :ping_ms_from_cell_search, :uint32, 10
-    optional :public_ip, :uint32, 20
-    optional :qos_level, :uint32, 21
-    optional :client_supplied_steam_id, :fixed64, 22
-    optional :machine_id, :bytes, 30
-    optional :launcher_type, :uint32, 31, :default => 0
-    optional :ui_mode, :uint32, 32, :default => 0
-    optional :steam2_auth_ticket, :bytes, 41
-    optional :email_address, :string, 42
-    optional :rtime32_account_creation, :fixed32, 43
-    optional :account_name, :string, 50
-    optional :password, :string, 51
-    optional :game_server_token, :string, 52
-    optional :login_key, :string, 60
-    optional :was_converted_deprecated_msg, :bool, 70, :default => false
-    optional :anon_user_target_account_name, :string, 80
-    optional :resolved_user_steam_id, :fixed64, 81
-    optional :eresult_sentryfile, :int32, 82
-    optional :sha_sentryfile, :bytes, 83
-    optional :auth_code, :string, 84
-    optional :otp_type, :int32, 85
-    optional :otp_value, :uint32, 86
-    optional :otp_identifier, :string, 87
-    optional :steam2_ticket_request, :bool, 88
-    optional :sony_psn_ticket, :bytes, 90
-    optional :sony_psn_service_id, :string, 91
-    optional :create_new_psn_linked_account_if_needed, :bool, 92, :default => false
-    optional :sony_psn_name, :string, 93
-    optional :game_server_app_id, :int32, 94
-    optional :steamguard_dont_remember_computer, :bool, 95
-    optional :machine_name, :string, 96
-    optional :machine_name_userchosen, :string, 97
-    optional :country_override, :string, 98
-    optional :is_steam_box, :bool, 99
-    optional :client_instance_id, :uint64, 100
-    optional :two_factor_code, :string, 101
-  end
-
-  class CMsgClientLogonResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :out_of_game_heartbeat_seconds, :int32, 2
-    optional :in_game_heartbeat_seconds, :int32, 3
-    optional :public_ip, :uint32, 4
-    optional :rtime32_server_time, :fixed32, 5
-    optional :account_flags, :uint32, 6
-    optional :cell_id, :uint32, 7
-    optional :email_domain, :string, 8
-    optional :steam2_ticket, :bytes, 9
-    optional :eresult_extended, :int32, 10
-    optional :webapi_authenticate_user_nonce, :string, 11
-    optional :cell_id_ping_threshold, :uint32, 12
-    optional :use_pics, :bool, 13
-    optional :vanity_url, :string, 14
-    optional :client_supplied_steamid, :fixed64, 20
-    optional :ip_country_code, :string, 21
-    optional :parental_settings, :bytes, 22
-    optional :parental_setting_signature, :bytes, 23
-    optional :count_loginfailures_to_migrate, :int32, 24
-    optional :count_disconnects_to_migrate, :int32, 25
-    optional :ogs_data_report_time_window, :int32, 26
-    optional :client_instance_id, :uint64, 27
-  end
-
-  class CMsgClientRequestWebAPIAuthenticateUserNonce
-  end
-
-  class CMsgClientRequestWebAPIAuthenticateUserNonceResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :webapi_authenticate_user_nonce, :string, 11
-  end
-
-  class CMsgClientLogOff
-  end
-
-  class CMsgClientLoggedOff
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientCMList
-    repeated :cm_addresses, :uint32, 1
-    repeated :cm_ports, :uint32, 2
-  end
-
-  class CMsgClientP2PConnectionInfo
-    optional :steam_id_dest, :fixed64, 1
-    optional :steam_id_src, :fixed64, 2
-    optional :app_id, :uint32, 3
-    optional :candidate, :bytes, 4
-  end
-
-  class CMsgClientP2PConnectionFailInfo
-    optional :steam_id_dest, :fixed64, 1
-    optional :steam_id_src, :fixed64, 2
-    optional :app_id, :uint32, 3
-    optional :ep2p_session_error, :uint32, 4
-  end
-
-  class CMsgClientGetAppOwnershipTicket
-    optional :app_id, :uint32, 1
-  end
-
-  class CMsgClientGetAppOwnershipTicketResponse
-    optional :eresult, :uint32, 1, :default => 2
-    optional :app_id, :uint32, 2
-    optional :ticket, :bytes, 3
-  end
-
-  class CMsgClientSessionToken
-    optional :token, :uint64, 1
-  end
-
-  class CMsgClientGameConnectTokens
-    optional :max_tokens_to_keep, :uint32, 1, :default => 10
-    repeated :tokens, :bytes, 2
-  end
-
-  class CMsgGSServerType
-    optional :app_id_served, :uint32, 1
-    optional :flags, :uint32, 2
-    optional :game_ip_address, :uint32, 3
-    optional :game_port, :uint32, 4
-    optional :game_dir, :string, 5
-    optional :game_version, :string, 6
-    optional :game_query_port, :uint32, 7
-  end
-
-  class CMsgGSStatusReply
-    optional :is_secure, :bool, 1
-  end
-
-  class CMsgGSPlayerList
-
-    class Player
-      optional :steam_id, :uint64, 1
-      optional :public_ip, :uint32, 2
-      optional :token, :bytes, 3
-    end
-    repeated :players, CMsgGSPlayerList::Player, 1
-  end
-
-  class CMsgGSUserPlaying
-    optional :steam_id, :fixed64, 1
-    optional :public_ip, :uint32, 2
-    optional :token, :bytes, 3
-  end
-
-  class CMsgGSDisconnectNotice
-    optional :steam_id, :fixed64, 1
-  end
-
-  class CMsgClientGamesPlayed
-
-    class GamePlayed
-      optional :steam_id_gs, :uint64, 1
-      optional :game_id, :fixed64, 2
-      optional :game_ip_address, :uint32, 3
-      optional :game_port, :uint32, 4
-      optional :is_secure, :bool, 5
-      optional :token, :bytes, 6
-      optional :game_extra_info, :string, 7
-      optional :game_data_blob, :bytes, 8
-      optional :process_id, :uint32, 9
-      optional :streaming_provider_id, :uint32, 10
-      optional :game_flags, :uint32, 11
-      optional :owner_id, :uint32, 12
-    end
-    repeated :games_played, CMsgClientGamesPlayed::GamePlayed, 1
-    optional :client_os_type, :uint32, 2
-  end
-
-  class CMsgGSApprove
-    optional :steam_id, :fixed64, 1
-    optional :owner_steam_id, :fixed64, 2
-  end
-
-  class CMsgGSDeny
-    optional :steam_id, :fixed64, 1
-    optional :edeny_reason, :int32, 2
-    optional :deny_string, :string, 3
-  end
-
-  class CMsgGSKick
-    optional :steam_id, :fixed64, 1
-    optional :edeny_reason, :int32, 2
-  end
-
-  class CMsgClientAuthList
-    optional :tokens_left, :uint32, 1
-    optional :last_request_seq, :uint32, 2
-    optional :last_request_seq_from_server, :uint32, 3
-    repeated :tickets, CMsgAuthTicket, 4
-    repeated :app_ids, :uint32, 5
-    optional :message_sequence, :uint32, 6
-  end
-
-  class CMsgClientAuthListAck
-    repeated :ticket_crc, :uint32, 1
-    repeated :app_ids, :uint32, 2
-    optional :message_sequence, :uint32, 3
-  end
-
-  class CMsgClientFriendsList
-
-    class Friend
-      optional :ulfriendid, :fixed64, 1
-      optional :efriendrelationship, :uint32, 2
-    end
-    optional :bincremental, :bool, 1
-    repeated :friends, CMsgClientFriendsList::Friend, 2
-    optional :max_friend_count, :uint32, 3
-    optional :active_friend_count, :uint32, 4
-    optional :friends_limit_hit, :bool, 5
-  end
-
-  class CMsgClientFriendsGroupsList
-
-    class FriendGroup
-      optional :nGroupID, :int32, 1
-      optional :strGroupName, :string, 2
-    end
-
-    class FriendGroupsMembership
-      optional :ulSteamID, :fixed64, 1
-      optional :nGroupID, :int32, 2
-    end
-    optional :bremoval, :bool, 1
-    optional :bincremental, :bool, 2
-    repeated :friendGroups, CMsgClientFriendsGroupsList::FriendGroup, 3
-    repeated :memberships, CMsgClientFriendsGroupsList::FriendGroupsMembership, 4
-  end
-
-  class CMsgClientPlayerNicknameList
-
-    class PlayerNickname
-      optional :steamid, :fixed64, 1
-      optional :nickname, :string, 3
-    end
-    optional :removal, :bool, 1
-    optional :incremental, :bool, 2
-    repeated :nicknames, CMsgClientPlayerNicknameList::PlayerNickname, 3
-  end
-
-  class CMsgClientSetPlayerNickname
-    optional :steamid, :fixed64, 1
-    optional :nickname, :string, 2
-  end
-
-  class CMsgClientSetPlayerNicknameResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientLicenseList
-
-    class License
-      optional :package_id, :uint32, 1
-      optional :time_created, :fixed32, 2
-      optional :time_next_process, :fixed32, 3
-      optional :minute_limit, :int32, 4
-      optional :minutes_used, :int32, 5
-      optional :payment_method, :uint32, 6
-      optional :flags, :uint32, 7
-      optional :purchase_country_code, :string, 8
-      optional :license_type, :uint32, 9
-      optional :territory_code, :int32, 10
-      optional :change_number, :int32, 11
-      optional :owner_id, :uint32, 12
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :licenses, CMsgClientLicenseList::License, 2
-  end
-
-  class CMsgClientLBSSetScore
-    optional :app_id, :uint32, 1
-    optional :leaderboard_id, :int32, 2
-    optional :score, :int32, 3
-    optional :details, :bytes, 4
-    optional :upload_score_method, :int32, 5
-  end
-
-  class CMsgClientLBSSetScoreResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :leaderboard_entry_count, :int32, 2
-    optional :score_changed, :bool, 3
-    optional :global_rank_previous, :int32, 4
-    optional :global_rank_new, :int32, 5
-  end
-
-  class CMsgClientLBSSetUGC
-    optional :app_id, :uint32, 1
-    optional :leaderboard_id, :int32, 2
-    optional :ugc_id, :fixed64, 3
-  end
-
-  class CMsgClientLBSSetUGCResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientLBSFindOrCreateLB
-    optional :app_id, :uint32, 1
-    optional :leaderboard_sort_method, :int32, 2
-    optional :leaderboard_display_type, :int32, 3
-    optional :create_if_not_found, :bool, 4
-    optional :leaderboard_name, :string, 5
-  end
-
-  class CMsgClientLBSFindOrCreateLBResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :leaderboard_id, :int32, 2
-    optional :leaderboard_entry_count, :int32, 3
-    optional :leaderboard_sort_method, :int32, 4, :default => 0
-    optional :leaderboard_display_type, :int32, 5, :default => 0
-    optional :leaderboard_name, :string, 6
-  end
-
-  class CMsgClientLBSGetLBEntries
-    optional :app_id, :int32, 1
-    optional :leaderboard_id, :int32, 2
-    optional :range_start, :int32, 3
-    optional :range_end, :int32, 4
-    optional :leaderboard_data_request, :int32, 5
-    repeated :steamids, :fixed64, 6
-  end
-
-  class CMsgClientLBSGetLBEntriesResponse
-
-    class Entry
-      optional :steam_id_user, :fixed64, 1
-      optional :global_rank, :int32, 2
-      optional :score, :int32, 3
-      optional :details, :bytes, 4
-      optional :ugc_id, :fixed64, 5
-    end
-    optional :eresult, :int32, 1, :default => 2
-    optional :leaderboard_entry_count, :int32, 2
-    repeated :entries, CMsgClientLBSGetLBEntriesResponse::Entry, 3
-  end
-
-  class CMsgClientAccountInfo
-    optional :persona_name, :string, 1
-    optional :ip_country, :string, 2
-    optional :salt_password, :bytes, 3
-    optional :sha_digest_Password, :bytes, 4
-    optional :count_authed_computers, :int32, 5
-    optional :locked_with_ipt, :bool, 6
-    optional :account_flags, :uint32, 7
-    optional :facebook_id, :uint64, 8
-    optional :facebook_name, :string, 9
-    optional :steam_guard_provider, :int32, 10
-    optional :steamguard_require_code_default, :bool, 11
-    optional :steamguard_show_providers, :bool, 12
-    optional :steamguard_can_use_mobile_provider, :bool, 13
-    optional :steamguard_notify_newmachines, :bool, 14
-    optional :steamguard_machine_name_user_chosen, :string, 15
-  end
-
-  class CMsgClientAppMinutesPlayedData
-
-    class AppMinutesPlayedData
-      optional :app_id, :uint32, 1
-      optional :forever, :int32, 2
-      optional :last_two_weeks, :int32, 3
-    end
-    repeated :minutes_played, CMsgClientAppMinutesPlayedData::AppMinutesPlayedData, 1
-  end
-
-  class CMsgClientIsLimitedAccount
-    optional :bis_limited_account, :bool, 1
-    optional :bis_community_banned, :bool, 2
-    optional :bis_locked_account, :bool, 3
-    optional :bis_limited_account_allowed_to_invite_friends, :bool, 4
-  end
-
-  class CMsgClientRequestFriendData
-    optional :persona_state_requested, :uint32, 1
-    repeated :friends, :fixed64, 2
-  end
-
-  class CMsgClientChangeStatus
-    optional :persona_state, :uint32, 1
-    optional :player_name, :string, 2
-    optional :is_auto_generated_name, :bool, 3
-    optional :high_priority, :bool, 4
-    optional :persona_set_by_user, :bool, 5
-  end
-
-  class CMsgPersonaChangeResponse
-    optional :result, :uint32, 1
-    optional :player_name, :string, 2
-  end
-
-  class CMsgClientPersonaState
-
-    class Friend
-      optional :friendid, :fixed64, 1
-      optional :persona_state, :uint32, 2
-      optional :game_played_app_id, :uint32, 3
-      optional :game_server_ip, :uint32, 4
-      optional :game_server_port, :uint32, 5
-      optional :persona_state_flags, :uint32, 6
-      optional :online_session_instances, :uint32, 7
-      optional :published_instance_id, :uint32, 8
-      optional :persona_set_by_user, :bool, 10
-      optional :player_name, :string, 15
-      optional :query_port, :uint32, 20
-      optional :steamid_source, :fixed64, 25
-      optional :avatar_hash, :bytes, 31
-      optional :last_logoff, :uint32, 45
-      optional :last_logon, :uint32, 46
-      optional :clan_rank, :uint32, 50
-      optional :game_name, :string, 55
-      optional :gameid, :fixed64, 56
-      optional :game_data_blob, :bytes, 60
-      optional :clan_tag, :string, 65
-      optional :facebook_name, :string, 66
-      optional :facebook_id, :uint64, 67
-    end
-    optional :status_flags, :uint32, 1
-    repeated :friends, CMsgClientPersonaState::Friend, 2
-  end
-
-  class CMsgClientFriendProfileInfo
-    optional :steamid_friend, :fixed64, 1
-  end
-
-  class CMsgClientFriendProfileInfoResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :steamid_friend, :fixed64, 2
-    optional :time_created, :uint32, 3
-    optional :real_name, :string, 4
-    optional :city_name, :string, 5
-    optional :state_name, :string, 6
-    optional :country_name, :string, 7
-    optional :headline, :string, 8
-    optional :summary, :string, 9
-  end
-
-  class CMsgClientServerList
-
-    class Server
-      optional :server_type, :uint32, 1
-      optional :server_ip, :uint32, 2
-      optional :server_port, :uint32, 3
-    end
-    repeated :servers, CMsgClientServerList::Server, 1
-  end
-
-  class CMsgClientRequestedClientStats
-
-    class StatsToSend
-      optional :client_stat, :uint32, 1
-      optional :stat_aggregate_method, :uint32, 2
-    end
-    repeated :stats_to_send, CMsgClientRequestedClientStats::StatsToSend, 1
-  end
-
-  class CMsgClientStat2
-
-    class StatDetail
-      optional :client_stat, :uint32, 1
-      optional :ll_value, :int64, 2
-      optional :time_of_day, :uint32, 3
-      optional :cell_id, :uint32, 4
-      optional :depot_id, :uint32, 5
-      optional :app_id, :uint32, 6
-    end
-    repeated :stat_detail, CMsgClientStat2::StatDetail, 1
-  end
-
-  class CMsgClientMMSCreateLobby
-    optional :app_id, :uint32, 1
-    optional :max_members, :int32, 2
-    optional :lobby_type, :int32, 3
-    optional :lobby_flags, :int32, 4
-    optional :cell_id, :uint32, 5
-    optional :public_ip, :uint32, 6
-    optional :metadata, :bytes, 7
-    optional :persona_name_owner, :string, 8
-  end
-
-  class CMsgClientMMSCreateLobbyResponse
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :eresult, :int32, 3, :default => 2
-  end
-
-  class CMsgClientMMSJoinLobby
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :persona_name, :string, 3
-  end
-
-  class CMsgClientMMSJoinLobbyResponse
-
-    class Member
-      optional :steam_id, :fixed64, 1
-      optional :persona_name, :string, 2
-      optional :metadata, :bytes, 3
-    end
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :chat_room_enter_response, :int32, 3
-    optional :max_members, :int32, 4
-    optional :lobby_type, :int32, 5
-    optional :lobby_flags, :int32, 6
-    optional :steam_id_owner, :fixed64, 7
-    optional :metadata, :bytes, 8
-    repeated :members, CMsgClientMMSJoinLobbyResponse::Member, 9
-  end
-
-  class CMsgClientMMSLeaveLobby
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-  end
-
-  class CMsgClientMMSLeaveLobbyResponse
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :eresult, :int32, 3, :default => 2
-  end
-
-  class CMsgClientMMSGetLobbyList
-
-    class Filter
-      optional :key, :string, 1
-      optional :value, :string, 2
-      optional :comparision, :int32, 3
-      optional :filter_type, :int32, 4
-    end
-    optional :app_id, :uint32, 1
-    optional :num_lobbies_requested, :int32, 3
-    optional :cell_id, :uint32, 4
-    optional :public_ip, :uint32, 5
-    repeated :filters, CMsgClientMMSGetLobbyList::Filter, 6
-  end
-
-  class CMsgClientMMSGetLobbyListResponse
-
-    class Lobby
-      optional :steam_id, :fixed64, 1
-      optional :max_members, :int32, 2
-      optional :lobby_type, :int32, 3
-      optional :lobby_flags, :int32, 4
-      optional :metadata, :bytes, 5
-      optional :num_members, :int32, 6
-      optional :distance, :float, 7
-      optional :weight, :int64, 8
-    end
-    optional :app_id, :uint32, 1
-    optional :eresult, :int32, 3, :default => 2
-    repeated :lobbies, CMsgClientMMSGetLobbyListResponse::Lobby, 4
-  end
-
-  class CMsgClientMMSSetLobbyData
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_member, :fixed64, 3
-    optional :max_members, :int32, 4
-    optional :lobby_type, :int32, 5
-    optional :lobby_flags, :int32, 6
-    optional :metadata, :bytes, 7
-  end
-
-  class CMsgClientMMSSetLobbyDataResponse
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :eresult, :int32, 3, :default => 2
-  end
-
-  class CMsgClientMMSGetLobbyData
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-  end
-
-  class CMsgClientMMSLobbyData
-
-    class Member
-      optional :steam_id, :fixed64, 1
-      optional :persona_name, :string, 2
-      optional :metadata, :bytes, 3
-    end
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :num_members, :int32, 3
-    optional :max_members, :int32, 4
-    optional :lobby_type, :int32, 5
-    optional :lobby_flags, :int32, 6
-    optional :steam_id_owner, :fixed64, 7
-    optional :metadata, :bytes, 8
-    repeated :members, CMsgClientMMSLobbyData::Member, 9
-    optional :lobby_cellid, :uint32, 10
-  end
-
-  class CMsgClientMMSSendLobbyChatMsg
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_target, :fixed64, 3
-    optional :lobby_message, :bytes, 4
-  end
-
-  class CMsgClientMMSLobbyChatMsg
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_sender, :fixed64, 3
-    optional :lobby_message, :bytes, 4
-  end
-
-  class CMsgClientMMSSetLobbyOwner
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_new_owner, :fixed64, 3
-  end
-
-  class CMsgClientMMSSetLobbyOwnerResponse
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :eresult, :int32, 3, :default => 2
-  end
-
-  class CMsgClientMMSSetLobbyLinked
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_lobby2, :fixed64, 3
-  end
-
-  class CMsgClientMMSSetLobbyGameServer
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :game_server_ip, :uint32, 3
-    optional :game_server_port, :uint32, 4
-    optional :game_server_steam_id, :fixed64, 5
-  end
-
-  class CMsgClientMMSLobbyGameServerSet
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :game_server_ip, :uint32, 3
-    optional :game_server_port, :uint32, 4
-    optional :game_server_steam_id, :fixed64, 5
-  end
-
-  class CMsgClientMMSUserJoinedLobby
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_user, :fixed64, 3
-    optional :persona_name, :string, 4
-  end
-
-  class CMsgClientMMSUserLeftLobby
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_user, :fixed64, 3
-    optional :persona_name, :string, 4
-  end
-
-  class CMsgClientMMSInviteToLobby
-    optional :app_id, :uint32, 1
-    optional :steam_id_lobby, :fixed64, 2
-    optional :steam_id_user_invited, :fixed64, 3
-  end
-
-  class CMsgClientUDSInviteToGame
-    optional :steam_id_dest, :fixed64, 1
-    optional :steam_id_src, :fixed64, 2
-    optional :connect_string, :string, 3
-  end
-
-  class CMsgClientChatInvite
-    optional :steam_id_invited, :fixed64, 1
-    optional :steam_id_chat, :fixed64, 2
-    optional :steam_id_patron, :fixed64, 3
-    optional :chatroom_type, :int32, 4
-    optional :steam_id_friend_chat, :fixed64, 5
-    optional :chat_name, :string, 6
-    optional :game_id, :fixed64, 7
-  end
-
-  class CMsgClientConnectionStats
-
-    class Stats_Logon
-      optional :connect_attempts, :int32, 1
-      optional :connect_successes, :int32, 2
-      optional :connect_failures, :int32, 3
-      optional :connections_dropped, :int32, 4
-      optional :seconds_running, :uint32, 5
-      optional :msec_tologonthistime, :uint32, 6
-      optional :count_bad_cms, :uint32, 7
-    end
-
-    class Stats_UDP
-      optional :pkts_sent, :uint64, 1
-      optional :bytes_sent, :uint64, 2
-      optional :pkts_recv, :uint64, 3
-      optional :pkts_processed, :uint64, 4
-      optional :bytes_recv, :uint64, 5
-    end
-
-    class Stats_VConn
-      optional :connections_udp, :uint32, 1
-      optional :connections_tcp, :uint32, 2
-      optional :stats_udp, CMsgClientConnectionStats::Stats_UDP, 3
-      optional :pkts_abandoned, :uint64, 4
-      optional :conn_req_received, :uint64, 5
-      optional :pkts_resent, :uint64, 6
-      optional :msgs_sent, :uint64, 7
-      optional :msgs_sent_failed, :uint64, 8
-      optional :msgs_recv, :uint64, 9
-      optional :datagrams_sent, :uint64, 10
-      optional :datagrams_recv, :uint64, 11
-      optional :bad_pkts_recv, :uint64, 12
-      optional :unknown_conn_pkts_recv, :uint64, 13
-      optional :missed_pkts_recv, :uint64, 14
-      optional :dup_pkts_recv, :uint64, 15
-      optional :failed_connect_challenges, :uint64, 16
-      optional :micro_sec_avg_latency, :uint32, 17
-      optional :micro_sec_min_latency, :uint32, 18
-      optional :micro_sec_max_latency, :uint32, 19
-      optional :mem_pool_msg_in_use, :uint32, 20
-    end
-    optional :stats_logon, CMsgClientConnectionStats::Stats_Logon, 1
-    optional :stats_vconn, CMsgClientConnectionStats::Stats_VConn, 2
-  end
-
-  class CMsgClientServersAvailable
-
-    class Server_Types_Available
-      optional :server, :uint32, 1
-      optional :changed, :bool, 2
-    end
-    repeated :server_types_available, CMsgClientServersAvailable::Server_Types_Available, 1
-    optional :server_type_for_auth_services, :uint32, 2
-  end
-
-  class CMsgClientGetUserStats
-    optional :game_id, :fixed64, 1
-    optional :crc_stats, :uint32, 2
-    optional :schema_local_version, :int32, 3
-    optional :steam_id_for_user, :fixed64, 4
-  end
-
-  class CMsgClientGetUserStatsResponse
-
-    class Stats
-      optional :stat_id, :uint32, 1
-      optional :stat_value, :uint32, 2
-    end
-
-    class Achievement_Blocks
-      optional :achievement_id, :uint32, 1
-      repeated :unlock_time, :fixed32, 2
-    end
-    optional :game_id, :fixed64, 1
-    optional :eresult, :int32, 2, :default => 2
-    optional :crc_stats, :uint32, 3
-    optional :schema, :bytes, 4
-    repeated :stats, CMsgClientGetUserStatsResponse::Stats, 5
-    repeated :achievement_blocks, CMsgClientGetUserStatsResponse::Achievement_Blocks, 6
-  end
-
-  class CMsgClientStoreUserStatsResponse
-
-    class Stats_Failed_Validation
-      optional :stat_id, :uint32, 1
-      optional :reverted_stat_value, :uint32, 2
-    end
-    optional :game_id, :fixed64, 1
-    optional :eresult, :int32, 2, :default => 2
-    optional :crc_stats, :uint32, 3
-    repeated :stats_failed_validation, CMsgClientStoreUserStatsResponse::Stats_Failed_Validation, 4
-    optional :stats_out_of_date, :bool, 5
-  end
-
-  class CMsgClientStoreUserStats2
-
-    class Stats
-      optional :stat_id, :uint32, 1
-      optional :stat_value, :uint32, 2
-    end
-    optional :game_id, :fixed64, 1
-    optional :settor_steam_id, :fixed64, 2
-    optional :settee_steam_id, :fixed64, 3
-    optional :crc_stats, :uint32, 4
-    optional :explicit_reset, :bool, 5
-    repeated :stats, CMsgClientStoreUserStats2::Stats, 6
-  end
-
-  class CMsgClientStatsUpdated
-
-    class Updated_Stats
-      optional :stat_id, :uint32, 1
-      optional :stat_value, :uint32, 2
-    end
-    optional :steam_id, :fixed64, 1
-    optional :game_id, :fixed64, 2
-    optional :crc_stats, :uint32, 3
-    repeated :updated_stats, CMsgClientStatsUpdated::Updated_Stats, 4
-  end
-
-  class CMsgClientStoreUserStats
-
-    class Stats_To_Store
-      optional :stat_id, :uint32, 1
-      optional :stat_value, :uint32, 2
-    end
-    optional :game_id, :fixed64, 1
-    optional :explicit_reset, :bool, 2
-    repeated :stats_to_store, CMsgClientStoreUserStats::Stats_To_Store, 3
-  end
-
-  class CMsgClientGetClientDetails
-  end
-
-  class CMsgClientReportOverlayDetourFailure
-    repeated :failure_strings, :string, 1
-  end
-
-  class CMsgClientGetClientDetailsResponse
-
-    class Game
-      optional :appid, :uint32, 1
-      optional :extra_info, :string, 2
-      optional :time_running_sec, :uint32, 3
-    end
-    optional :package_version, :uint32, 1
-    optional :protocol_version, :uint32, 8
-    optional :os, :string, 2
-    optional :machine_name, :string, 3
-    optional :ip_public, :string, 4
-    optional :ip_private, :string, 5
-    optional :bytes_available, :uint64, 7
-    repeated :games_running, CMsgClientGetClientDetailsResponse::Game, 6
-  end
-
-  class CMsgClientGetClientAppList
-    optional :media, :bool, 1
-    optional :tools, :bool, 2
-    optional :games, :bool, 3
-    optional :only_installed, :bool, 4
-    optional :only_changing, :bool, 5
-  end
-
-  class CMsgClientGetClientAppListResponse
-
-    class App
-
-      class DLC
-        optional :appid, :uint32, 1
-        optional :installed, :bool, 2
-      end
-      optional :appid, :uint32, 1
-      optional :category, :string, 2
-      optional :app_type, :string, 10
-      optional :favorite, :bool, 3
-      optional :installed, :bool, 4
-      optional :auto_update, :bool, 5
-      optional :bytes_downloaded, :uint64, 6
-      optional :bytes_needed, :uint64, 7
-      optional :bytes_download_rate, :uint32, 8
-      optional :download_paused, :bool, 11
-      optional :num_downloading, :uint32, 12
-      optional :num_paused, :uint32, 13
-      optional :changing, :bool, 14
-      optional :available_on_platform, :bool, 15
-      repeated :dlcs, CMsgClientGetClientAppListResponse::App::DLC, 9
-    end
-    repeated :apps, CMsgClientGetClientAppListResponse::App, 1
-    optional :bytes_available, :uint64, 2
-  end
-
-  class CMsgClientInstallClientApp
-    optional :appid, :uint32, 1
-  end
-
-  class CMsgClientInstallClientAppResponse
-    optional :result, :uint32, 1
-  end
-
-  class CMsgClientUninstallClientApp
-    optional :appid, :uint32, 1
-  end
-
-  class CMsgClientUninstallClientAppResponse
-    optional :result, :uint32, 1
-  end
-
-  class CMsgClientSetClientAppUpdateState
-    optional :appid, :uint32, 1
-    optional :update, :bool, 2
-  end
-
-  class CMsgClientSetClientAppUpdateStateResponse
-    optional :result, :uint32, 1
-  end
-
-  class CMsgClientUFSUploadFileRequest
-    optional :app_id, :uint32, 1
-    optional :file_size, :uint32, 2
-    optional :raw_file_size, :uint32, 3
-    optional :sha_file, :bytes, 4
-    optional :time_stamp, :uint64, 5
-    optional :file_name, :string, 6
-    optional :platforms_to_sync_deprecated, :uint32, 7
-    optional :platforms_to_sync, :uint32, 8, :default => 4294967295
-    optional :cell_id, :uint32, 9
-    optional :can_encrypt, :bool, 10
-  end
-
-  class CMsgClientUFSUploadFileResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :sha_file, :bytes, 2
-    optional :use_http, :bool, 3
-    optional :http_host, :string, 4
-    optional :http_url, :string, 5
-    optional :kv_headers, :bytes, 6
-    optional :use_https, :bool, 7
-    optional :encrypt_file, :bool, 8
-  end
-
-  class CMsgClientUFSUploadCommit
-
-    class File
-      optional :eresult, :int32, 1, :default => 2
-      optional :app_id, :uint32, 2
-      optional :sha_file, :bytes, 3
-      optional :cub_file, :uint32, 4
-      optional :file_name, :string, 5
-    end
-    repeated :files, CMsgClientUFSUploadCommit::File, 1
-  end
-
-  class CMsgClientUFSUploadCommitResponse
-
-    class File
-      optional :eresult, :int32, 1, :default => 2
-      optional :app_id, :uint32, 2
-      optional :sha_file, :bytes, 3
-    end
-    repeated :files, CMsgClientUFSUploadCommitResponse::File, 1
-  end
-
-  class CMsgClientUFSFileChunk
-    optional :sha_file, :bytes, 1
-    optional :file_start, :uint32, 2
-    optional :data, :bytes, 3
-  end
-
-  class CMsgClientUFSTransferHeartbeat
-  end
-
-  class CMsgClientUFSUploadFileFinished
-    optional :eresult, :int32, 1, :default => 2
-    optional :sha_file, :bytes, 2
-  end
-
-  class CMsgClientUFSDeleteFileRequest
-    optional :app_id, :uint32, 1
-    optional :file_name, :string, 2
-    optional :is_explicit_delete, :bool, 3
-  end
-
-  class CMsgClientUFSDeleteFileResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :file_name, :string, 2
-  end
-
-  class CMsgClientUFSGetFileListForApp
-    repeated :apps_to_query, :uint32, 1
-    optional :send_path_prefixes, :bool, 2
-  end
-
-  class CMsgClientUFSGetFileListForAppResponse
-
-    class File
-      optional :app_id, :uint32, 1
-      optional :file_name, :string, 2
-      optional :sha_file, :bytes, 3
-      optional :time_stamp, :uint64, 4
-      optional :raw_file_size, :uint32, 5
-      optional :is_explicit_delete, :bool, 6
-      optional :platforms_to_sync, :uint32, 7
-      optional :path_prefix_index, :uint32, 8
-    end
-    repeated :files, CMsgClientUFSGetFileListForAppResponse::File, 1
-    repeated :path_prefixes, :string, 2
-  end
-
-  class CMsgClientUFSDownloadRequest
-    optional :app_id, :uint32, 1
-    optional :file_name, :string, 2
-    optional :can_handle_http, :bool, 3
-  end
-
-  class CMsgClientUFSDownloadResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :app_id, :uint32, 2
-    optional :file_size, :uint32, 3
-    optional :raw_file_size, :uint32, 4
-    optional :sha_file, :bytes, 5
-    optional :time_stamp, :uint64, 6
-    optional :is_explicit_delete, :bool, 7
-    optional :use_http, :bool, 8
-    optional :http_host, :string, 9
-    optional :http_url, :string, 10
-    optional :kv_headers, :bytes, 11
-    optional :use_https, :bool, 12
-    optional :encrypted, :bool, 13
-  end
-
-  class CMsgClientUFSLoginRequest
-    optional :protocol_version, :uint32, 1
-    optional :am_session_token, :uint64, 2
-    repeated :apps, :uint32, 3
-  end
-
-  class CMsgClientUFSLoginResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientRequestEncryptedAppTicket
-    optional :app_id, :uint32, 1
-    optional :userdata, :bytes, 2
-  end
-
-  class CMsgClientRequestEncryptedAppTicketResponse
-    optional :app_id, :uint32, 1
-    optional :eresult, :int32, 2, :default => 2
-    optional :encrypted_app_ticket, EncryptedAppTicket, 3
-  end
-
-  class CMsgClientWalletInfoUpdate
-    optional :has_wallet, :bool, 1
-    optional :balance, :int32, 2
-    optional :currency, :int32, 3
-  end
-
-  class CMsgClientAppInfoUpdate
-    optional :last_changenumber, :uint32, 1
-    optional :send_changelist, :bool, 2
-  end
-
-  class CMsgClientAppInfoChanges
-    optional :current_change_number, :uint32, 1
-    optional :force_full_update, :bool, 2
-    repeated :appIDs, :uint32, 3
-  end
-
-  class CMsgClientAppInfoRequest
-
-    class App
-      optional :app_id, :uint32, 1
-      optional :section_flags, :uint32, 2
-      repeated :section_CRC, :uint32, 3
-    end
-    repeated :apps, CMsgClientAppInfoRequest::App, 1
-    optional :supports_batches, :bool, 2, :default => false
-  end
-
-  class CMsgClientAppInfoResponse
-
-    class App
-
-      class Section
-        optional :section_id, :uint32, 1
-        optional :section_kv, :bytes, 2
-      end
-      optional :app_id, :uint32, 1
-      optional :change_number, :uint32, 2
-      repeated :sections, CMsgClientAppInfoResponse::App::Section, 3
-    end
-    repeated :apps, CMsgClientAppInfoResponse::App, 1
-    repeated :apps_unknown, :uint32, 2
-    optional :apps_pending, :uint32, 3
-  end
-
-  class CMsgClientPackageInfoRequest
-    repeated :package_ids, :uint32, 1
-    optional :meta_data_only, :bool, 2
-  end
-
-  class CMsgClientPackageInfoResponse
-
-    class Package
-      optional :package_id, :uint32, 1
-      optional :change_number, :uint32, 2
-      optional :sha, :bytes, 3
-      optional :buffer, :bytes, 4
-    end
-    repeated :packages, CMsgClientPackageInfoResponse::Package, 1
-    repeated :packages_unknown, :uint32, 2
-    optional :packages_pending, :uint32, 3
-  end
-
-  class CMsgClientPICSChangesSinceRequest
-    optional :since_change_number, :uint32, 1
-    optional :send_app_info_changes, :bool, 2
-    optional :send_package_info_changes, :bool, 3
-  end
-
-  class CMsgClientPICSChangesSinceResponse
-
-    class PackageChange
-      optional :packageid, :uint32, 1
-      optional :change_number, :uint32, 2
-      optional :needs_token, :bool, 3
-    end
-
-    class AppChange
-      optional :appid, :uint32, 1
-      optional :change_number, :uint32, 2
-      optional :needs_token, :bool, 3
-    end
-    optional :current_change_number, :uint32, 1
-    optional :since_change_number, :uint32, 2
-    optional :force_full_update, :bool, 3
-    repeated :package_changes, CMsgClientPICSChangesSinceResponse::PackageChange, 4
-    repeated :app_changes, CMsgClientPICSChangesSinceResponse::AppChange, 5
-  end
-
-  class CMsgClientPICSProductInfoRequest
-
-    class AppInfo
-      optional :appid, :uint32, 1
-      optional :access_token, :uint64, 2
-      optional :only_public, :bool, 3
-    end
-
-    class PackageInfo
-      optional :packageid, :uint32, 1
-      optional :access_token, :uint64, 2
-    end
-    repeated :packages, CMsgClientPICSProductInfoRequest::PackageInfo, 1
-    repeated :apps, CMsgClientPICSProductInfoRequest::AppInfo, 2
-    optional :meta_data_only, :bool, 3
-    optional :num_prev_failed, :uint32, 4
-  end
-
-  class CMsgClientPICSProductInfoResponse
-
-    class AppInfo
-      optional :appid, :uint32, 1
-      optional :change_number, :uint32, 2
-      optional :missing_token, :bool, 3
-      optional :sha, :bytes, 4
-      optional :buffer, :bytes, 5
-      optional :only_public, :bool, 6
-      optional :size, :uint32, 7
-    end
-
-    class PackageInfo
-      optional :packageid, :uint32, 1
-      optional :change_number, :uint32, 2
-      optional :missing_token, :bool, 3
-      optional :sha, :bytes, 4
-      optional :buffer, :bytes, 5
-      optional :size, :uint32, 6
-    end
-    repeated :apps, CMsgClientPICSProductInfoResponse::AppInfo, 1
-    repeated :unknown_appids, :uint32, 2
-    repeated :packages, CMsgClientPICSProductInfoResponse::PackageInfo, 3
-    repeated :unknown_packageids, :uint32, 4
-    optional :meta_data_only, :bool, 5
-    optional :response_pending, :bool, 6
-    optional :http_min_size, :uint32, 7
-    optional :http_host, :string, 8
-  end
-
-  class CMsgClientPICSAccessTokenRequest
-    repeated :packageids, :uint32, 1
-    repeated :appids, :uint32, 2
-  end
-
-  class CMsgClientPICSAccessTokenResponse
-
-    class PackageToken
-      optional :packageid, :uint32, 1
-      optional :access_token, :uint64, 2
-    end
-
-    class AppToken
-      optional :appid, :uint32, 1
-      optional :access_token, :uint64, 2
-    end
-    repeated :package_access_tokens, CMsgClientPICSAccessTokenResponse::PackageToken, 1
-    repeated :package_denied_tokens, :uint32, 2
-    repeated :app_access_tokens, CMsgClientPICSAccessTokenResponse::AppToken, 3
-    repeated :app_denied_tokens, :uint32, 4
-  end
-
-  class CMsgClientUFSGetUGCDetails
-    optional :hcontent, :fixed64, 1, :default => 18446744073709551615
-  end
-
-  class CMsgClientUFSGetUGCDetailsResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :url, :string, 2
-    optional :app_id, :uint32, 3
-    optional :filename, :string, 4
-    optional :steamid_creator, :fixed64, 5
-    optional :file_size, :uint32, 6
-    optional :compressed_file_size, :uint32, 7
-    optional :rangecheck_host, :string, 8
-  end
-
-  class CMsgClientUFSGetSingleFileInfo
-    optional :app_id, :uint32, 1
-    optional :file_name, :string, 2
-  end
-
-  class CMsgClientUFSGetSingleFileInfoResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :app_id, :uint32, 2
-    optional :file_name, :string, 3
-    optional :sha_file, :bytes, 4
-    optional :time_stamp, :uint64, 5
-    optional :raw_file_size, :uint32, 6
-    optional :is_explicit_delete, :bool, 7
-  end
-
-  class CMsgClientUFSShareFile
-    optional :app_id, :uint32, 1
-    optional :file_name, :string, 2
-  end
-
-  class CMsgClientUFSShareFileResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :hcontent, :fixed64, 2, :default => 18446744073709551615
-  end
-
-  class CMsgClientNewLoginKey
-    optional :unique_id, :uint32, 1
-    optional :login_key, :string, 2
-  end
-
-  class CMsgClientNewLoginKeyAccepted
-    optional :unique_id, :uint32, 1
-  end
-
-  class CMsgClientAMGetClanOfficers
-    optional :steamid_clan, :fixed64, 1
-  end
-
-  class CMsgClientAMGetClanOfficersResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :steamid_clan, :fixed64, 2
-    optional :officer_count, :int32, 3
-  end
-
-  class CMsgClientAMGetPersonaNameHistory
-
-    class IdInstance
-      optional :steamid, :fixed64, 1
-    end
-    optional :id_count, :int32, 1
-    repeated :Ids, CMsgClientAMGetPersonaNameHistory::IdInstance, 2
-  end
-
-  class CMsgClientAMGetPersonaNameHistoryResponse
-
-    class NameTableInstance
-
-      class NameInstance
-        optional :name_since, :fixed32, 1
-        optional :name, :string, 2
-      end
-      optional :eresult, :int32, 1, :default => 2
-      optional :steamid, :fixed64, 2
-      repeated :names, CMsgClientAMGetPersonaNameHistoryResponse::NameTableInstance::NameInstance, 3
-    end
-    repeated :responses, CMsgClientAMGetPersonaNameHistoryResponse::NameTableInstance, 2
-  end
-
-  class CMsgClientDeregisterWithServer
-    optional :eservertype, :uint32, 1
-    optional :app_id, :uint32, 2
-  end
-
-  class CMsgClientClanState
-
-    class NameInfo
-      optional :clan_name, :string, 1
-      optional :sha_avatar, :bytes, 2
-    end
-
-    class UserCounts
-      optional :members, :uint32, 1
-      optional :online, :uint32, 2
-      optional :chatting, :uint32, 3
-      optional :in_game, :uint32, 4
-    end
-
-    class Event
-      optional :gid, :fixed64, 1
-      optional :event_time, :uint32, 2
-      optional :headline, :string, 3
-      optional :game_id, :fixed64, 4
-      optional :just_posted, :bool, 5
-    end
-    optional :steamid_clan, :fixed64, 1
-    optional :m_unStatusFlags, :uint32, 2
-    optional :clan_account_flags, :uint32, 3
-    optional :name_info, CMsgClientClanState::NameInfo, 4
-    optional :user_counts, CMsgClientClanState::UserCounts, 5
-    repeated :events, CMsgClientClanState::Event, 6
-    repeated :announcements, CMsgClientClanState::Event, 7
-  end
-
-  class CMsgClientFriendMsg
-    optional :steamid, :fixed64, 1
-    optional :chat_entry_type, :int32, 2
-    optional :message, :bytes, 3
-    optional :rtime32_server_timestamp, :fixed32, 4
-  end
-
-  class CMsgClientFriendMsgIncoming
-    optional :steamid_from, :fixed64, 1
-    optional :chat_entry_type, :int32, 2
-    optional :from_limited_account, :bool, 3
-    optional :message, :bytes, 4
-    optional :rtime32_server_timestamp, :fixed32, 5
-  end
-
-  class CMsgClientAddFriend
-    optional :steamid_to_add, :fixed64, 1
-    optional :accountname_or_email_to_add, :string, 2
-  end
-
-  class CMsgClientAddFriendResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :steam_id_added, :fixed64, 2
-    optional :persona_name_added, :string, 3
-  end
-
-  class CMsgClientRemoveFriend
-    optional :friendid, :fixed64, 1
-  end
-
-  class CMsgClientHideFriend
-    optional :friendid, :fixed64, 1
-    optional :hide, :bool, 2
-  end
-
-  class CMsgClientUCMAddScreenshot
-
-    class Tag
-      optional :tag_name, :string, 1
-      optional :tag_value, :string, 2
-    end
-    optional :appid, :uint32, 1
-    optional :filename, :string, 2
-    optional :thumbname, :string, 3
-    optional :rtime32_created, :fixed32, 4
-    optional :width, :uint32, 5
-    optional :height, :uint32, 6
-    optional :permissions, :uint32, 7
-    optional :caption, :string, 8
-    optional :shortcut_name, :string, 9
-    repeated :tag, CMsgClientUCMAddScreenshot::Tag, 10
-    repeated :tagged_steamid, :fixed64, 11
-    optional :spoiler_tag, :bool, 12
-    repeated :tagged_publishedfileid, :uint64, 13
-  end
-
-  class CMsgClientUCMAddScreenshotResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :screenshotid, :fixed64, 2, :default => 18446744073709551615
-  end
-
-  class CMsgClientUCMDeleteScreenshot
-    optional :screenshotid, :fixed64, 1, :default => 18446744073709551615
-  end
-
-  class CMsgClientUCMDeleteScreenshotResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientUCMPublishFile
-    optional :app_id, :uint32, 1
-    optional :file_name, :string, 2
-    optional :preview_file_name, :string, 3
-    optional :consumer_app_id, :uint32, 4
-    optional :title, :string, 5
-    optional :description, :string, 6
-    repeated :tags, :string, 8
-    optional :workshop_file, :bool, 9
-    optional :visibility, :int32, 10
-    optional :file_type, :uint32, 11
-    optional :url, :string, 12
-    optional :video_provider, :uint32, 13
-    optional :video_account_name, :string, 14
-    optional :video_identifier, :string, 15
-    optional :in_progress, :bool, 16
-  end
-
-  class CMsgClientUCMPublishFileResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :published_file_id, :fixed64, 2, :default => 18446744073709551615
-    optional :needs_workshop_legal_agreement_acceptance, :bool, 3, :default => false
-  end
-
-  class CMsgClientUCMUpdatePublishedFile
-    optional :app_id, :uint32, 1
-    optional :published_file_id, :fixed64, 2
-    optional :file_name, :string, 3
-    optional :preview_file_name, :string, 4
-    optional :title, :string, 5
-    optional :description, :string, 6
-    repeated :tags, :string, 7
-    optional :visibility, :int32, 8
-    optional :update_file, :bool, 9
-    optional :update_preview_file, :bool, 10
-    optional :update_title, :bool, 11
-    optional :update_description, :bool, 12
-    optional :update_tags, :bool, 13
-    optional :update_visibility, :bool, 14
-    optional :change_description, :string, 15
-    optional :update_url, :bool, 16
-    optional :url, :string, 17
-    optional :update_content_manifest, :bool, 18
-    optional :content_manifest, :fixed64, 19
-  end
-
-  class CMsgClientUCMUpdatePublishedFileResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :needs_workshop_legal_agreement_acceptance, :bool, 2, :default => false
-  end
-
-  class CMsgClientUCMDeletePublishedFile
-    optional :published_file_id, :fixed64, 1
-  end
-
-  class CMsgClientUCMDeletePublishedFileResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientUCMEnumerateUserPublishedFiles
-    optional :app_id, :uint32, 1
-    optional :start_index, :uint32, 2
-    optional :sort_order, :uint32, 3
-  end
-
-  class CMsgClientUCMEnumerateUserPublishedFilesResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :published_files, CMsgClientUCMEnumerateUserPublishedFilesResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgClientUCMSubscribePublishedFile
-    optional :app_id, :uint32, 1
-    optional :published_file_id, :fixed64, 2
-  end
-
-  class CMsgClientUCMSubscribePublishedFileResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFiles
-    optional :app_id, :uint32, 1
-    optional :start_index, :uint32, 2
-    optional :list_type, :uint32, 3, :default => 1
-    optional :matching_file_type, :uint32, 4, :default => 0
-    optional :count, :uint32, 5, :default => 50
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFilesResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-      optional :rtime32_subscribed, :fixed32, 2, :default => 0
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :subscribed_files, CMsgClientUCMEnumerateUserSubscribedFilesResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates
-    optional :app_id, :uint32, 1
-    optional :start_index, :uint32, 2
-    optional :start_time, :fixed32, 3
-  end
-
-  class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-      optional :rtime32_subscribed, :fixed32, 2, :default => 0
-      optional :appid, :uint32, 3
-      optional :file_hcontent, :fixed64, 4
-      optional :file_size, :uint32, 5
-      optional :rtime32_last_updated, :fixed32, 6
-      optional :is_depot_content, :bool, 7
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :subscribed_files, CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgClientUCMUnsubscribePublishedFile
-    optional :app_id, :uint32, 1
-    optional :published_file_id, :fixed64, 2
-  end
-
-  class CMsgClientUCMUnsubscribePublishedFileResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientUCMPublishedFileSubscribed
-    optional :published_file_id, :fixed64, 1
-    optional :app_id, :uint32, 2
-    optional :file_hcontent, :fixed64, 3
-    optional :file_size, :uint32, 4
-    optional :rtime_subscribed, :uint32, 5
-    optional :is_depot_content, :bool, 6
-  end
-
-  class CMsgClientUCMPublishedFileUnsubscribed
-    optional :published_file_id, :fixed64, 1
-    optional :app_id, :uint32, 2
-  end
-
-  class CMsgClientUCMPublishedFileDeleted
-    optional :published_file_id, :fixed64, 1
-    optional :app_id, :uint32, 2
-  end
-
-  class CMsgClientUCMPublishedFileUpdated
-    optional :published_file_id, :fixed64, 1
-    optional :app_id, :uint32, 2
-    optional :time_updated, :uint32, 3
-    optional :hcontent, :fixed64, 4
-    optional :file_size, :fixed32, 5
-    optional :is_depot_content, :bool, 6
-  end
-
-  class CMsgClientUCMGetPublishedFilesForUser
-    optional :app_id, :uint32, 1
-    optional :creator_steam_id, :fixed64, 2
-    repeated :required_tags, :string, 3
-    repeated :excluded_tags, :string, 4
-    optional :start_index, :uint32, 5
-  end
-
-  class CMsgClientUCMGetPublishedFilesForUserResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :published_files, CMsgClientUCMGetPublishedFilesForUserResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgClientUCMSetUserPublishedFileAction
-    optional :published_file_id, :fixed64, 1
-    optional :app_id, :uint32, 2
-    optional :action, :int32, 3
-  end
-
-  class CMsgClientUCMSetUserPublishedFileActionResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientUCMEnumeratePublishedFilesByUserAction
-    optional :app_id, :uint32, 1
-    optional :start_index, :uint32, 2
-    optional :action, :int32, 3
-  end
-
-  class CMsgClientUCMEnumeratePublishedFilesByUserActionResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-      optional :rtime_time_stamp, :fixed32, 2, :default => 0
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :published_files, CMsgClientUCMEnumeratePublishedFilesByUserActionResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgClientScreenshotsChanged
-  end
-
-  class CMsgClientUpdateUserGameInfo
-    optional :steamid_idgs, :fixed64, 1
-    optional :gameid, :fixed64, 2
-    optional :game_ip, :uint32, 3
-    optional :game_port, :uint32, 4
-    optional :token, :bytes, 5
-  end
-
-  class CMsgClientRichPresenceUpload
-    optional :rich_presence_kv, :bytes, 1
-    repeated :steamid_broadcast, :fixed64, 2
-  end
-
-  class CMsgClientRichPresenceRequest
-    repeated :steamid_request, :fixed64, 1
-  end
-
-  class CMsgClientRichPresenceInfo
-
-    class RichPresence
-      optional :steamid_user, :fixed64, 1
-      optional :rich_presence_kv, :bytes, 2
-    end
-    repeated :rich_presence, CMsgClientRichPresenceInfo::RichPresence, 1
-  end
-
-  class CMsgClientCheckFileSignature
-    optional :app_id, :uint32, 1
-  end
-
-  class CMsgClientCheckFileSignatureResponse
-    optional :app_id, :uint32, 1
-    optional :pid, :uint32, 2
-    optional :eresult, :uint32, 3
-    optional :filename, :string, 4
-    optional :esignatureresult, :uint32, 5
-    optional :sha_file, :bytes, 6
-    optional :signatureheader, :bytes, 7
-    optional :filesize, :uint32, 8
-    optional :getlasterror, :uint32, 9
-    optional :evalvesignaturecheckdetail, :uint32, 10
-  end
-
-  class CMsgClientReadMachineAuth
-    optional :filename, :string, 1
-    optional :offset, :uint32, 2
-    optional :cubtoread, :uint32, 3
-  end
-
-  class CMsgClientReadMachineAuthResponse
-    optional :filename, :string, 1
-    optional :eresult, :uint32, 2
-    optional :filesize, :uint32, 3
-    optional :sha_file, :bytes, 4
-    optional :getlasterror, :uint32, 5
-    optional :offset, :uint32, 6
-    optional :cubread, :uint32, 7
-    optional :bytes_read, :bytes, 8
-    optional :filename_sentry, :string, 9
-  end
-
-  class CMsgClientUpdateMachineAuth
-    optional :filename, :string, 1
-    optional :offset, :uint32, 2
-    optional :cubtowrite, :uint32, 3
-    optional :bytes, :bytes, 4
-    optional :otp_type, :uint32, 5
-    optional :otp_identifier, :string, 6
-    optional :otp_sharedsecret, :bytes, 7
-    optional :otp_timedrift, :uint32, 8
-  end
-
-  class CMsgClientUpdateMachineAuthResponse
-    optional :filename, :string, 1
-    optional :eresult, :uint32, 2
-    optional :filesize, :uint32, 3
-    optional :sha_file, :bytes, 4
-    optional :getlasterror, :uint32, 5
-    optional :offset, :uint32, 6
-    optional :cubwrote, :uint32, 7
-    optional :otp_type, :int32, 8
-    optional :otp_value, :uint32, 9
-    optional :otp_identifier, :string, 10
-  end
-
-  class CMsgClientRequestMachineAuth
-    optional :filename, :string, 1
-    optional :eresult_sentryfile, :uint32, 2
-    optional :filesize, :uint32, 3
-    optional :sha_sentryfile, :bytes, 4
-    optional :lock_account_action, :int32, 6
-    optional :otp_type, :uint32, 7
-    optional :otp_identifier, :string, 8
-    optional :otp_sharedsecret, :bytes, 9
-    optional :otp_value, :uint32, 10
-    optional :machine_name, :string, 11
-    optional :machine_name_userchosen, :string, 12
-  end
-
-  class CMsgClientRequestMachineAuthResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientChangeSteamGuardOptions
-    optional :steamguard_provider, :uint32, 1
-    optional :steamguard_require_code_default, :uint32, 2
-    optional :machine_name, :string, 3
-    optional :machine_name_userchosen, :string, 4
-  end
-
-  class CMsgClientChangeSteamGuardOptionsResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientCreateFriendsGroup
-    optional :steamid, :fixed64, 1
-    optional :groupname, :string, 2
-  end
-
-  class CMsgClientCreateFriendsGroupResponse
-    optional :eresult, :uint32, 1
-    optional :groupid, :int32, 2
-  end
-
-  class CMsgClientDeleteFriendsGroup
-    optional :steamid, :fixed64, 1
-    optional :groupid, :int32, 2
-  end
-
-  class CMsgClientDeleteFriendsGroupResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientRenameFriendsGroup
-    optional :groupid, :int32, 1
-    optional :groupname, :string, 2
-  end
-
-  class CMsgClientRenameFriendsGroupResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientAddFriendToGroup
-    optional :groupid, :int32, 1
-    optional :steamiduser, :fixed64, 2
-  end
-
-  class CMsgClientAddFriendToGroupResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientRemoveFriendFromGroup
-    optional :groupid, :int32, 1
-    optional :steamiduser, :fixed64, 2
-  end
-
-  class CMsgClientRemoveFriendFromGroupResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientRegisterKey
-    optional :key, :string, 1
-  end
-
-  class CMsgClientPurchaseResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :purchase_result_details, :int32, 2
-    optional :purchase_receipt_info, :bytes, 3
-  end
-
-  class CMsgClientActivateOEMLicense
-    optional :bios_manufacturer, :string, 1
-    optional :bios_serialnumber, :string, 2
-    optional :license_file, :bytes, 3
-    optional :mainboard_manufacturer, :string, 4
-    optional :mainboard_product, :string, 5
-    optional :mainboard_serialnumber, :string, 6
-  end
-
-  class CMsgClientRegisterOEMMachine
-    optional :oem_register_file, :bytes, 1
-  end
-
-  class CMsgClientRegisterOEMMachineResponse
-    optional :eresult, :uint32, 1
-  end
-
-  class CMsgClientPurchaseWithMachineID
-    optional :package_id, :uint32, 1
-    optional :machine_info, :bytes, 2
-  end
-
-  class CMsgTrading_InitiateTradeRequest
-    optional :trade_request_id, :uint32, 1
-    optional :other_steamid, :uint64, 2
-    optional :other_name, :string, 3
-  end
-
-  class CMsgTrading_InitiateTradeResponse
-    optional :response, :uint32, 1
-    optional :trade_request_id, :uint32, 2
-    optional :other_steamid, :uint64, 3
-    optional :steamguard_required_days, :uint32, 4
-    optional :new_device_cooldown_days, :uint32, 5
-    optional :default_password_reset_probation_days, :uint32, 6
-    optional :password_reset_probation_days, :uint32, 7
-  end
-
-  class CMsgTrading_CancelTradeRequest
-    optional :other_steamid, :uint64, 1
-  end
-
-  class CMsgTrading_StartSession
-    optional :other_steamid, :uint64, 1
-  end
-
-  class CMsgClientMDSInitDepotBuildRequest
-    optional :depot_id, :uint32, 1
-    optional :encrypted_aes_key, :bytes, 2
-    optional :build_id, :uint32, 4
-    optional :for_local_cs, :bool, 5
-    optional :no_baseline, :bool, 6
-  end
-
-  class CMsgClientMDSInitDepotBuildResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :default_chunk_size, :uint32, 2
-    optional :base_manifest, :fixed64, 3
-    optional :encrypted_depot_key, :bytes, 4
-  end
-
-  class CMsgClientMDSInitWorkshopBuildRequest
-    optional :depot_id, :uint32, 1
-    optional :app_id, :uint32, 2
-    optional :workshop_item_id, :uint64, 3
-  end
-
-  class CMsgClientMDSInitWorkshopBuildResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :default_chunk_size, :uint32, 2
-    optional :base_manifest, :fixed64, 3
-    optional :symmetric_depot_key, :bytes, 4
-  end
-
-  class CMsgClientMDSLoginRequest
-    optional :encrypted_session_key, :bytes, 1
-  end
-
-  class CMsgClientMDSLoginResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientMDSUploadDepotChunks
-
-    class ChunkUploadData
-      optional :sha, :bytes, 1
-      optional :rolling_crc, :uint32, 2
-      optional :original_chunk_size, :uint32, 3
-      optional :data, :bytes, 4
-      optional :compressed_chunk_size, :uint32, 5
-      optional :compressed_crc, :uint32, 6
-    end
-    optional :depot_id, :uint32, 1
-    repeated :chunks, CMsgClientMDSUploadDepotChunks::ChunkUploadData, 2
-    optional :only_meta_data, :bool, 3
-  end
-
-  class CMsgClientMDSUploadDepotChunksResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientMDSUploadRateTest
-    optional :serial_number, :uint32, 1
-    optional :test_data, :bytes, 2
-    optional :test_data_size, :uint32, 3
-    optional :test_data_crc, :uint32, 4
-  end
-
-  class CMsgClientMDSUploadRateTestResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :serial_number, :uint32, 2
-  end
-
-  class CMsgClientMDSTransmitManifestDataChunk
-    optional :offset, :int32, 1
-    optional :data, :bytes, 2
-  end
-
-  class CMsgClientMDSUploadManifestRequest
-    optional :depot_id, :uint32, 1
-    optional :manifest_size_compressed, :uint32, 2
-    optional :build_id, :uint32, 6
-    optional :manifest_version, :uint32, 7
-    optional :local_cs_build, :bool, 9
-  end
-
-  class CMsgClientMDSUploadManifestResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :new_manifest, :fixed64, 2
-    optional :unique_chunks, :uint32, 3
-    optional :missing_chunks, :uint32, 4
-    optional :bitstring_size_uncompressed, :uint32, 5
-    optional :bitstring, :bytes, 6
-    optional :is_prev_manifest, :bool, 7
-  end
-
-  class CMsgClientMDSGetDepotManifest
-    optional :depot_id, :uint32, 1
-    optional :manifest_id, :fixed64, 2
-    optional :manifest_version, :uint32, 3
-  end
-
-  class CMsgClientMDSGetDepotManifestResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :manifest_size_compressed, :uint32, 3
-  end
-
-  class CMsgClientMDSGetDepotManifestChunk
-    optional :offset, :uint32, 1
-    optional :data, :bytes, 3
-  end
-
-  class CMsgClientMDSRegisterAppBuild
-    optional :app_id, :int32, 1
-    optional :description, :string, 2
-    optional :for_local_cs, :bool, 5
-  end
-
-  class CMsgClientMDSRegisterAppBuildResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :build_id, :uint32, 2
-  end
-
-  class CMsgMDSSetAppBuildLive
-    optional :build_id, :uint32, 1
-    optional :app_id, :uint32, 2
-    optional :beta_key, :string, 3
-    optional :beta_password, :string, 5
-    optional :only_finish, :bool, 6
-    optional :num_skip_depots, :uint32, 7
-  end
-
-  class CMsgMDSSetAppBuildLiveResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :error_string, :string, 2
-  end
-
-  class CMsgClientMDSSignInstallScript
-    optional :depot_id, :int32, 1
-    optional :data, :string, 2
-  end
-
-  class CMsgClientMDSSignInstallScriptResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :error_string, :string, 2
-    optional :data, :string, 3
-  end
-
-  class CMsgClientEmailChange
-    optional :password, :string, 1
-    optional :email, :string, 2
-    optional :code, :string, 3
-    optional :final, :bool, 4
-    optional :newmethod, :bool, 5
-  end
-
-  class CMsgClientEmailChangeResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgClientGetCDNAuthToken
-    optional :app_id, :uint32, 1
-    optional :host_name, :string, 2
-  end
-
-  class CMsgClientGetDepotDecryptionKey
-    optional :depot_id, :uint32, 1
-    optional :app_id, :uint32, 2
-  end
-
-  class CMsgClientGetDepotDecryptionKeyResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :depot_id, :uint32, 2
-    optional :depot_encryption_key, :bytes, 3
-  end
-
-  class CMsgClientGetAppBetaPasswords
-    optional :app_id, :uint32, 1
-  end
-
-  class CMsgClientGetAppBetaPasswordsResponse
-
-    class BetaPassword
-      optional :betaname, :string, 1
-      optional :betapassword, :string, 2
-    end
-    optional :eresult, :int32, 1, :default => 2
-    optional :app_id, :uint32, 2
-    repeated :betapasswords, CMsgClientGetAppBetaPasswordsResponse::BetaPassword, 3
-  end
-
-  class CMsgClientUpdateAppJobReport
-    optional :app_id, :uint32, 1
-    repeated :depot_ids, :uint32, 2
-    optional :app_state, :uint32, 3
-    optional :job_app_error, :uint32, 4
-    optional :error_details, :string, 5
-    optional :job_duration, :uint32, 6
-    optional :files_validation_failed, :uint32, 7
-    optional :bytes_downloaded, :uint64, 8
-    optional :bytes_staged, :uint64, 9
-    optional :bytes_comitted, :uint64, 10
-    optional :start_app_state, :uint32, 11
-  end
-
-  class CMsgClientSteam2AppStarted
-    optional :app_id, :uint32, 1
-    optional :command_line, :string, 2
-  end
-
-  class CMsgClientGetCDNAuthTokenResponse
-    optional :eresult, :uint32, 1, :default => 2
-    optional :token, :string, 2
-    optional :expiration_time, :uint32, 3
-  end
-
-  class CMsgDownloadRateStatistics
-
-    class StatsInfo
-      optional :source_type, :uint32, 1
-      optional :source_id, :uint32, 2
-      optional :seconds, :uint32, 3
-      optional :bytes, :uint64, 4
-    end
-    optional :cell_id, :uint32, 1
-    repeated :stats, CMsgDownloadRateStatistics::StatsInfo, 2
-  end
-
-  class CMsgClientRequestAccountData
-    optional :account_or_email, :string, 1
-    optional :action, :uint32, 2
-  end
-
-  class CMsgClientRequestAccountDataResponse
-    optional :action, :uint32, 1
-    optional :eresult, :uint32, 2
-    optional :account_name, :string, 3
-    optional :ct_matches, :uint32, 4
-    optional :account_name_suggestion1, :string, 5
-    optional :account_name_suggestion2, :string, 6
-    optional :account_name_suggestion3, :string, 7
-  end
-
-  class CMsgClientUGSGetGlobalStats
-    optional :gameid, :uint64, 1
-    optional :history_days_requested, :uint32, 2
-    optional :time_last_requested, :fixed32, 3
-    optional :first_day_cached, :uint32, 4
-    optional :days_cached, :uint32, 5
-  end
-
-  class CMsgClientUGSGetGlobalStatsResponse
-
-    class Day
-
-      class Stat
-        optional :stat_id, :int32, 1
-        optional :data, :int64, 2
-      end
-      optional :day_id, :uint32, 1
-      repeated :stats, CMsgClientUGSGetGlobalStatsResponse::Day::Stat, 2
-    end
-    optional :eresult, :int32, 1, :default => 2
-    optional :timestamp, :fixed32, 2
-    optional :day_current, :int32, 3
-    repeated :days, CMsgClientUGSGetGlobalStatsResponse::Day, 4
-  end
-
-  class CMsgGameServerData
-
-    class Player
-      optional :steam_id, :fixed64, 1
-    end
-    optional :steam_id_gs, :fixed64, 1
-    optional :ip, :uint32, 2
-    optional :query_port, :uint32, 3
-    optional :game_port, :uint32, 4
-    optional :sourcetv_port, :uint32, 5
-    optional :name, :string, 22
-    optional :app_id, :uint32, 6
-    optional :gamedir, :string, 7
-    optional :version, :string, 8
-    optional :product, :string, 9
-    optional :region, :string, 10
-    repeated :players, CMsgGameServerData::Player, 11
-    optional :max_players, :uint32, 12
-    optional :bot_count, :uint32, 13
-    optional :password, :bool, 14
-    optional :secure, :bool, 15
-    optional :dedicated, :bool, 16
-    optional :os, :string, 17
-    optional :game_data, :string, 18
-    optional :game_data_version, :uint32, 19
-    optional :game_type, :string, 20
-    optional :map, :string, 21
-  end
-
-  class CMsgGameServerRemove
-    optional :steam_id, :fixed64, 1
-    optional :ip, :uint32, 2
-    optional :query_port, :uint32, 3
-  end
-
-  class CMsgClientGMSServerQuery
-    optional :app_id, :uint32, 1
-    optional :geo_location_ip, :uint32, 2
-    optional :region_code, :uint32, 3
-    optional :filter_text, :string, 4
-    optional :max_servers, :uint32, 5
-  end
-
-  class CMsgGMSClientServerQueryResponse
-
-    class Server
-      optional :server_ip, :uint32, 1
-      optional :server_port, :uint32, 2
-      optional :auth_players, :uint32, 3
-    end
-    repeated :servers, CMsgGMSClientServerQueryResponse::Server, 1
-    optional :error, :string, 2
-  end
-
-  class CMsgGameServerOutOfDate
-    optional :steam_id_gs, :fixed64, 1
-    optional :reject, :bool, 2
-    optional :message, :string, 3
-  end
-
-  class CMsgClientRedeemGuestPass
-    optional :guest_pass_id, :fixed64, 1
-  end
-
-  class CMsgClientRedeemGuestPassResponse
-    optional :eresult, :uint32, 1, :default => 2
-    optional :package_id, :uint32, 2
-    optional :must_own_appid, :uint32, 3
-  end
-
-  class CMsgClientGetClanActivityCounts
-    repeated :steamid_clans, :uint64, 1
-  end
-
-  class CMsgClientGetClanActivityCountsResponse
-    optional :eresult, :uint32, 1, :default => 2
-  end
-
-  class CMsgClientOGSReportString
-    optional :accumulated, :bool, 1
-    optional :sessionid, :uint64, 2
-    optional :severity, :int32, 3
-    optional :formatter, :string, 4
-    optional :varargs, :bytes, 5
-  end
-
-  class CMsgClientOGSReportBug
-    optional :sessionid, :uint64, 1
-    optional :bugtext, :string, 2
-    optional :screenshot, :bytes, 3
-  end
-
-  class CMsgGSAssociateWithClan
-    optional :steam_id_clan, :fixed64, 1
-  end
-
-  class CMsgGSAssociateWithClanResponse
-    optional :steam_id_clan, :fixed64, 1
-    optional :eresult, :uint32, 2, :default => 2
-  end
-
-  class CMsgGSComputeNewPlayerCompatibility
-    optional :steam_id_candidate, :fixed64, 1
-  end
-
-  class CMsgGSComputeNewPlayerCompatibilityResponse
-    optional :steam_id_candidate, :fixed64, 1
-    optional :eresult, :uint32, 2, :default => 2
-    optional :is_clan_member, :bool, 3
-    optional :ct_dont_like_you, :int32, 4
-    optional :ct_you_dont_like, :int32, 5
-    optional :ct_clanmembers_dont_like_you, :int32, 6
-  end
-
-  class CMsgClientSentLogs
-  end
-
-  class CMsgGCClient
-    optional :appid, :uint32, 1
-    optional :msgtype, :uint32, 2
-    optional :payload, :bytes, 3
-    optional :steamid, :fixed64, 4
-    optional :gcname, :string, 5
-  end
-
-  class CMsgClientRequestFreeLicense
-    repeated :appids, :uint32, 2
-  end
-
-  class CMsgClientRequestFreeLicenseResponse
-    optional :eresult, :uint32, 1, :default => 2
-    repeated :granted_packageids, :uint32, 2
-    repeated :granted_appids, :uint32, 3
-  end
-
-  class CMsgDRMDownloadRequestWithCrashData
-    optional :download_flags, :uint32, 1
-    optional :download_types_known, :uint32, 2
-    optional :guid_drm, :bytes, 3
-    optional :guid_split, :bytes, 4
-    optional :guid_merge, :bytes, 5
-    optional :module_name, :string, 6
-    optional :module_path, :string, 7
-    optional :crash_data, :bytes, 8
-  end
-
-  class CMsgDRMDownloadResponse
-    optional :eresult, :uint32, 1, :default => 2
-    optional :app_id, :uint32, 2
-    optional :blob_download_type, :uint32, 3
-    optional :merge_guid, :bytes, 4
-    optional :download_file_dfs_ip, :uint32, 5
-    optional :download_file_dfs_port, :uint32, 6
-    optional :download_file_url, :string, 7
-    optional :module_path, :string, 8
-  end
-
-  class CMsgDRMFinalResult
-    optional :eResult, :uint32, 1, :default => 2
-    optional :app_id, :uint32, 2
-    optional :blob_download_type, :uint32, 3
-    optional :error_detail, :uint32, 4
-    optional :merge_guid, :bytes, 5
-    optional :download_file_dfs_ip, :uint32, 6
-    optional :download_file_dfs_port, :uint32, 7
-    optional :download_file_url, :string, 8
-  end
-
-  class CMsgClientDPCheckSpecialSurvey
-    optional :survey_id, :uint32, 1
-  end
-
-  class CMsgClientDPCheckSpecialSurveyResponse
-    optional :eResult, :uint32, 1, :default => 2
-    optional :state, :uint32, 2
-    optional :name, :string, 3
-    optional :custom_url, :string, 4
-    optional :include_software, :bool, 5
-    optional :token, :bytes, 6
-  end
-
-  class CMsgClientDPSendSpecialSurveyResponse
-    optional :survey_id, :uint32, 1
-    optional :data, :bytes, 2
-  end
-
-  class CMsgClientDPSendSpecialSurveyResponseReply
-    optional :eResult, :uint32, 1, :default => 2
-    optional :token, :bytes, 2
-  end
-
-  class CMsgClientRequestForgottenPasswordEmail
-    optional :account_name, :string, 1
-    optional :password_tried, :string, 2
-  end
-
-  class CMsgClientRequestForgottenPasswordEmailResponse
-    optional :eResult, :uint32, 1
-    optional :use_secret_question, :bool, 2
-  end
-
-  class CMsgClientItemAnnouncements
-    optional :count_new_items, :uint32, 1
-  end
-
-  class CMsgClientRequestItemAnnouncements
-  end
-
-  class CMsgClientUserNotifications
-
-    class Notification
-      optional :user_notification_type, :uint32, 1
-      optional :count, :uint32, 2
-    end
-    repeated :notifications, CMsgClientUserNotifications::Notification, 1
-  end
-
-  class CMsgClientCommentNotifications
-    optional :count_new_comments, :uint32, 1
-    optional :count_new_comments_owner, :uint32, 2
-    optional :count_new_comments_subscriptions, :uint32, 3
-  end
-
-  class CMsgClientRequestCommentNotifications
-  end
-
-  class CMsgClientOfflineMessageNotification
-    optional :offline_messages, :uint32, 1
-    repeated :friends_with_offline_messages, :uint32, 2
-  end
-
-  class CMsgClientRequestOfflineMessageCount
-  end
-
-  class CMsgClientFSGetFriendMessageHistory
-    optional :steamid, :fixed64, 1
-  end
-
-  class CMsgClientFSGetFriendMessageHistoryResponse
-
-    class FriendMessage
-      optional :accountid, :uint32, 1
-      optional :timestamp, :uint32, 2
-      optional :message, :string, 3
-      optional :unread, :bool, 4
-    end
-    optional :steamid, :fixed64, 1
-    optional :success, :uint32, 2
-    repeated :messages, CMsgClientFSGetFriendMessageHistoryResponse::FriendMessage, 3
-  end
-
-  class CMsgClientFSGetFriendMessageHistoryForOfflineMessages
-  end
-
-  class CMsgClientFSGetFriendsSteamLevels
-    repeated :accountids, :uint32, 1
-  end
-
-  class CMsgClientFSGetFriendsSteamLevelsResponse
-
-    class Friend
-      optional :accountid, :uint32, 1
-      optional :level, :uint32, 2
-    end
-    repeated :friends, CMsgClientFSGetFriendsSteamLevelsResponse::Friend, 1
-  end
-
-  class CMsgClientEmailAddrInfo
-    optional :email_address, :string, 1
-    optional :email_is_validated, :bool, 2
-    optional :email_validation_changed, :bool, 3
-    optional :credential_change_requires_code, :bool, 4
-    optional :password_or_secretqa_change_requires_code, :bool, 5
-    optional :remind_user_about_email, :bool, 6
-  end
-
-  class CMsgCREEnumeratePublishedFiles
-    optional :app_id, :uint32, 1
-    optional :query_type, :int32, 2
-    optional :start_index, :uint32, 3
-    optional :days, :uint32, 4
-    optional :count, :uint32, 5
-    repeated :tags, :string, 6
-    repeated :user_tags, :string, 7
-    optional :matching_file_type, :uint32, 8, :default => 13
-  end
-
-  class CMsgCREEnumeratePublishedFilesResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-      optional :votes_for, :int32, 2
-      optional :votes_against, :int32, 3
-      optional :reports, :int32, 4
-      optional :score, :float, 5
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :published_files, CMsgCREEnumeratePublishedFilesResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgCRERankByVote
-    optional :app_id, :uint32, 1
-    optional :start_index, :uint32, 2
-    optional :count, :uint32, 3
-    repeated :tags, :string, 4
-    repeated :user_tags, :string, 5
-  end
-
-  class CMsgCRERankByVoteResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-      optional :votes_for, :int32, 2
-      optional :votes_against, :int32, 3
-      optional :reports, :int32, 4
-      optional :score, :float, 5
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :published_files, CMsgCRERankByVoteResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgCRERankByTrend
-    optional :app_id, :uint32, 1
-    optional :start_index, :uint32, 2
-    optional :days, :uint32, 3
-    optional :count, :uint32, 4
-    repeated :tags, :string, 5
-    repeated :user_tags, :string, 6
-  end
-
-  class CMsgCRERankByTrendResponse
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-      optional :votes_for, :int32, 2
-      optional :votes_against, :int32, 3
-      optional :reports, :int32, 4
-      optional :score, :float, 5
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :published_files, CMsgCRERankByTrendResponse::PublishedFileId, 2
-    optional :total_results, :uint32, 3
-  end
-
-  class CMsgCREItemVoteSummary
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-    end
-    repeated :published_file_ids, CMsgCREItemVoteSummary::PublishedFileId, 1
-  end
-
-  class CMsgCREItemVoteSummaryResponse
-
-    class ItemVoteSummary
-      optional :published_file_id, :fixed64, 1
-      optional :votes_for, :int32, 2
-      optional :votes_against, :int32, 3
-      optional :reports, :int32, 4
-      optional :score, :float, 5
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :item_vote_summaries, CMsgCREItemVoteSummaryResponse::ItemVoteSummary, 2
-  end
-
-  class CMsgCREUpdateUserPublishedItemVote
-    optional :published_file_id, :fixed64, 1
-    optional :vote_up, :bool, 2
-  end
-
-  class CMsgCREUpdateUserPublishedItemVoteResponse
-    optional :eresult, :int32, 1, :default => 2
-  end
-
-  class CMsgCREGetUserPublishedItemVoteDetails
-
-    class PublishedFileId
-      optional :published_file_id, :fixed64, 1
-    end
-    repeated :published_file_ids, CMsgCREGetUserPublishedItemVoteDetails::PublishedFileId, 1
-  end
-
-  class CMsgCREGetUserPublishedItemVoteDetailsResponse
-
-    class UserItemVoteDetail
-      optional :published_file_id, :fixed64, 1
-      optional :vote, :int32, 2, :default => 0
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :user_item_vote_details, CMsgCREGetUserPublishedItemVoteDetailsResponse::UserItemVoteDetail, 2
-  end
-
-  class CMsgGameServerPingSample
-
-    class Sample
-      optional :ip, :fixed32, 1
-      optional :avg_ping_ms, :uint32, 2
-      optional :stddev_ping_ms_x10, :uint32, 3
-    end
-    optional :my_ip, :fixed32, 1
-    optional :gs_app_id, :int32, 2
-    repeated :gs_samples, CMsgGameServerPingSample::Sample, 3
-  end
-
-  class CMsgFSGetFollowerCount
-    optional :steam_id, :fixed64, 1
-  end
-
-  class CMsgFSGetFollowerCountResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :count, :int32, 2, :default => 0
-  end
-
-  class CMsgFSGetIsFollowing
-    optional :steam_id, :fixed64, 1
-  end
-
-  class CMsgFSGetIsFollowingResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :is_following, :bool, 2, :default => false
-  end
-
-  class CMsgFSEnumerateFollowingList
-    optional :start_index, :uint32, 1
-  end
-
-  class CMsgFSEnumerateFollowingListResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :total_results, :int32, 2
-    repeated :steam_ids, :fixed64, 3
-  end
-
-  class CMsgDPGetNumberOfCurrentPlayers
-    optional :appid, :uint32, 1
-  end
-
-  class CMsgDPGetNumberOfCurrentPlayersResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :player_count, :int32, 2
-  end
-
-  class CMsgClientFriendUserStatusPublished
-    optional :friend_steamid, :fixed64, 1
-    optional :appid, :uint32, 2
-    optional :status_text, :string, 3
-  end
-
-  class CMsgClientServiceMethod
-    optional :method_name, :string, 1
-    optional :serialized_method, :bytes, 2
-    optional :is_notification, :bool, 3
-  end
-
-  class CMsgClientServiceMethodResponse
-    optional :method_name, :string, 1
-    optional :serialized_method_response, :bytes, 2
-  end
-
-  class CMsgClientUIMode
-    optional :uimode, :uint32, 1
-  end
-
-  class CMsgClientVanityURLChangedNotification
-    optional :vanity_url, :string, 1
-  end
-
-  class CMsgClientAuthorizeLocalDeviceRequest
-    optional :device_description, :string, 1
-    optional :owner_account_id, :uint32, 2
-  end
-
-  class CMsgClientAuthorizeLocalDevice
-    optional :eresult, :int32, 1, :default => 2
-    optional :owner_account_id, :uint32, 2
-    optional :authed_device_token, :uint64, 3
-  end
-
-  class CMsgClientDeauthorizeDeviceRequest
-    optional :deauthorization_account_id, :uint32, 1
-    optional :deauthorization_device_token, :uint64, 2
-  end
-
-  class CMsgClientDeauthorizeDevice
-    optional :eresult, :int32, 1, :default => 2
-    optional :deauthorization_account_id, :uint32, 2
-  end
-
-  class CMsgClientUseLocalDeviceAuthorizations
-
-    class DeviceToken
-      optional :owner_account_id, :uint32, 1
-      optional :token_id, :uint64, 2
-    end
-    repeated :authorization_account_id, :uint32, 1
-    repeated :device_tokens, CMsgClientUseLocalDeviceAuthorizations::DeviceToken, 2
-  end
-
-  class CMsgClientGetAuthorizedDevices
-  end
-
-  class CMsgClientGetAuthorizedDevicesResponse
-
-    class AuthorizedDevice
-      optional :auth_device_token, :uint64, 1
-      optional :device_name, :string, 2
-      optional :last_access_time, :uint32, 3
-      optional :borrower_id, :uint32, 4
-      optional :is_pending, :bool, 5
-      optional :app_played, :uint32, 6
-    end
-    optional :eresult, :int32, 1, :default => 2
-    repeated :authorized_device, CMsgClientGetAuthorizedDevicesResponse::AuthorizedDevice, 2
-  end
-
-  class CMsgClientGetEmoticonList
-  end
-
-  class CMsgClientEmoticonList
-
-    class Emoticon
-      optional :name, :string, 1
-      optional :count, :int32, 2
-    end
-    repeated :emoticons, CMsgClientEmoticonList::Emoticon, 1
-  end
-
-  class CMsgClientSharedLibraryLockStatus
-
-    class LockedLibrary
-      optional :owner_id, :uint32, 1
-      optional :locked_by, :uint32, 2
-    end
-    repeated :locked_library, CMsgClientSharedLibraryLockStatus::LockedLibrary, 1
-    optional :own_library_locked_by, :uint32, 2
-  end
-
-  class CMsgClientSharedLibraryStopPlaying
-
-    class StopApp
-      optional :app_id, :uint32, 1
-      optional :owner_id, :uint32, 2
-    end
-    optional :seconds_left, :int32, 1
-    repeated :stop_apps, CMsgClientSharedLibraryStopPlaying::StopApp, 2
-  end
-
-  class CMsgClientServiceCall
-    optional :sysid_routing, :bytes, 1
-    optional :call_handle, :uint32, 2
-    optional :module_crc, :uint32, 3
-    optional :module_hash, :bytes, 4
-    optional :function_id, :uint32, 5
-    optional :cub_output_max, :uint32, 6
-    optional :flags, :uint32, 7
-    optional :callparameter, :bytes, 8
-  end
-
-  class CMsgClientServiceModule
-    optional :module_crc, :uint32, 1
-    optional :module_hash, :bytes, 2
-    optional :module_content, :bytes, 3
-  end
-
-  class CMsgClientServiceCallResponse
-    optional :sysid_routing, :bytes, 1
-    optional :call_handle, :uint32, 2
-    optional :module_crc, :uint32, 3
-    optional :module_hash, :bytes, 4
-    optional :ecallresult, :uint32, 5
-    optional :result_content, :bytes, 6
-    optional :os_version_info, :bytes, 7
-    optional :system_info, :bytes, 8
-    optional :load_address, :fixed64, 9
-    optional :exception_record, :bytes, 10
-    optional :portable_os_version_info, :bytes, 11
-    optional :portable_system_info, :bytes, 12
-    optional :was_converted, :bool, 13
-    optional :internal_result, :uint32, 14
-  end
-
-  class CMsgAMUnlockStreaming
-  end
-
-  class CMsgAMUnlockStreamingResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :encryption_key, :bytes, 2
-  end
-
-  class CMsgClientPlayingSessionState
-    optional :playing_blocked, :bool, 2
-    optional :playing_app, :uint32, 3
-  end
-
-  class CMsgClientKickPlayingSession
-    optional :only_stop_game, :bool, 1
-  end
-
-  class CMsgClientCreateAccount
-    optional :account_name, :string, 1
-    optional :password, :string, 2
-    optional :email, :string, 3
-    optional :question, :string, 4
-    optional :answer, :string, 5
-    optional :launcher, :uint32, 6
-  end
-
-  class CMsgClientCreateAccountResponse
-    optional :eresult, :int32, 1, :default => 2
-    optional :steamid, :fixed64, 2
-  end
 end
+
+class CMsgClientUDSP2PSessionStarted < ::Protobuf::Message; end
+class CMsgClientUDSP2PSessionEnded < ::Protobuf::Message; end
+class CMsgClientRegisterAuthTicketWithCM < ::Protobuf::Message; end
+class CMsgClientTicketAuthComplete < ::Protobuf::Message; end
+class CMsgClientLogon < ::Protobuf::Message; end
+class CMsgClientLogonResponse < ::Protobuf::Message; end
+class CMsgClientRequestWebAPIAuthenticateUserNonce < ::Protobuf::Message; end
+class CMsgClientRequestWebAPIAuthenticateUserNonceResponse < ::Protobuf::Message; end
+class CMsgClientLogOff < ::Protobuf::Message; end
+class CMsgClientLoggedOff < ::Protobuf::Message; end
+class CMsgClientCMList < ::Protobuf::Message; end
+class CMsgClientP2PConnectionInfo < ::Protobuf::Message; end
+class CMsgClientP2PConnectionFailInfo < ::Protobuf::Message; end
+class CMsgClientGetAppOwnershipTicket < ::Protobuf::Message; end
+class CMsgClientGetAppOwnershipTicketResponse < ::Protobuf::Message; end
+class CMsgClientSessionToken < ::Protobuf::Message; end
+class CMsgClientGameConnectTokens < ::Protobuf::Message; end
+class CMsgGSServerType < ::Protobuf::Message; end
+class CMsgGSStatusReply < ::Protobuf::Message; end
+class CMsgGSPlayerList < ::Protobuf::Message
+  class Player < ::Protobuf::Message; end
+
+end
+
+class CMsgGSUserPlaying < ::Protobuf::Message; end
+class CMsgGSDisconnectNotice < ::Protobuf::Message; end
+class CMsgClientGamesPlayed < ::Protobuf::Message
+  class GamePlayed < ::Protobuf::Message; end
+
+end
+
+class CMsgGSApprove < ::Protobuf::Message; end
+class CMsgGSDeny < ::Protobuf::Message; end
+class CMsgGSKick < ::Protobuf::Message; end
+class CMsgClientAuthList < ::Protobuf::Message; end
+class CMsgClientAuthListAck < ::Protobuf::Message; end
+class CMsgClientFriendsList < ::Protobuf::Message
+  class Friend < ::Protobuf::Message; end
+
+end
+
+class CMsgClientFriendsGroupsList < ::Protobuf::Message
+  class FriendGroup < ::Protobuf::Message; end
+  class FriendGroupsMembership < ::Protobuf::Message; end
+
+end
+
+class CMsgClientPlayerNicknameList < ::Protobuf::Message
+  class PlayerNickname < ::Protobuf::Message; end
+
+end
+
+class CMsgClientSetPlayerNickname < ::Protobuf::Message; end
+class CMsgClientSetPlayerNicknameResponse < ::Protobuf::Message; end
+class CMsgClientLicenseList < ::Protobuf::Message
+  class License < ::Protobuf::Message; end
+
+end
+
+class CMsgClientLBSSetScore < ::Protobuf::Message; end
+class CMsgClientLBSSetScoreResponse < ::Protobuf::Message; end
+class CMsgClientLBSSetUGC < ::Protobuf::Message; end
+class CMsgClientLBSSetUGCResponse < ::Protobuf::Message; end
+class CMsgClientLBSFindOrCreateLB < ::Protobuf::Message; end
+class CMsgClientLBSFindOrCreateLBResponse < ::Protobuf::Message; end
+class CMsgClientLBSGetLBEntries < ::Protobuf::Message; end
+class CMsgClientLBSGetLBEntriesResponse < ::Protobuf::Message
+  class Entry < ::Protobuf::Message; end
+
+end
+
+class CMsgClientAccountInfo < ::Protobuf::Message; end
+class CMsgClientAppMinutesPlayedData < ::Protobuf::Message
+  class AppMinutesPlayedData < ::Protobuf::Message; end
+
+end
+
+class CMsgClientIsLimitedAccount < ::Protobuf::Message; end
+class CMsgClientRequestFriendData < ::Protobuf::Message; end
+class CMsgClientChangeStatus < ::Protobuf::Message; end
+class CMsgPersonaChangeResponse < ::Protobuf::Message; end
+class CMsgClientPersonaState < ::Protobuf::Message
+  class Friend < ::Protobuf::Message; end
+
+end
+
+class CMsgClientFriendProfileInfo < ::Protobuf::Message; end
+class CMsgClientFriendProfileInfoResponse < ::Protobuf::Message; end
+class CMsgClientServerList < ::Protobuf::Message
+  class Server < ::Protobuf::Message; end
+
+end
+
+class CMsgClientRequestedClientStats < ::Protobuf::Message
+  class StatsToSend < ::Protobuf::Message; end
+
+end
+
+class CMsgClientStat2 < ::Protobuf::Message
+  class StatDetail < ::Protobuf::Message; end
+
+end
+
+class CMsgClientMMSCreateLobby < ::Protobuf::Message; end
+class CMsgClientMMSCreateLobbyResponse < ::Protobuf::Message; end
+class CMsgClientMMSJoinLobby < ::Protobuf::Message; end
+class CMsgClientMMSJoinLobbyResponse < ::Protobuf::Message
+  class Member < ::Protobuf::Message; end
+
+end
+
+class CMsgClientMMSLeaveLobby < ::Protobuf::Message; end
+class CMsgClientMMSLeaveLobbyResponse < ::Protobuf::Message; end
+class CMsgClientMMSGetLobbyList < ::Protobuf::Message
+  class Filter < ::Protobuf::Message; end
+
+end
+
+class CMsgClientMMSGetLobbyListResponse < ::Protobuf::Message
+  class Lobby < ::Protobuf::Message; end
+
+end
+
+class CMsgClientMMSSetLobbyData < ::Protobuf::Message; end
+class CMsgClientMMSSetLobbyDataResponse < ::Protobuf::Message; end
+class CMsgClientMMSGetLobbyData < ::Protobuf::Message; end
+class CMsgClientMMSLobbyData < ::Protobuf::Message
+  class Member < ::Protobuf::Message; end
+
+end
+
+class CMsgClientMMSSendLobbyChatMsg < ::Protobuf::Message; end
+class CMsgClientMMSLobbyChatMsg < ::Protobuf::Message; end
+class CMsgClientMMSSetLobbyOwner < ::Protobuf::Message; end
+class CMsgClientMMSSetLobbyOwnerResponse < ::Protobuf::Message; end
+class CMsgClientMMSSetLobbyLinked < ::Protobuf::Message; end
+class CMsgClientMMSSetLobbyGameServer < ::Protobuf::Message; end
+class CMsgClientMMSLobbyGameServerSet < ::Protobuf::Message; end
+class CMsgClientMMSUserJoinedLobby < ::Protobuf::Message; end
+class CMsgClientMMSUserLeftLobby < ::Protobuf::Message; end
+class CMsgClientMMSInviteToLobby < ::Protobuf::Message; end
+class CMsgClientUDSInviteToGame < ::Protobuf::Message; end
+class CMsgClientChatInvite < ::Protobuf::Message; end
+class CMsgClientConnectionStats < ::Protobuf::Message
+  class Stats_Logon < ::Protobuf::Message; end
+  class Stats_UDP < ::Protobuf::Message; end
+  class Stats_VConn < ::Protobuf::Message; end
+
+end
+
+class CMsgClientServersAvailable < ::Protobuf::Message
+  class Server_Types_Available < ::Protobuf::Message; end
+
+end
+
+class CMsgClientGetUserStats < ::Protobuf::Message; end
+class CMsgClientGetUserStatsResponse < ::Protobuf::Message
+  class Stats < ::Protobuf::Message; end
+  class Achievement_Blocks < ::Protobuf::Message; end
+
+end
+
+class CMsgClientStoreUserStatsResponse < ::Protobuf::Message
+  class Stats_Failed_Validation < ::Protobuf::Message; end
+
+end
+
+class CMsgClientStoreUserStats2 < ::Protobuf::Message
+  class Stats < ::Protobuf::Message; end
+
+end
+
+class CMsgClientStatsUpdated < ::Protobuf::Message
+  class Updated_Stats < ::Protobuf::Message; end
+
+end
+
+class CMsgClientStoreUserStats < ::Protobuf::Message
+  class Stats_To_Store < ::Protobuf::Message; end
+
+end
+
+class CMsgClientGetClientDetails < ::Protobuf::Message; end
+class CMsgClientReportOverlayDetourFailure < ::Protobuf::Message; end
+class CMsgClientGetClientDetailsResponse < ::Protobuf::Message
+  class Game < ::Protobuf::Message; end
+
+end
+
+class CMsgClientGetClientAppList < ::Protobuf::Message; end
+class CMsgClientGetClientAppListResponse < ::Protobuf::Message
+  class App < ::Protobuf::Message
+    class DLC < ::Protobuf::Message; end
+
+  end
+
+
+end
+
+class CMsgClientInstallClientApp < ::Protobuf::Message; end
+class CMsgClientInstallClientAppResponse < ::Protobuf::Message; end
+class CMsgClientUninstallClientApp < ::Protobuf::Message; end
+class CMsgClientUninstallClientAppResponse < ::Protobuf::Message; end
+class CMsgClientSetClientAppUpdateState < ::Protobuf::Message; end
+class CMsgClientSetClientAppUpdateStateResponse < ::Protobuf::Message; end
+class CMsgClientUFSUploadFileRequest < ::Protobuf::Message; end
+class CMsgClientUFSUploadFileResponse < ::Protobuf::Message; end
+class CMsgClientUFSUploadCommit < ::Protobuf::Message
+  class File < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUFSUploadCommitResponse < ::Protobuf::Message
+  class File < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUFSFileChunk < ::Protobuf::Message; end
+class CMsgClientUFSTransferHeartbeat < ::Protobuf::Message; end
+class CMsgClientUFSUploadFileFinished < ::Protobuf::Message; end
+class CMsgClientUFSDeleteFileRequest < ::Protobuf::Message; end
+class CMsgClientUFSDeleteFileResponse < ::Protobuf::Message; end
+class CMsgClientUFSGetFileListForApp < ::Protobuf::Message; end
+class CMsgClientUFSGetFileListForAppResponse < ::Protobuf::Message
+  class File < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUFSDownloadRequest < ::Protobuf::Message; end
+class CMsgClientUFSDownloadResponse < ::Protobuf::Message; end
+class CMsgClientUFSLoginRequest < ::Protobuf::Message; end
+class CMsgClientUFSLoginResponse < ::Protobuf::Message; end
+class CMsgClientRequestEncryptedAppTicket < ::Protobuf::Message; end
+class CMsgClientRequestEncryptedAppTicketResponse < ::Protobuf::Message; end
+class CMsgClientWalletInfoUpdate < ::Protobuf::Message; end
+class CMsgClientAppInfoUpdate < ::Protobuf::Message; end
+class CMsgClientAppInfoChanges < ::Protobuf::Message; end
+class CMsgClientAppInfoRequest < ::Protobuf::Message
+  class App < ::Protobuf::Message; end
+
+end
+
+class CMsgClientAppInfoResponse < ::Protobuf::Message
+  class App < ::Protobuf::Message
+    class Section < ::Protobuf::Message; end
+
+  end
+
+
+end
+
+class CMsgClientPackageInfoRequest < ::Protobuf::Message; end
+class CMsgClientPackageInfoResponse < ::Protobuf::Message
+  class Package < ::Protobuf::Message; end
+
+end
+
+class CMsgClientPICSChangesSinceRequest < ::Protobuf::Message; end
+class CMsgClientPICSChangesSinceResponse < ::Protobuf::Message
+  class PackageChange < ::Protobuf::Message; end
+  class AppChange < ::Protobuf::Message; end
+
+end
+
+class CMsgClientPICSProductInfoRequest < ::Protobuf::Message
+  class AppInfo < ::Protobuf::Message; end
+  class PackageInfo < ::Protobuf::Message; end
+
+end
+
+class CMsgClientPICSProductInfoResponse < ::Protobuf::Message
+  class AppInfo < ::Protobuf::Message; end
+  class PackageInfo < ::Protobuf::Message; end
+
+end
+
+class CMsgClientPICSAccessTokenRequest < ::Protobuf::Message; end
+class CMsgClientPICSAccessTokenResponse < ::Protobuf::Message
+  class PackageToken < ::Protobuf::Message; end
+  class AppToken < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUFSGetUGCDetails < ::Protobuf::Message; end
+class CMsgClientUFSGetUGCDetailsResponse < ::Protobuf::Message; end
+class CMsgClientUFSGetSingleFileInfo < ::Protobuf::Message; end
+class CMsgClientUFSGetSingleFileInfoResponse < ::Protobuf::Message; end
+class CMsgClientUFSShareFile < ::Protobuf::Message; end
+class CMsgClientUFSShareFileResponse < ::Protobuf::Message; end
+class CMsgClientNewLoginKey < ::Protobuf::Message; end
+class CMsgClientNewLoginKeyAccepted < ::Protobuf::Message; end
+class CMsgClientAMGetClanOfficers < ::Protobuf::Message; end
+class CMsgClientAMGetClanOfficersResponse < ::Protobuf::Message; end
+class CMsgClientAMGetPersonaNameHistory < ::Protobuf::Message
+  class IdInstance < ::Protobuf::Message; end
+
+end
+
+class CMsgClientAMGetPersonaNameHistoryResponse < ::Protobuf::Message
+  class NameTableInstance < ::Protobuf::Message
+    class NameInstance < ::Protobuf::Message; end
+
+  end
+
+
+end
+
+class CMsgClientDeregisterWithServer < ::Protobuf::Message; end
+class CMsgClientClanState < ::Protobuf::Message
+  class NameInfo < ::Protobuf::Message; end
+  class UserCounts < ::Protobuf::Message; end
+  class Event < ::Protobuf::Message; end
+
+end
+
+class CMsgClientFriendMsg < ::Protobuf::Message; end
+class CMsgClientFriendMsgIncoming < ::Protobuf::Message; end
+class CMsgClientAddFriend < ::Protobuf::Message; end
+class CMsgClientAddFriendResponse < ::Protobuf::Message; end
+class CMsgClientRemoveFriend < ::Protobuf::Message; end
+class CMsgClientHideFriend < ::Protobuf::Message; end
+class CMsgClientUCMAddScreenshot < ::Protobuf::Message
+  class Tag < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUCMAddScreenshotResponse < ::Protobuf::Message; end
+class CMsgClientUCMDeleteScreenshot < ::Protobuf::Message; end
+class CMsgClientUCMDeleteScreenshotResponse < ::Protobuf::Message; end
+class CMsgClientUCMPublishFile < ::Protobuf::Message; end
+class CMsgClientUCMPublishFileResponse < ::Protobuf::Message; end
+class CMsgClientUCMUpdatePublishedFile < ::Protobuf::Message; end
+class CMsgClientUCMUpdatePublishedFileResponse < ::Protobuf::Message; end
+class CMsgClientUCMDeletePublishedFile < ::Protobuf::Message; end
+class CMsgClientUCMDeletePublishedFileResponse < ::Protobuf::Message; end
+class CMsgClientUCMEnumerateUserPublishedFiles < ::Protobuf::Message; end
+class CMsgClientUCMEnumerateUserPublishedFilesResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUCMSubscribePublishedFile < ::Protobuf::Message; end
+class CMsgClientUCMSubscribePublishedFileResponse < ::Protobuf::Message; end
+class CMsgClientUCMEnumerateUserSubscribedFiles < ::Protobuf::Message; end
+class CMsgClientUCMEnumerateUserSubscribedFilesResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates < ::Protobuf::Message; end
+class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUCMUnsubscribePublishedFile < ::Protobuf::Message; end
+class CMsgClientUCMUnsubscribePublishedFileResponse < ::Protobuf::Message; end
+class CMsgClientUCMPublishedFileSubscribed < ::Protobuf::Message; end
+class CMsgClientUCMPublishedFileUnsubscribed < ::Protobuf::Message; end
+class CMsgClientUCMPublishedFileDeleted < ::Protobuf::Message; end
+class CMsgClientUCMPublishedFileUpdated < ::Protobuf::Message; end
+class CMsgClientUCMGetPublishedFilesForUser < ::Protobuf::Message; end
+class CMsgClientUCMGetPublishedFilesForUserResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUCMSetUserPublishedFileAction < ::Protobuf::Message; end
+class CMsgClientUCMSetUserPublishedFileActionResponse < ::Protobuf::Message; end
+class CMsgClientUCMEnumeratePublishedFilesByUserAction < ::Protobuf::Message; end
+class CMsgClientUCMEnumeratePublishedFilesByUserActionResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgClientScreenshotsChanged < ::Protobuf::Message; end
+class CMsgClientUpdateUserGameInfo < ::Protobuf::Message; end
+class CMsgClientRichPresenceUpload < ::Protobuf::Message; end
+class CMsgClientRichPresenceRequest < ::Protobuf::Message; end
+class CMsgClientRichPresenceInfo < ::Protobuf::Message
+  class RichPresence < ::Protobuf::Message; end
+
+end
+
+class CMsgClientCheckFileSignature < ::Protobuf::Message; end
+class CMsgClientCheckFileSignatureResponse < ::Protobuf::Message; end
+class CMsgClientReadMachineAuth < ::Protobuf::Message; end
+class CMsgClientReadMachineAuthResponse < ::Protobuf::Message; end
+class CMsgClientUpdateMachineAuth < ::Protobuf::Message; end
+class CMsgClientUpdateMachineAuthResponse < ::Protobuf::Message; end
+class CMsgClientRequestMachineAuth < ::Protobuf::Message; end
+class CMsgClientRequestMachineAuthResponse < ::Protobuf::Message; end
+class CMsgClientChangeSteamGuardOptions < ::Protobuf::Message; end
+class CMsgClientChangeSteamGuardOptionsResponse < ::Protobuf::Message; end
+class CMsgClientCreateFriendsGroup < ::Protobuf::Message; end
+class CMsgClientCreateFriendsGroupResponse < ::Protobuf::Message; end
+class CMsgClientDeleteFriendsGroup < ::Protobuf::Message; end
+class CMsgClientDeleteFriendsGroupResponse < ::Protobuf::Message; end
+class CMsgClientRenameFriendsGroup < ::Protobuf::Message; end
+class CMsgClientRenameFriendsGroupResponse < ::Protobuf::Message; end
+class CMsgClientAddFriendToGroup < ::Protobuf::Message; end
+class CMsgClientAddFriendToGroupResponse < ::Protobuf::Message; end
+class CMsgClientRemoveFriendFromGroup < ::Protobuf::Message; end
+class CMsgClientRemoveFriendFromGroupResponse < ::Protobuf::Message; end
+class CMsgClientRegisterKey < ::Protobuf::Message; end
+class CMsgClientPurchaseResponse < ::Protobuf::Message; end
+class CMsgClientActivateOEMLicense < ::Protobuf::Message; end
+class CMsgClientRegisterOEMMachine < ::Protobuf::Message; end
+class CMsgClientRegisterOEMMachineResponse < ::Protobuf::Message; end
+class CMsgClientPurchaseWithMachineID < ::Protobuf::Message; end
+class CMsgTrading_InitiateTradeRequest < ::Protobuf::Message; end
+class CMsgTrading_InitiateTradeResponse < ::Protobuf::Message; end
+class CMsgTrading_CancelTradeRequest < ::Protobuf::Message; end
+class CMsgTrading_StartSession < ::Protobuf::Message; end
+class CMsgClientMDSInitDepotBuildRequest < ::Protobuf::Message; end
+class CMsgClientMDSInitDepotBuildResponse < ::Protobuf::Message; end
+class CMsgClientMDSInitWorkshopBuildRequest < ::Protobuf::Message; end
+class CMsgClientMDSInitWorkshopBuildResponse < ::Protobuf::Message; end
+class CMsgClientMDSLoginRequest < ::Protobuf::Message; end
+class CMsgClientMDSLoginResponse < ::Protobuf::Message; end
+class CMsgClientMDSUploadDepotChunks < ::Protobuf::Message
+  class ChunkUploadData < ::Protobuf::Message; end
+
+end
+
+class CMsgClientMDSUploadDepotChunksResponse < ::Protobuf::Message; end
+class CMsgClientMDSUploadRateTest < ::Protobuf::Message; end
+class CMsgClientMDSUploadRateTestResponse < ::Protobuf::Message; end
+class CMsgClientMDSTransmitManifestDataChunk < ::Protobuf::Message; end
+class CMsgClientMDSUploadManifestRequest < ::Protobuf::Message; end
+class CMsgClientMDSUploadManifestResponse < ::Protobuf::Message; end
+class CMsgClientMDSGetDepotManifest < ::Protobuf::Message; end
+class CMsgClientMDSGetDepotManifestResponse < ::Protobuf::Message; end
+class CMsgClientMDSGetDepotManifestChunk < ::Protobuf::Message; end
+class CMsgClientMDSRegisterAppBuild < ::Protobuf::Message; end
+class CMsgClientMDSRegisterAppBuildResponse < ::Protobuf::Message; end
+class CMsgMDSSetAppBuildLive < ::Protobuf::Message; end
+class CMsgMDSSetAppBuildLiveResponse < ::Protobuf::Message; end
+class CMsgClientMDSSignInstallScript < ::Protobuf::Message; end
+class CMsgClientMDSSignInstallScriptResponse < ::Protobuf::Message; end
+class CMsgClientEmailChange < ::Protobuf::Message; end
+class CMsgClientEmailChangeResponse < ::Protobuf::Message; end
+class CMsgClientGetCDNAuthToken < ::Protobuf::Message; end
+class CMsgClientGetDepotDecryptionKey < ::Protobuf::Message; end
+class CMsgClientGetDepotDecryptionKeyResponse < ::Protobuf::Message; end
+class CMsgClientGetAppBetaPasswords < ::Protobuf::Message; end
+class CMsgClientGetAppBetaPasswordsResponse < ::Protobuf::Message
+  class BetaPassword < ::Protobuf::Message; end
+
+end
+
+class CMsgClientUpdateAppJobReport < ::Protobuf::Message; end
+class CMsgClientSteam2AppStarted < ::Protobuf::Message; end
+class CMsgClientGetCDNAuthTokenResponse < ::Protobuf::Message; end
+class CMsgDownloadRateStatistics < ::Protobuf::Message
+  class StatsInfo < ::Protobuf::Message; end
+
+end
+
+class CMsgClientRequestAccountData < ::Protobuf::Message; end
+class CMsgClientRequestAccountDataResponse < ::Protobuf::Message; end
+class CMsgClientUGSGetGlobalStats < ::Protobuf::Message; end
+class CMsgClientUGSGetGlobalStatsResponse < ::Protobuf::Message
+  class Day < ::Protobuf::Message
+    class Stat < ::Protobuf::Message; end
+
+  end
+
+
+end
+
+class CMsgGameServerData < ::Protobuf::Message
+  class Player < ::Protobuf::Message; end
+
+end
+
+class CMsgGameServerRemove < ::Protobuf::Message; end
+class CMsgClientGMSServerQuery < ::Protobuf::Message; end
+class CMsgGMSClientServerQueryResponse < ::Protobuf::Message
+  class Server < ::Protobuf::Message; end
+
+end
+
+class CMsgGameServerOutOfDate < ::Protobuf::Message; end
+class CMsgClientRedeemGuestPass < ::Protobuf::Message; end
+class CMsgClientRedeemGuestPassResponse < ::Protobuf::Message; end
+class CMsgClientGetClanActivityCounts < ::Protobuf::Message; end
+class CMsgClientGetClanActivityCountsResponse < ::Protobuf::Message; end
+class CMsgClientOGSReportString < ::Protobuf::Message; end
+class CMsgClientOGSReportBug < ::Protobuf::Message; end
+class CMsgGSAssociateWithClan < ::Protobuf::Message; end
+class CMsgGSAssociateWithClanResponse < ::Protobuf::Message; end
+class CMsgGSComputeNewPlayerCompatibility < ::Protobuf::Message; end
+class CMsgGSComputeNewPlayerCompatibilityResponse < ::Protobuf::Message; end
+class CMsgClientSentLogs < ::Protobuf::Message; end
+class CMsgGCClient < ::Protobuf::Message; end
+class CMsgClientRequestFreeLicense < ::Protobuf::Message; end
+class CMsgClientRequestFreeLicenseResponse < ::Protobuf::Message; end
+class CMsgDRMDownloadRequestWithCrashData < ::Protobuf::Message; end
+class CMsgDRMDownloadResponse < ::Protobuf::Message; end
+class CMsgDRMFinalResult < ::Protobuf::Message; end
+class CMsgClientDPCheckSpecialSurvey < ::Protobuf::Message; end
+class CMsgClientDPCheckSpecialSurveyResponse < ::Protobuf::Message; end
+class CMsgClientDPSendSpecialSurveyResponse < ::Protobuf::Message; end
+class CMsgClientDPSendSpecialSurveyResponseReply < ::Protobuf::Message; end
+class CMsgClientRequestForgottenPasswordEmail < ::Protobuf::Message; end
+class CMsgClientRequestForgottenPasswordEmailResponse < ::Protobuf::Message; end
+class CMsgClientItemAnnouncements < ::Protobuf::Message; end
+class CMsgClientRequestItemAnnouncements < ::Protobuf::Message; end
+class CMsgClientUserNotifications < ::Protobuf::Message
+  class Notification < ::Protobuf::Message; end
+
+end
+
+class CMsgClientCommentNotifications < ::Protobuf::Message; end
+class CMsgClientRequestCommentNotifications < ::Protobuf::Message; end
+class CMsgClientOfflineMessageNotification < ::Protobuf::Message; end
+class CMsgClientRequestOfflineMessageCount < ::Protobuf::Message; end
+class CMsgClientFSGetFriendMessageHistory < ::Protobuf::Message; end
+class CMsgClientFSGetFriendMessageHistoryResponse < ::Protobuf::Message
+  class FriendMessage < ::Protobuf::Message; end
+
+end
+
+class CMsgClientFSGetFriendMessageHistoryForOfflineMessages < ::Protobuf::Message; end
+class CMsgClientFSGetFriendsSteamLevels < ::Protobuf::Message; end
+class CMsgClientFSGetFriendsSteamLevelsResponse < ::Protobuf::Message
+  class Friend < ::Protobuf::Message; end
+
+end
+
+class CMsgClientEmailAddrInfo < ::Protobuf::Message; end
+class CMsgCREEnumeratePublishedFiles < ::Protobuf::Message; end
+class CMsgCREEnumeratePublishedFilesResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgCRERankByVote < ::Protobuf::Message; end
+class CMsgCRERankByVoteResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgCRERankByTrend < ::Protobuf::Message; end
+class CMsgCRERankByTrendResponse < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgCREItemVoteSummary < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgCREItemVoteSummaryResponse < ::Protobuf::Message
+  class ItemVoteSummary < ::Protobuf::Message; end
+
+end
+
+class CMsgCREUpdateUserPublishedItemVote < ::Protobuf::Message; end
+class CMsgCREUpdateUserPublishedItemVoteResponse < ::Protobuf::Message; end
+class CMsgCREGetUserPublishedItemVoteDetails < ::Protobuf::Message
+  class PublishedFileId < ::Protobuf::Message; end
+
+end
+
+class CMsgCREGetUserPublishedItemVoteDetailsResponse < ::Protobuf::Message
+  class UserItemVoteDetail < ::Protobuf::Message; end
+
+end
+
+class CMsgGameServerPingSample < ::Protobuf::Message
+  class Sample < ::Protobuf::Message; end
+
+end
+
+class CMsgFSGetFollowerCount < ::Protobuf::Message; end
+class CMsgFSGetFollowerCountResponse < ::Protobuf::Message; end
+class CMsgFSGetIsFollowing < ::Protobuf::Message; end
+class CMsgFSGetIsFollowingResponse < ::Protobuf::Message; end
+class CMsgFSEnumerateFollowingList < ::Protobuf::Message; end
+class CMsgFSEnumerateFollowingListResponse < ::Protobuf::Message; end
+class CMsgDPGetNumberOfCurrentPlayers < ::Protobuf::Message; end
+class CMsgDPGetNumberOfCurrentPlayersResponse < ::Protobuf::Message; end
+class CMsgClientFriendUserStatusPublished < ::Protobuf::Message; end
+class CMsgClientServiceMethod < ::Protobuf::Message; end
+class CMsgClientServiceMethodResponse < ::Protobuf::Message; end
+class CMsgClientUIMode < ::Protobuf::Message; end
+class CMsgClientVanityURLChangedNotification < ::Protobuf::Message; end
+class CMsgClientAuthorizeLocalDeviceRequest < ::Protobuf::Message; end
+class CMsgClientAuthorizeLocalDevice < ::Protobuf::Message; end
+class CMsgClientDeauthorizeDeviceRequest < ::Protobuf::Message; end
+class CMsgClientDeauthorizeDevice < ::Protobuf::Message; end
+class CMsgClientUseLocalDeviceAuthorizations < ::Protobuf::Message
+  class DeviceToken < ::Protobuf::Message; end
+
+end
+
+class CMsgClientGetAuthorizedDevices < ::Protobuf::Message; end
+class CMsgClientGetAuthorizedDevicesResponse < ::Protobuf::Message
+  class AuthorizedDevice < ::Protobuf::Message; end
+
+end
+
+class CMsgClientGetEmoticonList < ::Protobuf::Message; end
+class CMsgClientEmoticonList < ::Protobuf::Message
+  class Emoticon < ::Protobuf::Message; end
+
+end
+
+class CMsgClientSharedLibraryLockStatus < ::Protobuf::Message
+  class LockedLibrary < ::Protobuf::Message; end
+
+end
+
+class CMsgClientSharedLibraryStopPlaying < ::Protobuf::Message
+  class StopApp < ::Protobuf::Message; end
+
+end
+
+class CMsgClientServiceCall < ::Protobuf::Message; end
+class CMsgClientServiceModule < ::Protobuf::Message; end
+class CMsgClientServiceCallResponse < ::Protobuf::Message; end
+class CMsgAMUnlockStreaming < ::Protobuf::Message; end
+class CMsgAMUnlockStreamingResponse < ::Protobuf::Message; end
+class CMsgClientPlayingSessionState < ::Protobuf::Message; end
+class CMsgClientKickPlayingSession < ::Protobuf::Message; end
+class CMsgClientCreateAccount < ::Protobuf::Message; end
+class CMsgClientCreateAccountResponse < ::Protobuf::Message; end
+
+
+##
+# Message Fields
+#
+class CMsgClientSubscribeToPersonaFeed
+  class PersonaFeed
+    optional :fixed64, :steamID, 1
+    optional :bool, :subscribe, 2
+  end
+
+  repeated ::CMsgClientSubscribeToPersonaFeed::PersonaFeed, :persona_feeds, 1
+end
+
+class CMsgClientUDSP2PSessionStarted
+  optional :fixed64, :steamid_remote, 1
+  optional :int32, :appid, 2
+end
+
+class CMsgClientUDSP2PSessionEnded
+  optional :fixed64, :steamid_remote, 1
+  optional :int32, :appid, 2
+  optional :int32, :session_length_sec, 3
+  optional :int32, :session_error, 4
+  optional :int32, :nattype, 5
+  optional :int32, :bytes_recv, 6
+  optional :int32, :bytes_sent, 7
+  optional :int32, :bytes_sent_relay, 8
+  optional :int32, :bytes_recv_relay, 9
+  optional :int32, :time_to_connect_ms, 10
+end
+
+class CMsgClientRegisterAuthTicketWithCM
+  optional :uint32, :protocol_version, 1
+  optional :bytes, :ticket, 3
+  optional :uint64, :client_instance_id, 4
+end
+
+class CMsgClientTicketAuthComplete
+  optional :fixed64, :steam_id, 1
+  optional :fixed64, :game_id, 2
+  optional :uint32, :estate, 3
+  optional :uint32, :eauth_session_response, 4
+  optional :bytes, :DEPRECATED_ticket, 5
+  optional :uint32, :ticket_crc, 6
+  optional :uint32, :ticket_sequence, 7
+  optional :fixed64, :owner_steam_id, 8
+end
+
+class CMsgClientLogon
+  optional :uint32, :protocol_version, 1
+  optional :uint32, :obfustucated_private_ip, 2
+  optional :uint32, :cell_id, 3
+  optional :uint32, :last_session_id, 4
+  optional :uint32, :client_package_version, 5
+  optional :string, :client_language, 6
+  optional :uint32, :client_os_type, 7
+  optional :bool, :should_remember_password, 8, :default => false
+  optional :string, :wine_version, 9
+  optional :uint32, :ping_ms_from_cell_search, 10
+  optional :uint32, :public_ip, 20
+  optional :uint32, :qos_level, 21
+  optional :fixed64, :client_supplied_steam_id, 22
+  optional :bytes, :machine_id, 30
+  optional :uint32, :launcher_type, 31, :default => 0
+  optional :uint32, :ui_mode, 32, :default => 0
+  optional :bytes, :steam2_auth_ticket, 41
+  optional :string, :email_address, 42
+  optional :fixed32, :rtime32_account_creation, 43
+  optional :string, :account_name, 50
+  optional :string, :password, 51
+  optional :string, :game_server_token, 52
+  optional :string, :login_key, 60
+  optional :bool, :was_converted_deprecated_msg, 70, :default => false
+  optional :string, :anon_user_target_account_name, 80
+  optional :fixed64, :resolved_user_steam_id, 81
+  optional :int32, :eresult_sentryfile, 82
+  optional :bytes, :sha_sentryfile, 83
+  optional :string, :auth_code, 84
+  optional :int32, :otp_type, 85
+  optional :uint32, :otp_value, 86
+  optional :string, :otp_identifier, 87
+  optional :bool, :steam2_ticket_request, 88
+  optional :bytes, :sony_psn_ticket, 90
+  optional :string, :sony_psn_service_id, 91
+  optional :bool, :create_new_psn_linked_account_if_needed, 92, :default => false
+  optional :string, :sony_psn_name, 93
+  optional :int32, :game_server_app_id, 94
+  optional :bool, :steamguard_dont_remember_computer, 95
+  optional :string, :machine_name, 96
+  optional :string, :machine_name_userchosen, 97
+  optional :string, :country_override, 98
+  optional :bool, :is_steam_box, 99
+  optional :uint64, :client_instance_id, 100
+  optional :string, :two_factor_code, 101
+end
+
+class CMsgClientLogonResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :out_of_game_heartbeat_seconds, 2
+  optional :int32, :in_game_heartbeat_seconds, 3
+  optional :uint32, :public_ip, 4
+  optional :fixed32, :rtime32_server_time, 5
+  optional :uint32, :account_flags, 6
+  optional :uint32, :cell_id, 7
+  optional :string, :email_domain, 8
+  optional :bytes, :steam2_ticket, 9
+  optional :int32, :eresult_extended, 10
+  optional :string, :webapi_authenticate_user_nonce, 11
+  optional :uint32, :cell_id_ping_threshold, 12
+  optional :bool, :use_pics, 13
+  optional :string, :vanity_url, 14
+  optional :fixed64, :client_supplied_steamid, 20
+  optional :string, :ip_country_code, 21
+  optional :bytes, :parental_settings, 22
+  optional :bytes, :parental_setting_signature, 23
+  optional :int32, :count_loginfailures_to_migrate, 24
+  optional :int32, :count_disconnects_to_migrate, 25
+  optional :int32, :ogs_data_report_time_window, 26
+  optional :uint64, :client_instance_id, 27
+end
+
+class CMsgClientRequestWebAPIAuthenticateUserNonceResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :string, :webapi_authenticate_user_nonce, 11
+end
+
+class CMsgClientLoggedOff
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientCMList
+  repeated :uint32, :cm_addresses, 1
+  repeated :uint32, :cm_ports, 2
+end
+
+class CMsgClientP2PConnectionInfo
+  optional :fixed64, :steam_id_dest, 1
+  optional :fixed64, :steam_id_src, 2
+  optional :uint32, :app_id, 3
+  optional :bytes, :candidate, 4
+end
+
+class CMsgClientP2PConnectionFailInfo
+  optional :fixed64, :steam_id_dest, 1
+  optional :fixed64, :steam_id_src, 2
+  optional :uint32, :app_id, 3
+  optional :uint32, :ep2p_session_error, 4
+end
+
+class CMsgClientGetAppOwnershipTicket
+  optional :uint32, :app_id, 1
+end
+
+class CMsgClientGetAppOwnershipTicketResponse
+  optional :uint32, :eresult, 1, :default => 2
+  optional :uint32, :app_id, 2
+  optional :bytes, :ticket, 3
+end
+
+class CMsgClientSessionToken
+  optional :uint64, :token, 1
+end
+
+class CMsgClientGameConnectTokens
+  optional :uint32, :max_tokens_to_keep, 1, :default => 10
+  repeated :bytes, :tokens, 2
+end
+
+class CMsgGSServerType
+  optional :uint32, :app_id_served, 1
+  optional :uint32, :flags, 2
+  optional :uint32, :game_ip_address, 3
+  optional :uint32, :game_port, 4
+  optional :string, :game_dir, 5
+  optional :string, :game_version, 6
+  optional :uint32, :game_query_port, 7
+end
+
+class CMsgGSStatusReply
+  optional :bool, :is_secure, 1
+end
+
+class CMsgGSPlayerList
+  class Player
+    optional :uint64, :steam_id, 1
+    optional :uint32, :public_ip, 2
+    optional :bytes, :token, 3
+  end
+
+  repeated ::CMsgGSPlayerList::Player, :players, 1
+end
+
+class CMsgGSUserPlaying
+  optional :fixed64, :steam_id, 1
+  optional :uint32, :public_ip, 2
+  optional :bytes, :token, 3
+end
+
+class CMsgGSDisconnectNotice
+  optional :fixed64, :steam_id, 1
+end
+
+class CMsgClientGamesPlayed
+  class GamePlayed
+    optional :uint64, :steam_id_gs, 1
+    optional :fixed64, :game_id, 2
+    optional :uint32, :game_ip_address, 3
+    optional :uint32, :game_port, 4
+    optional :bool, :is_secure, 5
+    optional :bytes, :token, 6
+    optional :string, :game_extra_info, 7
+    optional :bytes, :game_data_blob, 8
+    optional :uint32, :process_id, 9
+    optional :uint32, :streaming_provider_id, 10
+    optional :uint32, :game_flags, 11
+    optional :uint32, :owner_id, 12
+  end
+
+  repeated ::CMsgClientGamesPlayed::GamePlayed, :games_played, 1
+  optional :uint32, :client_os_type, 2
+end
+
+class CMsgGSApprove
+  optional :fixed64, :steam_id, 1
+  optional :fixed64, :owner_steam_id, 2
+end
+
+class CMsgGSDeny
+  optional :fixed64, :steam_id, 1
+  optional :int32, :edeny_reason, 2
+  optional :string, :deny_string, 3
+end
+
+class CMsgGSKick
+  optional :fixed64, :steam_id, 1
+  optional :int32, :edeny_reason, 2
+end
+
+class CMsgClientAuthList
+  optional :uint32, :tokens_left, 1
+  optional :uint32, :last_request_seq, 2
+  optional :uint32, :last_request_seq_from_server, 3
+  repeated ::CMsgAuthTicket, :tickets, 4
+  repeated :uint32, :app_ids, 5
+  optional :uint32, :message_sequence, 6
+end
+
+class CMsgClientAuthListAck
+  repeated :uint32, :ticket_crc, 1
+  repeated :uint32, :app_ids, 2
+  optional :uint32, :message_sequence, 3
+end
+
+class CMsgClientFriendsList
+  class Friend
+    optional :fixed64, :ulfriendid, 1
+    optional :uint32, :efriendrelationship, 2
+  end
+
+  optional :bool, :bincremental, 1
+  repeated ::CMsgClientFriendsList::Friend, :friends, 2
+  optional :uint32, :max_friend_count, 3
+  optional :uint32, :active_friend_count, 4
+  optional :bool, :friends_limit_hit, 5
+end
+
+class CMsgClientFriendsGroupsList
+  class FriendGroup
+    optional :int32, :nGroupID, 1
+    optional :string, :strGroupName, 2
+  end
+
+  class FriendGroupsMembership
+    optional :fixed64, :ulSteamID, 1
+    optional :int32, :nGroupID, 2
+  end
+
+  optional :bool, :bremoval, 1
+  optional :bool, :bincremental, 2
+  repeated ::CMsgClientFriendsGroupsList::FriendGroup, :friendGroups, 3
+  repeated ::CMsgClientFriendsGroupsList::FriendGroupsMembership, :memberships, 4
+end
+
+class CMsgClientPlayerNicknameList
+  class PlayerNickname
+    optional :fixed64, :steamid, 1
+    optional :string, :nickname, 3
+  end
+
+  optional :bool, :removal, 1
+  optional :bool, :incremental, 2
+  repeated ::CMsgClientPlayerNicknameList::PlayerNickname, :nicknames, 3
+end
+
+class CMsgClientSetPlayerNickname
+  optional :fixed64, :steamid, 1
+  optional :string, :nickname, 2
+end
+
+class CMsgClientSetPlayerNicknameResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientLicenseList
+  class License
+    optional :uint32, :package_id, 1
+    optional :fixed32, :time_created, 2
+    optional :fixed32, :time_next_process, 3
+    optional :int32, :minute_limit, 4
+    optional :int32, :minutes_used, 5
+    optional :uint32, :payment_method, 6
+    optional :uint32, :flags, 7
+    optional :string, :purchase_country_code, 8
+    optional :uint32, :license_type, 9
+    optional :int32, :territory_code, 10
+    optional :int32, :change_number, 11
+    optional :uint32, :owner_id, 12
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientLicenseList::License, :licenses, 2
+end
+
+class CMsgClientLBSSetScore
+  optional :uint32, :app_id, 1
+  optional :int32, :leaderboard_id, 2
+  optional :int32, :score, 3
+  optional :bytes, :details, 4
+  optional :int32, :upload_score_method, 5
+end
+
+class CMsgClientLBSSetScoreResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :leaderboard_entry_count, 2
+  optional :bool, :score_changed, 3
+  optional :int32, :global_rank_previous, 4
+  optional :int32, :global_rank_new, 5
+end
+
+class CMsgClientLBSSetUGC
+  optional :uint32, :app_id, 1
+  optional :int32, :leaderboard_id, 2
+  optional :fixed64, :ugc_id, 3
+end
+
+class CMsgClientLBSSetUGCResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientLBSFindOrCreateLB
+  optional :uint32, :app_id, 1
+  optional :int32, :leaderboard_sort_method, 2
+  optional :int32, :leaderboard_display_type, 3
+  optional :bool, :create_if_not_found, 4
+  optional :string, :leaderboard_name, 5
+end
+
+class CMsgClientLBSFindOrCreateLBResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :leaderboard_id, 2
+  optional :int32, :leaderboard_entry_count, 3
+  optional :int32, :leaderboard_sort_method, 4, :default => 0
+  optional :int32, :leaderboard_display_type, 5, :default => 0
+  optional :string, :leaderboard_name, 6
+end
+
+class CMsgClientLBSGetLBEntries
+  optional :int32, :app_id, 1
+  optional :int32, :leaderboard_id, 2
+  optional :int32, :range_start, 3
+  optional :int32, :range_end, 4
+  optional :int32, :leaderboard_data_request, 5
+  repeated :fixed64, :steamids, 6
+end
+
+class CMsgClientLBSGetLBEntriesResponse
+  class Entry
+    optional :fixed64, :steam_id_user, 1
+    optional :int32, :global_rank, 2
+    optional :int32, :score, 3
+    optional :bytes, :details, 4
+    optional :fixed64, :ugc_id, 5
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :leaderboard_entry_count, 2
+  repeated ::CMsgClientLBSGetLBEntriesResponse::Entry, :entries, 3
+end
+
+class CMsgClientAccountInfo
+  optional :string, :persona_name, 1
+  optional :string, :ip_country, 2
+  optional :bytes, :salt_password, 3
+  optional :bytes, :sha_digest_Password, 4
+  optional :int32, :count_authed_computers, 5
+  optional :bool, :locked_with_ipt, 6
+  optional :uint32, :account_flags, 7
+  optional :uint64, :facebook_id, 8
+  optional :string, :facebook_name, 9
+  optional :int32, :steam_guard_provider, 10
+  optional :bool, :steamguard_require_code_default, 11
+  optional :bool, :steamguard_show_providers, 12
+  optional :bool, :steamguard_can_use_mobile_provider, 13
+  optional :bool, :steamguard_notify_newmachines, 14
+  optional :string, :steamguard_machine_name_user_chosen, 15
+end
+
+class CMsgClientAppMinutesPlayedData
+  class AppMinutesPlayedData
+    optional :uint32, :app_id, 1
+    optional :int32, :forever, 2
+    optional :int32, :last_two_weeks, 3
+  end
+
+  repeated ::CMsgClientAppMinutesPlayedData::AppMinutesPlayedData, :minutes_played, 1
+end
+
+class CMsgClientIsLimitedAccount
+  optional :bool, :bis_limited_account, 1
+  optional :bool, :bis_community_banned, 2
+  optional :bool, :bis_locked_account, 3
+  optional :bool, :bis_limited_account_allowed_to_invite_friends, 4
+end
+
+class CMsgClientRequestFriendData
+  optional :uint32, :persona_state_requested, 1
+  repeated :fixed64, :friends, 2
+end
+
+class CMsgClientChangeStatus
+  optional :uint32, :persona_state, 1
+  optional :string, :player_name, 2
+  optional :bool, :is_auto_generated_name, 3
+  optional :bool, :high_priority, 4
+  optional :bool, :persona_set_by_user, 5
+end
+
+class CMsgPersonaChangeResponse
+  optional :uint32, :result, 1
+  optional :string, :player_name, 2
+end
+
+class CMsgClientPersonaState
+  class Friend
+    optional :fixed64, :friendid, 1
+    optional :uint32, :persona_state, 2
+    optional :uint32, :game_played_app_id, 3
+    optional :uint32, :game_server_ip, 4
+    optional :uint32, :game_server_port, 5
+    optional :uint32, :persona_state_flags, 6
+    optional :uint32, :online_session_instances, 7
+    optional :uint32, :published_instance_id, 8
+    optional :bool, :persona_set_by_user, 10
+    optional :string, :player_name, 15
+    optional :uint32, :query_port, 20
+    optional :fixed64, :steamid_source, 25
+    optional :bytes, :avatar_hash, 31
+    optional :uint32, :last_logoff, 45
+    optional :uint32, :last_logon, 46
+    optional :uint32, :clan_rank, 50
+    optional :string, :game_name, 55
+    optional :fixed64, :gameid, 56
+    optional :bytes, :game_data_blob, 60
+    optional :string, :clan_tag, 65
+    optional :string, :facebook_name, 66
+    optional :uint64, :facebook_id, 67
+  end
+
+  optional :uint32, :status_flags, 1
+  repeated ::CMsgClientPersonaState::Friend, :friends, 2
+end
+
+class CMsgClientFriendProfileInfo
+  optional :fixed64, :steamid_friend, 1
+end
+
+class CMsgClientFriendProfileInfoResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :steamid_friend, 2
+  optional :uint32, :time_created, 3
+  optional :string, :real_name, 4
+  optional :string, :city_name, 5
+  optional :string, :state_name, 6
+  optional :string, :country_name, 7
+  optional :string, :headline, 8
+  optional :string, :summary, 9
+end
+
+class CMsgClientServerList
+  class Server
+    optional :uint32, :server_type, 1
+    optional :uint32, :server_ip, 2
+    optional :uint32, :server_port, 3
+  end
+
+  repeated ::CMsgClientServerList::Server, :servers, 1
+end
+
+class CMsgClientRequestedClientStats
+  class StatsToSend
+    optional :uint32, :client_stat, 1
+    optional :uint32, :stat_aggregate_method, 2
+  end
+
+  repeated ::CMsgClientRequestedClientStats::StatsToSend, :stats_to_send, 1
+end
+
+class CMsgClientStat2
+  class StatDetail
+    optional :uint32, :client_stat, 1
+    optional :int64, :ll_value, 2
+    optional :uint32, :time_of_day, 3
+    optional :uint32, :cell_id, 4
+    optional :uint32, :depot_id, 5
+    optional :uint32, :app_id, 6
+  end
+
+  repeated ::CMsgClientStat2::StatDetail, :stat_detail, 1
+end
+
+class CMsgClientMMSCreateLobby
+  optional :uint32, :app_id, 1
+  optional :int32, :max_members, 2
+  optional :int32, :lobby_type, 3
+  optional :int32, :lobby_flags, 4
+  optional :uint32, :cell_id, 5
+  optional :uint32, :public_ip, 6
+  optional :bytes, :metadata, 7
+  optional :string, :persona_name_owner, 8
+end
+
+class CMsgClientMMSCreateLobbyResponse
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :int32, :eresult, 3, :default => 2
+end
+
+class CMsgClientMMSJoinLobby
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :string, :persona_name, 3
+end
+
+class CMsgClientMMSJoinLobbyResponse
+  class Member
+    optional :fixed64, :steam_id, 1
+    optional :string, :persona_name, 2
+    optional :bytes, :metadata, 3
+  end
+
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :int32, :chat_room_enter_response, 3
+  optional :int32, :max_members, 4
+  optional :int32, :lobby_type, 5
+  optional :int32, :lobby_flags, 6
+  optional :fixed64, :steam_id_owner, 7
+  optional :bytes, :metadata, 8
+  repeated ::CMsgClientMMSJoinLobbyResponse::Member, :members, 9
+end
+
+class CMsgClientMMSLeaveLobby
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+end
+
+class CMsgClientMMSLeaveLobbyResponse
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :int32, :eresult, 3, :default => 2
+end
+
+class CMsgClientMMSGetLobbyList
+  class Filter
+    optional :string, :key, 1
+    optional :string, :value, 2
+    optional :int32, :comparision, 3
+    optional :int32, :filter_type, 4
+  end
+
+  optional :uint32, :app_id, 1
+  optional :int32, :num_lobbies_requested, 3
+  optional :uint32, :cell_id, 4
+  optional :uint32, :public_ip, 5
+  repeated ::CMsgClientMMSGetLobbyList::Filter, :filters, 6
+end
+
+class CMsgClientMMSGetLobbyListResponse
+  class Lobby
+    optional :fixed64, :steam_id, 1
+    optional :int32, :max_members, 2
+    optional :int32, :lobby_type, 3
+    optional :int32, :lobby_flags, 4
+    optional :bytes, :metadata, 5
+    optional :int32, :num_members, 6
+    optional :float, :distance, 7
+    optional :int64, :weight, 8
+  end
+
+  optional :uint32, :app_id, 1
+  optional :int32, :eresult, 3, :default => 2
+  repeated ::CMsgClientMMSGetLobbyListResponse::Lobby, :lobbies, 4
+end
+
+class CMsgClientMMSSetLobbyData
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_member, 3
+  optional :int32, :max_members, 4
+  optional :int32, :lobby_type, 5
+  optional :int32, :lobby_flags, 6
+  optional :bytes, :metadata, 7
+end
+
+class CMsgClientMMSSetLobbyDataResponse
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :int32, :eresult, 3, :default => 2
+end
+
+class CMsgClientMMSGetLobbyData
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+end
+
+class CMsgClientMMSLobbyData
+  class Member
+    optional :fixed64, :steam_id, 1
+    optional :string, :persona_name, 2
+    optional :bytes, :metadata, 3
+  end
+
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :int32, :num_members, 3
+  optional :int32, :max_members, 4
+  optional :int32, :lobby_type, 5
+  optional :int32, :lobby_flags, 6
+  optional :fixed64, :steam_id_owner, 7
+  optional :bytes, :metadata, 8
+  repeated ::CMsgClientMMSLobbyData::Member, :members, 9
+  optional :uint32, :lobby_cellid, 10
+end
+
+class CMsgClientMMSSendLobbyChatMsg
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_target, 3
+  optional :bytes, :lobby_message, 4
+end
+
+class CMsgClientMMSLobbyChatMsg
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_sender, 3
+  optional :bytes, :lobby_message, 4
+end
+
+class CMsgClientMMSSetLobbyOwner
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_new_owner, 3
+end
+
+class CMsgClientMMSSetLobbyOwnerResponse
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :int32, :eresult, 3, :default => 2
+end
+
+class CMsgClientMMSSetLobbyLinked
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_lobby2, 3
+end
+
+class CMsgClientMMSSetLobbyGameServer
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :uint32, :game_server_ip, 3
+  optional :uint32, :game_server_port, 4
+  optional :fixed64, :game_server_steam_id, 5
+end
+
+class CMsgClientMMSLobbyGameServerSet
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :uint32, :game_server_ip, 3
+  optional :uint32, :game_server_port, 4
+  optional :fixed64, :game_server_steam_id, 5
+end
+
+class CMsgClientMMSUserJoinedLobby
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_user, 3
+  optional :string, :persona_name, 4
+end
+
+class CMsgClientMMSUserLeftLobby
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_user, 3
+  optional :string, :persona_name, 4
+end
+
+class CMsgClientMMSInviteToLobby
+  optional :uint32, :app_id, 1
+  optional :fixed64, :steam_id_lobby, 2
+  optional :fixed64, :steam_id_user_invited, 3
+end
+
+class CMsgClientUDSInviteToGame
+  optional :fixed64, :steam_id_dest, 1
+  optional :fixed64, :steam_id_src, 2
+  optional :string, :connect_string, 3
+end
+
+class CMsgClientChatInvite
+  optional :fixed64, :steam_id_invited, 1
+  optional :fixed64, :steam_id_chat, 2
+  optional :fixed64, :steam_id_patron, 3
+  optional :int32, :chatroom_type, 4
+  optional :fixed64, :steam_id_friend_chat, 5
+  optional :string, :chat_name, 6
+  optional :fixed64, :game_id, 7
+end
+
+class CMsgClientConnectionStats
+  class Stats_Logon
+    optional :int32, :connect_attempts, 1
+    optional :int32, :connect_successes, 2
+    optional :int32, :connect_failures, 3
+    optional :int32, :connections_dropped, 4
+    optional :uint32, :seconds_running, 5
+    optional :uint32, :msec_tologonthistime, 6
+    optional :uint32, :count_bad_cms, 7
+  end
+
+  class Stats_UDP
+    optional :uint64, :pkts_sent, 1
+    optional :uint64, :bytes_sent, 2
+    optional :uint64, :pkts_recv, 3
+    optional :uint64, :pkts_processed, 4
+    optional :uint64, :bytes_recv, 5
+  end
+
+  class Stats_VConn
+    optional :uint32, :connections_udp, 1
+    optional :uint32, :connections_tcp, 2
+    optional ::CMsgClientConnectionStats::Stats_UDP, :stats_udp, 3
+    optional :uint64, :pkts_abandoned, 4
+    optional :uint64, :conn_req_received, 5
+    optional :uint64, :pkts_resent, 6
+    optional :uint64, :msgs_sent, 7
+    optional :uint64, :msgs_sent_failed, 8
+    optional :uint64, :msgs_recv, 9
+    optional :uint64, :datagrams_sent, 10
+    optional :uint64, :datagrams_recv, 11
+    optional :uint64, :bad_pkts_recv, 12
+    optional :uint64, :unknown_conn_pkts_recv, 13
+    optional :uint64, :missed_pkts_recv, 14
+    optional :uint64, :dup_pkts_recv, 15
+    optional :uint64, :failed_connect_challenges, 16
+    optional :uint32, :micro_sec_avg_latency, 17
+    optional :uint32, :micro_sec_min_latency, 18
+    optional :uint32, :micro_sec_max_latency, 19
+    optional :uint32, :mem_pool_msg_in_use, 20
+  end
+
+  optional ::CMsgClientConnectionStats::Stats_Logon, :stats_logon, 1
+  optional ::CMsgClientConnectionStats::Stats_VConn, :stats_vconn, 2
+end
+
+class CMsgClientServersAvailable
+  class Server_Types_Available
+    optional :uint32, :server, 1
+    optional :bool, :changed, 2
+  end
+
+  repeated ::CMsgClientServersAvailable::Server_Types_Available, :server_types_available, 1
+  optional :uint32, :server_type_for_auth_services, 2
+end
+
+class CMsgClientGetUserStats
+  optional :fixed64, :game_id, 1
+  optional :uint32, :crc_stats, 2
+  optional :int32, :schema_local_version, 3
+  optional :fixed64, :steam_id_for_user, 4
+end
+
+class CMsgClientGetUserStatsResponse
+  class Stats
+    optional :uint32, :stat_id, 1
+    optional :uint32, :stat_value, 2
+  end
+
+  class Achievement_Blocks
+    optional :uint32, :achievement_id, 1
+    repeated :fixed32, :unlock_time, 2
+  end
+
+  optional :fixed64, :game_id, 1
+  optional :int32, :eresult, 2, :default => 2
+  optional :uint32, :crc_stats, 3
+  optional :bytes, :schema, 4
+  repeated ::CMsgClientGetUserStatsResponse::Stats, :stats, 5
+  repeated ::CMsgClientGetUserStatsResponse::Achievement_Blocks, :achievement_blocks, 6
+end
+
+class CMsgClientStoreUserStatsResponse
+  class Stats_Failed_Validation
+    optional :uint32, :stat_id, 1
+    optional :uint32, :reverted_stat_value, 2
+  end
+
+  optional :fixed64, :game_id, 1
+  optional :int32, :eresult, 2, :default => 2
+  optional :uint32, :crc_stats, 3
+  repeated ::CMsgClientStoreUserStatsResponse::Stats_Failed_Validation, :stats_failed_validation, 4
+  optional :bool, :stats_out_of_date, 5
+end
+
+class CMsgClientStoreUserStats2
+  class Stats
+    optional :uint32, :stat_id, 1
+    optional :uint32, :stat_value, 2
+  end
+
+  optional :fixed64, :game_id, 1
+  optional :fixed64, :settor_steam_id, 2
+  optional :fixed64, :settee_steam_id, 3
+  optional :uint32, :crc_stats, 4
+  optional :bool, :explicit_reset, 5
+  repeated ::CMsgClientStoreUserStats2::Stats, :stats, 6
+end
+
+class CMsgClientStatsUpdated
+  class Updated_Stats
+    optional :uint32, :stat_id, 1
+    optional :uint32, :stat_value, 2
+  end
+
+  optional :fixed64, :steam_id, 1
+  optional :fixed64, :game_id, 2
+  optional :uint32, :crc_stats, 3
+  repeated ::CMsgClientStatsUpdated::Updated_Stats, :updated_stats, 4
+end
+
+class CMsgClientStoreUserStats
+  class Stats_To_Store
+    optional :uint32, :stat_id, 1
+    optional :uint32, :stat_value, 2
+  end
+
+  optional :fixed64, :game_id, 1
+  optional :bool, :explicit_reset, 2
+  repeated ::CMsgClientStoreUserStats::Stats_To_Store, :stats_to_store, 3
+end
+
+class CMsgClientReportOverlayDetourFailure
+  repeated :string, :failure_strings, 1
+end
+
+class CMsgClientGetClientDetailsResponse
+  class Game
+    optional :uint32, :appid, 1
+    optional :string, :extra_info, 2
+    optional :uint32, :time_running_sec, 3
+  end
+
+  optional :uint32, :package_version, 1
+  optional :uint32, :protocol_version, 8
+  optional :string, :os, 2
+  optional :string, :machine_name, 3
+  optional :string, :ip_public, 4
+  optional :string, :ip_private, 5
+  optional :uint64, :bytes_available, 7
+  repeated ::CMsgClientGetClientDetailsResponse::Game, :games_running, 6
+end
+
+class CMsgClientGetClientAppList
+  optional :bool, :media, 1
+  optional :bool, :tools, 2
+  optional :bool, :games, 3
+  optional :bool, :only_installed, 4
+  optional :bool, :only_changing, 5
+end
+
+class CMsgClientGetClientAppListResponse
+  class App
+    class DLC
+      optional :uint32, :appid, 1
+      optional :bool, :installed, 2
+    end
+
+    optional :uint32, :appid, 1
+    optional :string, :category, 2
+    optional :string, :app_type, 10
+    optional :bool, :favorite, 3
+    optional :bool, :installed, 4
+    optional :bool, :auto_update, 5
+    optional :uint64, :bytes_downloaded, 6
+    optional :uint64, :bytes_needed, 7
+    optional :uint32, :bytes_download_rate, 8
+    optional :bool, :download_paused, 11
+    optional :uint32, :num_downloading, 12
+    optional :uint32, :num_paused, 13
+    optional :bool, :changing, 14
+    optional :bool, :available_on_platform, 15
+    repeated ::CMsgClientGetClientAppListResponse::App::DLC, :dlcs, 9
+  end
+
+  repeated ::CMsgClientGetClientAppListResponse::App, :apps, 1
+  optional :uint64, :bytes_available, 2
+end
+
+class CMsgClientInstallClientApp
+  optional :uint32, :appid, 1
+end
+
+class CMsgClientInstallClientAppResponse
+  optional :uint32, :result, 1
+end
+
+class CMsgClientUninstallClientApp
+  optional :uint32, :appid, 1
+end
+
+class CMsgClientUninstallClientAppResponse
+  optional :uint32, :result, 1
+end
+
+class CMsgClientSetClientAppUpdateState
+  optional :uint32, :appid, 1
+  optional :bool, :update, 2
+end
+
+class CMsgClientSetClientAppUpdateStateResponse
+  optional :uint32, :result, 1
+end
+
+class CMsgClientUFSUploadFileRequest
+  optional :uint32, :app_id, 1
+  optional :uint32, :file_size, 2
+  optional :uint32, :raw_file_size, 3
+  optional :bytes, :sha_file, 4
+  optional :uint64, :time_stamp, 5
+  optional :string, :file_name, 6
+  optional :uint32, :platforms_to_sync_deprecated, 7
+  optional :uint32, :platforms_to_sync, 8, :default => 4294967295
+  optional :uint32, :cell_id, 9
+  optional :bool, :can_encrypt, 10
+end
+
+class CMsgClientUFSUploadFileResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :bytes, :sha_file, 2
+  optional :bool, :use_http, 3
+  optional :string, :http_host, 4
+  optional :string, :http_url, 5
+  optional :bytes, :kv_headers, 6
+  optional :bool, :use_https, 7
+  optional :bool, :encrypt_file, 8
+end
+
+class CMsgClientUFSUploadCommit
+  class File
+    optional :int32, :eresult, 1, :default => 2
+    optional :uint32, :app_id, 2
+    optional :bytes, :sha_file, 3
+    optional :uint32, :cub_file, 4
+    optional :string, :file_name, 5
+  end
+
+  repeated ::CMsgClientUFSUploadCommit::File, :files, 1
+end
+
+class CMsgClientUFSUploadCommitResponse
+  class File
+    optional :int32, :eresult, 1, :default => 2
+    optional :uint32, :app_id, 2
+    optional :bytes, :sha_file, 3
+  end
+
+  repeated ::CMsgClientUFSUploadCommitResponse::File, :files, 1
+end
+
+class CMsgClientUFSFileChunk
+  optional :bytes, :sha_file, 1
+  optional :uint32, :file_start, 2
+  optional :bytes, :data, 3
+end
+
+class CMsgClientUFSUploadFileFinished
+  optional :int32, :eresult, 1, :default => 2
+  optional :bytes, :sha_file, 2
+end
+
+class CMsgClientUFSDeleteFileRequest
+  optional :uint32, :app_id, 1
+  optional :string, :file_name, 2
+  optional :bool, :is_explicit_delete, 3
+end
+
+class CMsgClientUFSDeleteFileResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :string, :file_name, 2
+end
+
+class CMsgClientUFSGetFileListForApp
+  repeated :uint32, :apps_to_query, 1
+  optional :bool, :send_path_prefixes, 2
+end
+
+class CMsgClientUFSGetFileListForAppResponse
+  class File
+    optional :uint32, :app_id, 1
+    optional :string, :file_name, 2
+    optional :bytes, :sha_file, 3
+    optional :uint64, :time_stamp, 4
+    optional :uint32, :raw_file_size, 5
+    optional :bool, :is_explicit_delete, 6
+    optional :uint32, :platforms_to_sync, 7
+    optional :uint32, :path_prefix_index, 8
+  end
+
+  repeated ::CMsgClientUFSGetFileListForAppResponse::File, :files, 1
+  repeated :string, :path_prefixes, 2
+end
+
+class CMsgClientUFSDownloadRequest
+  optional :uint32, :app_id, 1
+  optional :string, :file_name, 2
+  optional :bool, :can_handle_http, 3
+end
+
+class CMsgClientUFSDownloadResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :app_id, 2
+  optional :uint32, :file_size, 3
+  optional :uint32, :raw_file_size, 4
+  optional :bytes, :sha_file, 5
+  optional :uint64, :time_stamp, 6
+  optional :bool, :is_explicit_delete, 7
+  optional :bool, :use_http, 8
+  optional :string, :http_host, 9
+  optional :string, :http_url, 10
+  optional :bytes, :kv_headers, 11
+  optional :bool, :use_https, 12
+  optional :bool, :encrypted, 13
+end
+
+class CMsgClientUFSLoginRequest
+  optional :uint32, :protocol_version, 1
+  optional :uint64, :am_session_token, 2
+  repeated :uint32, :apps, 3
+end
+
+class CMsgClientUFSLoginResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientRequestEncryptedAppTicket
+  optional :uint32, :app_id, 1
+  optional :bytes, :userdata, 2
+end
+
+class CMsgClientRequestEncryptedAppTicketResponse
+  optional :uint32, :app_id, 1
+  optional :int32, :eresult, 2, :default => 2
+  optional ::EncryptedAppTicket, :encrypted_app_ticket, 3
+end
+
+class CMsgClientWalletInfoUpdate
+  optional :bool, :has_wallet, 1
+  optional :int32, :balance, 2
+  optional :int32, :currency, 3
+end
+
+class CMsgClientAppInfoUpdate
+  optional :uint32, :last_changenumber, 1
+  optional :bool, :send_changelist, 2
+end
+
+class CMsgClientAppInfoChanges
+  optional :uint32, :current_change_number, 1
+  optional :bool, :force_full_update, 2
+  repeated :uint32, :appIDs, 3
+end
+
+class CMsgClientAppInfoRequest
+  class App
+    optional :uint32, :app_id, 1
+    optional :uint32, :section_flags, 2
+    repeated :uint32, :section_CRC, 3
+  end
+
+  repeated ::CMsgClientAppInfoRequest::App, :apps, 1
+  optional :bool, :supports_batches, 2, :default => false
+end
+
+class CMsgClientAppInfoResponse
+  class App
+    class Section
+      optional :uint32, :section_id, 1
+      optional :bytes, :section_kv, 2
+    end
+
+    optional :uint32, :app_id, 1
+    optional :uint32, :change_number, 2
+    repeated ::CMsgClientAppInfoResponse::App::Section, :sections, 3
+  end
+
+  repeated ::CMsgClientAppInfoResponse::App, :apps, 1
+  repeated :uint32, :apps_unknown, 2
+  optional :uint32, :apps_pending, 3
+end
+
+class CMsgClientPackageInfoRequest
+  repeated :uint32, :package_ids, 1
+  optional :bool, :meta_data_only, 2
+end
+
+class CMsgClientPackageInfoResponse
+  class Package
+    optional :uint32, :package_id, 1
+    optional :uint32, :change_number, 2
+    optional :bytes, :sha, 3
+    optional :bytes, :buffer, 4
+  end
+
+  repeated ::CMsgClientPackageInfoResponse::Package, :packages, 1
+  repeated :uint32, :packages_unknown, 2
+  optional :uint32, :packages_pending, 3
+end
+
+class CMsgClientPICSChangesSinceRequest
+  optional :uint32, :since_change_number, 1
+  optional :bool, :send_app_info_changes, 2
+  optional :bool, :send_package_info_changes, 3
+end
+
+class CMsgClientPICSChangesSinceResponse
+  class PackageChange
+    optional :uint32, :packageid, 1
+    optional :uint32, :change_number, 2
+    optional :bool, :needs_token, 3
+  end
+
+  class AppChange
+    optional :uint32, :appid, 1
+    optional :uint32, :change_number, 2
+    optional :bool, :needs_token, 3
+  end
+
+  optional :uint32, :current_change_number, 1
+  optional :uint32, :since_change_number, 2
+  optional :bool, :force_full_update, 3
+  repeated ::CMsgClientPICSChangesSinceResponse::PackageChange, :package_changes, 4
+  repeated ::CMsgClientPICSChangesSinceResponse::AppChange, :app_changes, 5
+end
+
+class CMsgClientPICSProductInfoRequest
+  class AppInfo
+    optional :uint32, :appid, 1
+    optional :uint64, :access_token, 2
+    optional :bool, :only_public, 3
+  end
+
+  class PackageInfo
+    optional :uint32, :packageid, 1
+    optional :uint64, :access_token, 2
+  end
+
+  repeated ::CMsgClientPICSProductInfoRequest::PackageInfo, :packages, 1
+  repeated ::CMsgClientPICSProductInfoRequest::AppInfo, :apps, 2
+  optional :bool, :meta_data_only, 3
+  optional :uint32, :num_prev_failed, 4
+end
+
+class CMsgClientPICSProductInfoResponse
+  class AppInfo
+    optional :uint32, :appid, 1
+    optional :uint32, :change_number, 2
+    optional :bool, :missing_token, 3
+    optional :bytes, :sha, 4
+    optional :bytes, :buffer, 5
+    optional :bool, :only_public, 6
+    optional :uint32, :size, 7
+  end
+
+  class PackageInfo
+    optional :uint32, :packageid, 1
+    optional :uint32, :change_number, 2
+    optional :bool, :missing_token, 3
+    optional :bytes, :sha, 4
+    optional :bytes, :buffer, 5
+    optional :uint32, :size, 6
+  end
+
+  repeated ::CMsgClientPICSProductInfoResponse::AppInfo, :apps, 1
+  repeated :uint32, :unknown_appids, 2
+  repeated ::CMsgClientPICSProductInfoResponse::PackageInfo, :packages, 3
+  repeated :uint32, :unknown_packageids, 4
+  optional :bool, :meta_data_only, 5
+  optional :bool, :response_pending, 6
+  optional :uint32, :http_min_size, 7
+  optional :string, :http_host, 8
+end
+
+class CMsgClientPICSAccessTokenRequest
+  repeated :uint32, :packageids, 1
+  repeated :uint32, :appids, 2
+end
+
+class CMsgClientPICSAccessTokenResponse
+  class PackageToken
+    optional :uint32, :packageid, 1
+    optional :uint64, :access_token, 2
+  end
+
+  class AppToken
+    optional :uint32, :appid, 1
+    optional :uint64, :access_token, 2
+  end
+
+  repeated ::CMsgClientPICSAccessTokenResponse::PackageToken, :package_access_tokens, 1
+  repeated :uint32, :package_denied_tokens, 2
+  repeated ::CMsgClientPICSAccessTokenResponse::AppToken, :app_access_tokens, 3
+  repeated :uint32, :app_denied_tokens, 4
+end
+
+class CMsgClientUFSGetUGCDetails
+  optional :fixed64, :hcontent, 1, :default => 18446744073709551615
+end
+
+class CMsgClientUFSGetUGCDetailsResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :string, :url, 2
+  optional :uint32, :app_id, 3
+  optional :string, :filename, 4
+  optional :fixed64, :steamid_creator, 5
+  optional :uint32, :file_size, 6
+  optional :uint32, :compressed_file_size, 7
+  optional :string, :rangecheck_host, 8
+end
+
+class CMsgClientUFSGetSingleFileInfo
+  optional :uint32, :app_id, 1
+  optional :string, :file_name, 2
+end
+
+class CMsgClientUFSGetSingleFileInfoResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :app_id, 2
+  optional :string, :file_name, 3
+  optional :bytes, :sha_file, 4
+  optional :uint64, :time_stamp, 5
+  optional :uint32, :raw_file_size, 6
+  optional :bool, :is_explicit_delete, 7
+end
+
+class CMsgClientUFSShareFile
+  optional :uint32, :app_id, 1
+  optional :string, :file_name, 2
+end
+
+class CMsgClientUFSShareFileResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :hcontent, 2, :default => 18446744073709551615
+end
+
+class CMsgClientNewLoginKey
+  optional :uint32, :unique_id, 1
+  optional :string, :login_key, 2
+end
+
+class CMsgClientNewLoginKeyAccepted
+  optional :uint32, :unique_id, 1
+end
+
+class CMsgClientAMGetClanOfficers
+  optional :fixed64, :steamid_clan, 1
+end
+
+class CMsgClientAMGetClanOfficersResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :steamid_clan, 2
+  optional :int32, :officer_count, 3
+end
+
+class CMsgClientAMGetPersonaNameHistory
+  class IdInstance
+    optional :fixed64, :steamid, 1
+  end
+
+  optional :int32, :id_count, 1
+  repeated ::CMsgClientAMGetPersonaNameHistory::IdInstance, :Ids, 2
+end
+
+class CMsgClientAMGetPersonaNameHistoryResponse
+  class NameTableInstance
+    class NameInstance
+      optional :fixed32, :name_since, 1
+      optional :string, :name, 2
+    end
+
+    optional :int32, :eresult, 1, :default => 2
+    optional :fixed64, :steamid, 2
+    repeated ::CMsgClientAMGetPersonaNameHistoryResponse::NameTableInstance::NameInstance, :names, 3
+  end
+
+  repeated ::CMsgClientAMGetPersonaNameHistoryResponse::NameTableInstance, :responses, 2
+end
+
+class CMsgClientDeregisterWithServer
+  optional :uint32, :eservertype, 1
+  optional :uint32, :app_id, 2
+end
+
+class CMsgClientClanState
+  class NameInfo
+    optional :string, :clan_name, 1
+    optional :bytes, :sha_avatar, 2
+  end
+
+  class UserCounts
+    optional :uint32, :members, 1
+    optional :uint32, :online, 2
+    optional :uint32, :chatting, 3
+    optional :uint32, :in_game, 4
+  end
+
+  class Event
+    optional :fixed64, :gid, 1
+    optional :uint32, :event_time, 2
+    optional :string, :headline, 3
+    optional :fixed64, :game_id, 4
+    optional :bool, :just_posted, 5
+  end
+
+  optional :fixed64, :steamid_clan, 1
+  optional :uint32, :m_unStatusFlags, 2
+  optional :uint32, :clan_account_flags, 3
+  optional ::CMsgClientClanState::NameInfo, :name_info, 4
+  optional ::CMsgClientClanState::UserCounts, :user_counts, 5
+  repeated ::CMsgClientClanState::Event, :events, 6
+  repeated ::CMsgClientClanState::Event, :announcements, 7
+end
+
+class CMsgClientFriendMsg
+  optional :fixed64, :steamid, 1
+  optional :int32, :chat_entry_type, 2
+  optional :bytes, :message, 3
+  optional :fixed32, :rtime32_server_timestamp, 4
+end
+
+class CMsgClientFriendMsgIncoming
+  optional :fixed64, :steamid_from, 1
+  optional :int32, :chat_entry_type, 2
+  optional :bool, :from_limited_account, 3
+  optional :bytes, :message, 4
+  optional :fixed32, :rtime32_server_timestamp, 5
+end
+
+class CMsgClientAddFriend
+  optional :fixed64, :steamid_to_add, 1
+  optional :string, :accountname_or_email_to_add, 2
+end
+
+class CMsgClientAddFriendResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :steam_id_added, 2
+  optional :string, :persona_name_added, 3
+end
+
+class CMsgClientRemoveFriend
+  optional :fixed64, :friendid, 1
+end
+
+class CMsgClientHideFriend
+  optional :fixed64, :friendid, 1
+  optional :bool, :hide, 2
+end
+
+class CMsgClientUCMAddScreenshot
+  class Tag
+    optional :string, :tag_name, 1
+    optional :string, :tag_value, 2
+  end
+
+  optional :uint32, :appid, 1
+  optional :string, :filename, 2
+  optional :string, :thumbname, 3
+  optional :fixed32, :rtime32_created, 4
+  optional :uint32, :width, 5
+  optional :uint32, :height, 6
+  optional :uint32, :permissions, 7
+  optional :string, :caption, 8
+  optional :string, :shortcut_name, 9
+  repeated ::CMsgClientUCMAddScreenshot::Tag, :tag, 10
+  repeated :fixed64, :tagged_steamid, 11
+  optional :bool, :spoiler_tag, 12
+  repeated :uint64, :tagged_publishedfileid, 13
+end
+
+class CMsgClientUCMAddScreenshotResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :screenshotid, 2, :default => 18446744073709551615
+end
+
+class CMsgClientUCMDeleteScreenshot
+  optional :fixed64, :screenshotid, 1, :default => 18446744073709551615
+end
+
+class CMsgClientUCMDeleteScreenshotResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientUCMPublishFile
+  optional :uint32, :app_id, 1
+  optional :string, :file_name, 2
+  optional :string, :preview_file_name, 3
+  optional :uint32, :consumer_app_id, 4
+  optional :string, :title, 5
+  optional :string, :description, 6
+  repeated :string, :tags, 8
+  optional :bool, :workshop_file, 9
+  optional :int32, :visibility, 10
+  optional :uint32, :file_type, 11
+  optional :string, :url, 12
+  optional :uint32, :video_provider, 13
+  optional :string, :video_account_name, 14
+  optional :string, :video_identifier, 15
+  optional :bool, :in_progress, 16
+end
+
+class CMsgClientUCMPublishFileResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :published_file_id, 2, :default => 18446744073709551615
+  optional :bool, :needs_workshop_legal_agreement_acceptance, 3, :default => false
+end
+
+class CMsgClientUCMUpdatePublishedFile
+  optional :uint32, :app_id, 1
+  optional :fixed64, :published_file_id, 2
+  optional :string, :file_name, 3
+  optional :string, :preview_file_name, 4
+  optional :string, :title, 5
+  optional :string, :description, 6
+  repeated :string, :tags, 7
+  optional :int32, :visibility, 8
+  optional :bool, :update_file, 9
+  optional :bool, :update_preview_file, 10
+  optional :bool, :update_title, 11
+  optional :bool, :update_description, 12
+  optional :bool, :update_tags, 13
+  optional :bool, :update_visibility, 14
+  optional :string, :change_description, 15
+  optional :bool, :update_url, 16
+  optional :string, :url, 17
+  optional :bool, :update_content_manifest, 18
+  optional :fixed64, :content_manifest, 19
+end
+
+class CMsgClientUCMUpdatePublishedFileResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :bool, :needs_workshop_legal_agreement_acceptance, 2, :default => false
+end
+
+class CMsgClientUCMDeletePublishedFile
+  optional :fixed64, :published_file_id, 1
+end
+
+class CMsgClientUCMDeletePublishedFileResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientUCMEnumerateUserPublishedFiles
+  optional :uint32, :app_id, 1
+  optional :uint32, :start_index, 2
+  optional :uint32, :sort_order, 3
+end
+
+class CMsgClientUCMEnumerateUserPublishedFilesResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientUCMEnumerateUserPublishedFilesResponse::PublishedFileId, :published_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgClientUCMSubscribePublishedFile
+  optional :uint32, :app_id, 1
+  optional :fixed64, :published_file_id, 2
+end
+
+class CMsgClientUCMSubscribePublishedFileResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientUCMEnumerateUserSubscribedFiles
+  optional :uint32, :app_id, 1
+  optional :uint32, :start_index, 2
+  optional :uint32, :list_type, 3, :default => 1
+  optional :uint32, :matching_file_type, 4, :default => 0
+  optional :uint32, :count, 5, :default => 50
+end
+
+class CMsgClientUCMEnumerateUserSubscribedFilesResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+    optional :fixed32, :rtime32_subscribed, 2, :default => 0
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientUCMEnumerateUserSubscribedFilesResponse::PublishedFileId, :subscribed_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates
+  optional :uint32, :app_id, 1
+  optional :uint32, :start_index, 2
+  optional :fixed32, :start_time, 3
+end
+
+class CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+    optional :fixed32, :rtime32_subscribed, 2, :default => 0
+    optional :uint32, :appid, 3
+    optional :fixed64, :file_hcontent, 4
+    optional :uint32, :file_size, 5
+    optional :fixed32, :rtime32_last_updated, 6
+    optional :bool, :is_depot_content, 7
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse::PublishedFileId, :subscribed_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgClientUCMUnsubscribePublishedFile
+  optional :uint32, :app_id, 1
+  optional :fixed64, :published_file_id, 2
+end
+
+class CMsgClientUCMUnsubscribePublishedFileResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientUCMPublishedFileSubscribed
+  optional :fixed64, :published_file_id, 1
+  optional :uint32, :app_id, 2
+  optional :fixed64, :file_hcontent, 3
+  optional :uint32, :file_size, 4
+  optional :uint32, :rtime_subscribed, 5
+  optional :bool, :is_depot_content, 6
+end
+
+class CMsgClientUCMPublishedFileUnsubscribed
+  optional :fixed64, :published_file_id, 1
+  optional :uint32, :app_id, 2
+end
+
+class CMsgClientUCMPublishedFileDeleted
+  optional :fixed64, :published_file_id, 1
+  optional :uint32, :app_id, 2
+end
+
+class CMsgClientUCMPublishedFileUpdated
+  optional :fixed64, :published_file_id, 1
+  optional :uint32, :app_id, 2
+  optional :uint32, :time_updated, 3
+  optional :fixed64, :hcontent, 4
+  optional :fixed32, :file_size, 5
+  optional :bool, :is_depot_content, 6
+end
+
+class CMsgClientUCMGetPublishedFilesForUser
+  optional :uint32, :app_id, 1
+  optional :fixed64, :creator_steam_id, 2
+  repeated :string, :required_tags, 3
+  repeated :string, :excluded_tags, 4
+  optional :uint32, :start_index, 5
+end
+
+class CMsgClientUCMGetPublishedFilesForUserResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientUCMGetPublishedFilesForUserResponse::PublishedFileId, :published_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgClientUCMSetUserPublishedFileAction
+  optional :fixed64, :published_file_id, 1
+  optional :uint32, :app_id, 2
+  optional :int32, :action, 3
+end
+
+class CMsgClientUCMSetUserPublishedFileActionResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientUCMEnumeratePublishedFilesByUserAction
+  optional :uint32, :app_id, 1
+  optional :uint32, :start_index, 2
+  optional :int32, :action, 3
+end
+
+class CMsgClientUCMEnumeratePublishedFilesByUserActionResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+    optional :fixed32, :rtime_time_stamp, 2, :default => 0
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientUCMEnumeratePublishedFilesByUserActionResponse::PublishedFileId, :published_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgClientUpdateUserGameInfo
+  optional :fixed64, :steamid_idgs, 1
+  optional :fixed64, :gameid, 2
+  optional :uint32, :game_ip, 3
+  optional :uint32, :game_port, 4
+  optional :bytes, :token, 5
+end
+
+class CMsgClientRichPresenceUpload
+  optional :bytes, :rich_presence_kv, 1
+  repeated :fixed64, :steamid_broadcast, 2
+end
+
+class CMsgClientRichPresenceRequest
+  repeated :fixed64, :steamid_request, 1
+end
+
+class CMsgClientRichPresenceInfo
+  class RichPresence
+    optional :fixed64, :steamid_user, 1
+    optional :bytes, :rich_presence_kv, 2
+  end
+
+  repeated ::CMsgClientRichPresenceInfo::RichPresence, :rich_presence, 1
+end
+
+class CMsgClientCheckFileSignature
+  optional :uint32, :app_id, 1
+end
+
+class CMsgClientCheckFileSignatureResponse
+  optional :uint32, :app_id, 1
+  optional :uint32, :pid, 2
+  optional :uint32, :eresult, 3
+  optional :string, :filename, 4
+  optional :uint32, :esignatureresult, 5
+  optional :bytes, :sha_file, 6
+  optional :bytes, :signatureheader, 7
+  optional :uint32, :filesize, 8
+  optional :uint32, :getlasterror, 9
+  optional :uint32, :evalvesignaturecheckdetail, 10
+end
+
+class CMsgClientReadMachineAuth
+  optional :string, :filename, 1
+  optional :uint32, :offset, 2
+  optional :uint32, :cubtoread, 3
+end
+
+class CMsgClientReadMachineAuthResponse
+  optional :string, :filename, 1
+  optional :uint32, :eresult, 2
+  optional :uint32, :filesize, 3
+  optional :bytes, :sha_file, 4
+  optional :uint32, :getlasterror, 5
+  optional :uint32, :offset, 6
+  optional :uint32, :cubread, 7
+  optional :bytes, :bytes_read, 8
+  optional :string, :filename_sentry, 9
+end
+
+class CMsgClientUpdateMachineAuth
+  optional :string, :filename, 1
+  optional :uint32, :offset, 2
+  optional :uint32, :cubtowrite, 3
+  optional :bytes, :bytes, 4
+  optional :uint32, :otp_type, 5
+  optional :string, :otp_identifier, 6
+  optional :bytes, :otp_sharedsecret, 7
+  optional :uint32, :otp_timedrift, 8
+end
+
+class CMsgClientUpdateMachineAuthResponse
+  optional :string, :filename, 1
+  optional :uint32, :eresult, 2
+  optional :uint32, :filesize, 3
+  optional :bytes, :sha_file, 4
+  optional :uint32, :getlasterror, 5
+  optional :uint32, :offset, 6
+  optional :uint32, :cubwrote, 7
+  optional :int32, :otp_type, 8
+  optional :uint32, :otp_value, 9
+  optional :string, :otp_identifier, 10
+end
+
+class CMsgClientRequestMachineAuth
+  optional :string, :filename, 1
+  optional :uint32, :eresult_sentryfile, 2
+  optional :uint32, :filesize, 3
+  optional :bytes, :sha_sentryfile, 4
+  optional :int32, :lock_account_action, 6
+  optional :uint32, :otp_type, 7
+  optional :string, :otp_identifier, 8
+  optional :bytes, :otp_sharedsecret, 9
+  optional :uint32, :otp_value, 10
+  optional :string, :machine_name, 11
+  optional :string, :machine_name_userchosen, 12
+end
+
+class CMsgClientRequestMachineAuthResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientChangeSteamGuardOptions
+  optional :uint32, :steamguard_provider, 1
+  optional :uint32, :steamguard_require_code_default, 2
+  optional :string, :machine_name, 3
+  optional :string, :machine_name_userchosen, 4
+end
+
+class CMsgClientChangeSteamGuardOptionsResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientCreateFriendsGroup
+  optional :fixed64, :steamid, 1
+  optional :string, :groupname, 2
+end
+
+class CMsgClientCreateFriendsGroupResponse
+  optional :uint32, :eresult, 1
+  optional :int32, :groupid, 2
+end
+
+class CMsgClientDeleteFriendsGroup
+  optional :fixed64, :steamid, 1
+  optional :int32, :groupid, 2
+end
+
+class CMsgClientDeleteFriendsGroupResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientRenameFriendsGroup
+  optional :int32, :groupid, 1
+  optional :string, :groupname, 2
+end
+
+class CMsgClientRenameFriendsGroupResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientAddFriendToGroup
+  optional :int32, :groupid, 1
+  optional :fixed64, :steamiduser, 2
+end
+
+class CMsgClientAddFriendToGroupResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientRemoveFriendFromGroup
+  optional :int32, :groupid, 1
+  optional :fixed64, :steamiduser, 2
+end
+
+class CMsgClientRemoveFriendFromGroupResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientRegisterKey
+  optional :string, :key, 1
+end
+
+class CMsgClientPurchaseResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :purchase_result_details, 2
+  optional :bytes, :purchase_receipt_info, 3
+end
+
+class CMsgClientActivateOEMLicense
+  optional :string, :bios_manufacturer, 1
+  optional :string, :bios_serialnumber, 2
+  optional :bytes, :license_file, 3
+  optional :string, :mainboard_manufacturer, 4
+  optional :string, :mainboard_product, 5
+  optional :string, :mainboard_serialnumber, 6
+end
+
+class CMsgClientRegisterOEMMachine
+  optional :bytes, :oem_register_file, 1
+end
+
+class CMsgClientRegisterOEMMachineResponse
+  optional :uint32, :eresult, 1
+end
+
+class CMsgClientPurchaseWithMachineID
+  optional :uint32, :package_id, 1
+  optional :bytes, :machine_info, 2
+end
+
+class CMsgTrading_InitiateTradeRequest
+  optional :uint32, :trade_request_id, 1
+  optional :uint64, :other_steamid, 2
+  optional :string, :other_name, 3
+end
+
+class CMsgTrading_InitiateTradeResponse
+  optional :uint32, :response, 1
+  optional :uint32, :trade_request_id, 2
+  optional :uint64, :other_steamid, 3
+  optional :uint32, :steamguard_required_days, 4
+  optional :uint32, :new_device_cooldown_days, 5
+  optional :uint32, :default_password_reset_probation_days, 6
+  optional :uint32, :password_reset_probation_days, 7
+end
+
+class CMsgTrading_CancelTradeRequest
+  optional :uint64, :other_steamid, 1
+end
+
+class CMsgTrading_StartSession
+  optional :uint64, :other_steamid, 1
+end
+
+class CMsgClientMDSInitDepotBuildRequest
+  optional :uint32, :depot_id, 1
+  optional :bytes, :encrypted_aes_key, 2
+  optional :uint32, :build_id, 4
+  optional :bool, :for_local_cs, 5
+  optional :bool, :no_baseline, 6
+end
+
+class CMsgClientMDSInitDepotBuildResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :default_chunk_size, 2
+  optional :fixed64, :base_manifest, 3
+  optional :bytes, :encrypted_depot_key, 4
+end
+
+class CMsgClientMDSInitWorkshopBuildRequest
+  optional :uint32, :depot_id, 1
+  optional :uint32, :app_id, 2
+  optional :uint64, :workshop_item_id, 3
+end
+
+class CMsgClientMDSInitWorkshopBuildResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :default_chunk_size, 2
+  optional :fixed64, :base_manifest, 3
+  optional :bytes, :symmetric_depot_key, 4
+end
+
+class CMsgClientMDSLoginRequest
+  optional :bytes, :encrypted_session_key, 1
+end
+
+class CMsgClientMDSLoginResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientMDSUploadDepotChunks
+  class ChunkUploadData
+    optional :bytes, :sha, 1
+    optional :uint32, :rolling_crc, 2
+    optional :uint32, :original_chunk_size, 3
+    optional :bytes, :data, 4
+    optional :uint32, :compressed_chunk_size, 5
+    optional :uint32, :compressed_crc, 6
+  end
+
+  optional :uint32, :depot_id, 1
+  repeated ::CMsgClientMDSUploadDepotChunks::ChunkUploadData, :chunks, 2
+  optional :bool, :only_meta_data, 3
+end
+
+class CMsgClientMDSUploadDepotChunksResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientMDSUploadRateTest
+  optional :uint32, :serial_number, 1
+  optional :bytes, :test_data, 2
+  optional :uint32, :test_data_size, 3
+  optional :uint32, :test_data_crc, 4
+end
+
+class CMsgClientMDSUploadRateTestResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :serial_number, 2
+end
+
+class CMsgClientMDSTransmitManifestDataChunk
+  optional :int32, :offset, 1
+  optional :bytes, :data, 2
+end
+
+class CMsgClientMDSUploadManifestRequest
+  optional :uint32, :depot_id, 1
+  optional :uint32, :manifest_size_compressed, 2
+  optional :uint32, :build_id, 6
+  optional :uint32, :manifest_version, 7
+  optional :bool, :local_cs_build, 9
+end
+
+class CMsgClientMDSUploadManifestResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :new_manifest, 2
+  optional :uint32, :unique_chunks, 3
+  optional :uint32, :missing_chunks, 4
+  optional :uint32, :bitstring_size_uncompressed, 5
+  optional :bytes, :bitstring, 6
+  optional :bool, :is_prev_manifest, 7
+end
+
+class CMsgClientMDSGetDepotManifest
+  optional :uint32, :depot_id, 1
+  optional :fixed64, :manifest_id, 2
+  optional :uint32, :manifest_version, 3
+end
+
+class CMsgClientMDSGetDepotManifestResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :manifest_size_compressed, 3
+end
+
+class CMsgClientMDSGetDepotManifestChunk
+  optional :uint32, :offset, 1
+  optional :bytes, :data, 3
+end
+
+class CMsgClientMDSRegisterAppBuild
+  optional :int32, :app_id, 1
+  optional :string, :description, 2
+  optional :bool, :for_local_cs, 5
+end
+
+class CMsgClientMDSRegisterAppBuildResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :build_id, 2
+end
+
+class CMsgMDSSetAppBuildLive
+  optional :uint32, :build_id, 1
+  optional :uint32, :app_id, 2
+  optional :string, :beta_key, 3
+  optional :string, :beta_password, 5
+  optional :bool, :only_finish, 6
+  optional :uint32, :num_skip_depots, 7
+end
+
+class CMsgMDSSetAppBuildLiveResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :string, :error_string, 2
+end
+
+class CMsgClientMDSSignInstallScript
+  optional :int32, :depot_id, 1
+  optional :string, :data, 2
+end
+
+class CMsgClientMDSSignInstallScriptResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :string, :error_string, 2
+  optional :string, :data, 3
+end
+
+class CMsgClientEmailChange
+  optional :string, :password, 1
+  optional :string, :email, 2
+  optional :string, :code, 3
+  optional :bool, :final, 4
+  optional :bool, :newmethod, 5
+end
+
+class CMsgClientEmailChangeResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgClientGetCDNAuthToken
+  optional :uint32, :app_id, 1
+  optional :string, :host_name, 2
+end
+
+class CMsgClientGetDepotDecryptionKey
+  optional :uint32, :depot_id, 1
+  optional :uint32, :app_id, 2
+end
+
+class CMsgClientGetDepotDecryptionKeyResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :depot_id, 2
+  optional :bytes, :depot_encryption_key, 3
+end
+
+class CMsgClientGetAppBetaPasswords
+  optional :uint32, :app_id, 1
+end
+
+class CMsgClientGetAppBetaPasswordsResponse
+  class BetaPassword
+    optional :string, :betaname, 1
+    optional :string, :betapassword, 2
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :app_id, 2
+  repeated ::CMsgClientGetAppBetaPasswordsResponse::BetaPassword, :betapasswords, 3
+end
+
+class CMsgClientUpdateAppJobReport
+  optional :uint32, :app_id, 1
+  repeated :uint32, :depot_ids, 2
+  optional :uint32, :app_state, 3
+  optional :uint32, :job_app_error, 4
+  optional :string, :error_details, 5
+  optional :uint32, :job_duration, 6
+  optional :uint32, :files_validation_failed, 7
+  optional :uint64, :bytes_downloaded, 8
+  optional :uint64, :bytes_staged, 9
+  optional :uint64, :bytes_comitted, 10
+  optional :uint32, :start_app_state, 11
+end
+
+class CMsgClientSteam2AppStarted
+  optional :uint32, :app_id, 1
+  optional :string, :command_line, 2
+end
+
+class CMsgClientGetCDNAuthTokenResponse
+  optional :uint32, :eresult, 1, :default => 2
+  optional :string, :token, 2
+  optional :uint32, :expiration_time, 3
+end
+
+class CMsgDownloadRateStatistics
+  class StatsInfo
+    optional :uint32, :source_type, 1
+    optional :uint32, :source_id, 2
+    optional :uint32, :seconds, 3
+    optional :uint64, :bytes, 4
+  end
+
+  optional :uint32, :cell_id, 1
+  repeated ::CMsgDownloadRateStatistics::StatsInfo, :stats, 2
+end
+
+class CMsgClientRequestAccountData
+  optional :string, :account_or_email, 1
+  optional :uint32, :action, 2
+end
+
+class CMsgClientRequestAccountDataResponse
+  optional :uint32, :action, 1
+  optional :uint32, :eresult, 2
+  optional :string, :account_name, 3
+  optional :uint32, :ct_matches, 4
+  optional :string, :account_name_suggestion1, 5
+  optional :string, :account_name_suggestion2, 6
+  optional :string, :account_name_suggestion3, 7
+end
+
+class CMsgClientUGSGetGlobalStats
+  optional :uint64, :gameid, 1
+  optional :uint32, :history_days_requested, 2
+  optional :fixed32, :time_last_requested, 3
+  optional :uint32, :first_day_cached, 4
+  optional :uint32, :days_cached, 5
+end
+
+class CMsgClientUGSGetGlobalStatsResponse
+  class Day
+    class Stat
+      optional :int32, :stat_id, 1
+      optional :int64, :data, 2
+    end
+
+    optional :uint32, :day_id, 1
+    repeated ::CMsgClientUGSGetGlobalStatsResponse::Day::Stat, :stats, 2
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed32, :timestamp, 2
+  optional :int32, :day_current, 3
+  repeated ::CMsgClientUGSGetGlobalStatsResponse::Day, :days, 4
+end
+
+class CMsgGameServerData
+  class Player
+    optional :fixed64, :steam_id, 1
+  end
+
+  optional :fixed64, :steam_id_gs, 1
+  optional :uint32, :ip, 2
+  optional :uint32, :query_port, 3
+  optional :uint32, :game_port, 4
+  optional :uint32, :sourcetv_port, 5
+  optional :string, :name, 22
+  optional :uint32, :app_id, 6
+  optional :string, :gamedir, 7
+  optional :string, :version, 8
+  optional :string, :product, 9
+  optional :string, :region, 10
+  repeated ::CMsgGameServerData::Player, :players, 11
+  optional :uint32, :max_players, 12
+  optional :uint32, :bot_count, 13
+  optional :bool, :password, 14
+  optional :bool, :secure, 15
+  optional :bool, :dedicated, 16
+  optional :string, :os, 17
+  optional :string, :game_data, 18
+  optional :uint32, :game_data_version, 19
+  optional :string, :game_type, 20
+  optional :string, :map, 21
+end
+
+class CMsgGameServerRemove
+  optional :fixed64, :steam_id, 1
+  optional :uint32, :ip, 2
+  optional :uint32, :query_port, 3
+end
+
+class CMsgClientGMSServerQuery
+  optional :uint32, :app_id, 1
+  optional :uint32, :geo_location_ip, 2
+  optional :uint32, :region_code, 3
+  optional :string, :filter_text, 4
+  optional :uint32, :max_servers, 5
+end
+
+class CMsgGMSClientServerQueryResponse
+  class Server
+    optional :uint32, :server_ip, 1
+    optional :uint32, :server_port, 2
+    optional :uint32, :auth_players, 3
+  end
+
+  repeated ::CMsgGMSClientServerQueryResponse::Server, :servers, 1
+  optional :string, :error, 2
+end
+
+class CMsgGameServerOutOfDate
+  optional :fixed64, :steam_id_gs, 1
+  optional :bool, :reject, 2
+  optional :string, :message, 3
+end
+
+class CMsgClientRedeemGuestPass
+  optional :fixed64, :guest_pass_id, 1
+end
+
+class CMsgClientRedeemGuestPassResponse
+  optional :uint32, :eresult, 1, :default => 2
+  optional :uint32, :package_id, 2
+  optional :uint32, :must_own_appid, 3
+end
+
+class CMsgClientGetClanActivityCounts
+  repeated :uint64, :steamid_clans, 1
+end
+
+class CMsgClientGetClanActivityCountsResponse
+  optional :uint32, :eresult, 1, :default => 2
+end
+
+class CMsgClientOGSReportString
+  optional :bool, :accumulated, 1
+  optional :uint64, :sessionid, 2
+  optional :int32, :severity, 3
+  optional :string, :formatter, 4
+  optional :bytes, :varargs, 5
+end
+
+class CMsgClientOGSReportBug
+  optional :uint64, :sessionid, 1
+  optional :string, :bugtext, 2
+  optional :bytes, :screenshot, 3
+end
+
+class CMsgGSAssociateWithClan
+  optional :fixed64, :steam_id_clan, 1
+end
+
+class CMsgGSAssociateWithClanResponse
+  optional :fixed64, :steam_id_clan, 1
+  optional :uint32, :eresult, 2, :default => 2
+end
+
+class CMsgGSComputeNewPlayerCompatibility
+  optional :fixed64, :steam_id_candidate, 1
+end
+
+class CMsgGSComputeNewPlayerCompatibilityResponse
+  optional :fixed64, :steam_id_candidate, 1
+  optional :uint32, :eresult, 2, :default => 2
+  optional :bool, :is_clan_member, 3
+  optional :int32, :ct_dont_like_you, 4
+  optional :int32, :ct_you_dont_like, 5
+  optional :int32, :ct_clanmembers_dont_like_you, 6
+end
+
+class CMsgGCClient
+  optional :uint32, :appid, 1
+  optional :uint32, :msgtype, 2
+  optional :bytes, :payload, 3
+  optional :fixed64, :steamid, 4
+  optional :string, :gcname, 5
+end
+
+class CMsgClientRequestFreeLicense
+  repeated :uint32, :appids, 2
+end
+
+class CMsgClientRequestFreeLicenseResponse
+  optional :uint32, :eresult, 1, :default => 2
+  repeated :uint32, :granted_packageids, 2
+  repeated :uint32, :granted_appids, 3
+end
+
+class CMsgDRMDownloadRequestWithCrashData
+  optional :uint32, :download_flags, 1
+  optional :uint32, :download_types_known, 2
+  optional :bytes, :guid_drm, 3
+  optional :bytes, :guid_split, 4
+  optional :bytes, :guid_merge, 5
+  optional :string, :module_name, 6
+  optional :string, :module_path, 7
+  optional :bytes, :crash_data, 8
+end
+
+class CMsgDRMDownloadResponse
+  optional :uint32, :eresult, 1, :default => 2
+  optional :uint32, :app_id, 2
+  optional :uint32, :blob_download_type, 3
+  optional :bytes, :merge_guid, 4
+  optional :uint32, :download_file_dfs_ip, 5
+  optional :uint32, :download_file_dfs_port, 6
+  optional :string, :download_file_url, 7
+  optional :string, :module_path, 8
+end
+
+class CMsgDRMFinalResult
+  optional :uint32, :eResult, 1, :default => 2
+  optional :uint32, :app_id, 2
+  optional :uint32, :blob_download_type, 3
+  optional :uint32, :error_detail, 4
+  optional :bytes, :merge_guid, 5
+  optional :uint32, :download_file_dfs_ip, 6
+  optional :uint32, :download_file_dfs_port, 7
+  optional :string, :download_file_url, 8
+end
+
+class CMsgClientDPCheckSpecialSurvey
+  optional :uint32, :survey_id, 1
+end
+
+class CMsgClientDPCheckSpecialSurveyResponse
+  optional :uint32, :eResult, 1, :default => 2
+  optional :uint32, :state, 2
+  optional :string, :name, 3
+  optional :string, :custom_url, 4
+  optional :bool, :include_software, 5
+  optional :bytes, :token, 6
+end
+
+class CMsgClientDPSendSpecialSurveyResponse
+  optional :uint32, :survey_id, 1
+  optional :bytes, :data, 2
+end
+
+class CMsgClientDPSendSpecialSurveyResponseReply
+  optional :uint32, :eResult, 1, :default => 2
+  optional :bytes, :token, 2
+end
+
+class CMsgClientRequestForgottenPasswordEmail
+  optional :string, :account_name, 1
+  optional :string, :password_tried, 2
+end
+
+class CMsgClientRequestForgottenPasswordEmailResponse
+  optional :uint32, :eResult, 1
+  optional :bool, :use_secret_question, 2
+end
+
+class CMsgClientItemAnnouncements
+  optional :uint32, :count_new_items, 1
+end
+
+class CMsgClientUserNotifications
+  class Notification
+    optional :uint32, :user_notification_type, 1
+    optional :uint32, :count, 2
+  end
+
+  repeated ::CMsgClientUserNotifications::Notification, :notifications, 1
+end
+
+class CMsgClientCommentNotifications
+  optional :uint32, :count_new_comments, 1
+  optional :uint32, :count_new_comments_owner, 2
+  optional :uint32, :count_new_comments_subscriptions, 3
+end
+
+class CMsgClientOfflineMessageNotification
+  optional :uint32, :offline_messages, 1
+  repeated :uint32, :friends_with_offline_messages, 2
+end
+
+class CMsgClientFSGetFriendMessageHistory
+  optional :fixed64, :steamid, 1
+end
+
+class CMsgClientFSGetFriendMessageHistoryResponse
+  class FriendMessage
+    optional :uint32, :accountid, 1
+    optional :uint32, :timestamp, 2
+    optional :string, :message, 3
+    optional :bool, :unread, 4
+  end
+
+  optional :fixed64, :steamid, 1
+  optional :uint32, :success, 2
+  repeated ::CMsgClientFSGetFriendMessageHistoryResponse::FriendMessage, :messages, 3
+end
+
+class CMsgClientFSGetFriendsSteamLevels
+  repeated :uint32, :accountids, 1
+end
+
+class CMsgClientFSGetFriendsSteamLevelsResponse
+  class Friend
+    optional :uint32, :accountid, 1
+    optional :uint32, :level, 2
+  end
+
+  repeated ::CMsgClientFSGetFriendsSteamLevelsResponse::Friend, :friends, 1
+end
+
+class CMsgClientEmailAddrInfo
+  optional :string, :email_address, 1
+  optional :bool, :email_is_validated, 2
+  optional :bool, :email_validation_changed, 3
+  optional :bool, :credential_change_requires_code, 4
+  optional :bool, :password_or_secretqa_change_requires_code, 5
+  optional :bool, :remind_user_about_email, 6
+end
+
+class CMsgCREEnumeratePublishedFiles
+  optional :uint32, :app_id, 1
+  optional :int32, :query_type, 2
+  optional :uint32, :start_index, 3
+  optional :uint32, :days, 4
+  optional :uint32, :count, 5
+  repeated :string, :tags, 6
+  repeated :string, :user_tags, 7
+  optional :uint32, :matching_file_type, 8, :default => 13
+end
+
+class CMsgCREEnumeratePublishedFilesResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+    optional :int32, :votes_for, 2
+    optional :int32, :votes_against, 3
+    optional :int32, :reports, 4
+    optional :float, :score, 5
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgCREEnumeratePublishedFilesResponse::PublishedFileId, :published_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgCRERankByVote
+  optional :uint32, :app_id, 1
+  optional :uint32, :start_index, 2
+  optional :uint32, :count, 3
+  repeated :string, :tags, 4
+  repeated :string, :user_tags, 5
+end
+
+class CMsgCRERankByVoteResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+    optional :int32, :votes_for, 2
+    optional :int32, :votes_against, 3
+    optional :int32, :reports, 4
+    optional :float, :score, 5
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgCRERankByVoteResponse::PublishedFileId, :published_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgCRERankByTrend
+  optional :uint32, :app_id, 1
+  optional :uint32, :start_index, 2
+  optional :uint32, :days, 3
+  optional :uint32, :count, 4
+  repeated :string, :tags, 5
+  repeated :string, :user_tags, 6
+end
+
+class CMsgCRERankByTrendResponse
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+    optional :int32, :votes_for, 2
+    optional :int32, :votes_against, 3
+    optional :int32, :reports, 4
+    optional :float, :score, 5
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgCRERankByTrendResponse::PublishedFileId, :published_files, 2
+  optional :uint32, :total_results, 3
+end
+
+class CMsgCREItemVoteSummary
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+  end
+
+  repeated ::CMsgCREItemVoteSummary::PublishedFileId, :published_file_ids, 1
+end
+
+class CMsgCREItemVoteSummaryResponse
+  class ItemVoteSummary
+    optional :fixed64, :published_file_id, 1
+    optional :int32, :votes_for, 2
+    optional :int32, :votes_against, 3
+    optional :int32, :reports, 4
+    optional :float, :score, 5
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgCREItemVoteSummaryResponse::ItemVoteSummary, :item_vote_summaries, 2
+end
+
+class CMsgCREUpdateUserPublishedItemVote
+  optional :fixed64, :published_file_id, 1
+  optional :bool, :vote_up, 2
+end
+
+class CMsgCREUpdateUserPublishedItemVoteResponse
+  optional :int32, :eresult, 1, :default => 2
+end
+
+class CMsgCREGetUserPublishedItemVoteDetails
+  class PublishedFileId
+    optional :fixed64, :published_file_id, 1
+  end
+
+  repeated ::CMsgCREGetUserPublishedItemVoteDetails::PublishedFileId, :published_file_ids, 1
+end
+
+class CMsgCREGetUserPublishedItemVoteDetailsResponse
+  class UserItemVoteDetail
+    optional :fixed64, :published_file_id, 1
+    optional :int32, :vote, 2, :default => 0
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgCREGetUserPublishedItemVoteDetailsResponse::UserItemVoteDetail, :user_item_vote_details, 2
+end
+
+class CMsgGameServerPingSample
+  class Sample
+    optional :fixed32, :ip, 1
+    optional :uint32, :avg_ping_ms, 2
+    optional :uint32, :stddev_ping_ms_x10, 3
+  end
+
+  optional :fixed32, :my_ip, 1
+  optional :int32, :gs_app_id, 2
+  repeated ::CMsgGameServerPingSample::Sample, :gs_samples, 3
+end
+
+class CMsgFSGetFollowerCount
+  optional :fixed64, :steam_id, 1
+end
+
+class CMsgFSGetFollowerCountResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :count, 2, :default => 0
+end
+
+class CMsgFSGetIsFollowing
+  optional :fixed64, :steam_id, 1
+end
+
+class CMsgFSGetIsFollowingResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :bool, :is_following, 2, :default => false
+end
+
+class CMsgFSEnumerateFollowingList
+  optional :uint32, :start_index, 1
+end
+
+class CMsgFSEnumerateFollowingListResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :total_results, 2
+  repeated :fixed64, :steam_ids, 3
+end
+
+class CMsgDPGetNumberOfCurrentPlayers
+  optional :uint32, :appid, 1
+end
+
+class CMsgDPGetNumberOfCurrentPlayersResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :int32, :player_count, 2
+end
+
+class CMsgClientFriendUserStatusPublished
+  optional :fixed64, :friend_steamid, 1
+  optional :uint32, :appid, 2
+  optional :string, :status_text, 3
+end
+
+class CMsgClientServiceMethod
+  optional :string, :method_name, 1
+  optional :bytes, :serialized_method, 2
+  optional :bool, :is_notification, 3
+end
+
+class CMsgClientServiceMethodResponse
+  optional :string, :method_name, 1
+  optional :bytes, :serialized_method_response, 2
+end
+
+class CMsgClientUIMode
+  optional :uint32, :uimode, 1
+end
+
+class CMsgClientVanityURLChangedNotification
+  optional :string, :vanity_url, 1
+end
+
+class CMsgClientAuthorizeLocalDeviceRequest
+  optional :string, :device_description, 1
+  optional :uint32, :owner_account_id, 2
+end
+
+class CMsgClientAuthorizeLocalDevice
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :owner_account_id, 2
+  optional :uint64, :authed_device_token, 3
+end
+
+class CMsgClientDeauthorizeDeviceRequest
+  optional :uint32, :deauthorization_account_id, 1
+  optional :uint64, :deauthorization_device_token, 2
+end
+
+class CMsgClientDeauthorizeDevice
+  optional :int32, :eresult, 1, :default => 2
+  optional :uint32, :deauthorization_account_id, 2
+end
+
+class CMsgClientUseLocalDeviceAuthorizations
+  class DeviceToken
+    optional :uint32, :owner_account_id, 1
+    optional :uint64, :token_id, 2
+  end
+
+  repeated :uint32, :authorization_account_id, 1
+  repeated ::CMsgClientUseLocalDeviceAuthorizations::DeviceToken, :device_tokens, 2
+end
+
+class CMsgClientGetAuthorizedDevicesResponse
+  class AuthorizedDevice
+    optional :uint64, :auth_device_token, 1
+    optional :string, :device_name, 2
+    optional :uint32, :last_access_time, 3
+    optional :uint32, :borrower_id, 4
+    optional :bool, :is_pending, 5
+    optional :uint32, :app_played, 6
+  end
+
+  optional :int32, :eresult, 1, :default => 2
+  repeated ::CMsgClientGetAuthorizedDevicesResponse::AuthorizedDevice, :authorized_device, 2
+end
+
+class CMsgClientEmoticonList
+  class Emoticon
+    optional :string, :name, 1
+    optional :int32, :count, 2
+  end
+
+  repeated ::CMsgClientEmoticonList::Emoticon, :emoticons, 1
+end
+
+class CMsgClientSharedLibraryLockStatus
+  class LockedLibrary
+    optional :uint32, :owner_id, 1
+    optional :uint32, :locked_by, 2
+  end
+
+  repeated ::CMsgClientSharedLibraryLockStatus::LockedLibrary, :locked_library, 1
+  optional :uint32, :own_library_locked_by, 2
+end
+
+class CMsgClientSharedLibraryStopPlaying
+  class StopApp
+    optional :uint32, :app_id, 1
+    optional :uint32, :owner_id, 2
+  end
+
+  optional :int32, :seconds_left, 1
+  repeated ::CMsgClientSharedLibraryStopPlaying::StopApp, :stop_apps, 2
+end
+
+class CMsgClientServiceCall
+  optional :bytes, :sysid_routing, 1
+  optional :uint32, :call_handle, 2
+  optional :uint32, :module_crc, 3
+  optional :bytes, :module_hash, 4
+  optional :uint32, :function_id, 5
+  optional :uint32, :cub_output_max, 6
+  optional :uint32, :flags, 7
+  optional :bytes, :callparameter, 8
+end
+
+class CMsgClientServiceModule
+  optional :uint32, :module_crc, 1
+  optional :bytes, :module_hash, 2
+  optional :bytes, :module_content, 3
+end
+
+class CMsgClientServiceCallResponse
+  optional :bytes, :sysid_routing, 1
+  optional :uint32, :call_handle, 2
+  optional :uint32, :module_crc, 3
+  optional :bytes, :module_hash, 4
+  optional :uint32, :ecallresult, 5
+  optional :bytes, :result_content, 6
+  optional :bytes, :os_version_info, 7
+  optional :bytes, :system_info, 8
+  optional :fixed64, :load_address, 9
+  optional :bytes, :exception_record, 10
+  optional :bytes, :portable_os_version_info, 11
+  optional :bytes, :portable_system_info, 12
+  optional :bool, :was_converted, 13
+  optional :uint32, :internal_result, 14
+end
+
+class CMsgAMUnlockStreamingResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :bytes, :encryption_key, 2
+end
+
+class CMsgClientPlayingSessionState
+  optional :bool, :playing_blocked, 2
+  optional :uint32, :playing_app, 3
+end
+
+class CMsgClientKickPlayingSession
+  optional :bool, :only_stop_game, 1
+end
+
+class CMsgClientCreateAccount
+  optional :string, :account_name, 1
+  optional :string, :password, 2
+  optional :string, :email, 3
+  optional :string, :question, 4
+  optional :string, :answer, 5
+  optional :uint32, :launcher, 6
+end
+
+class CMsgClientCreateAccountResponse
+  optional :int32, :eresult, 1, :default => 2
+  optional :fixed64, :steamid, 2
+end
+

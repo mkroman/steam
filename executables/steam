@@ -7,7 +7,7 @@ require 'bundler'
 
 Bundler.setup :default
 
-Steam.connect username: "my-account", password: "my-password" do
+Steam.connect username: "mkroman", password: "9qQn5ZYvCNei88QSud7V" do
   log.info "Steam #{Steam::Version}" ^ :bold
   log.info "Connecting to steam servers…"
 end

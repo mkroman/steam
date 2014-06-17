@@ -1,17 +1,23 @@
-## Generated from encrypted_app_ticket.proto for 
-require "beefcake"
+##
+# This file is auto-generated. DO NOT EDIT!
+#
+require 'protobuf/message'
 
-module Steam
 
-  class EncryptedAppTicket
-    include Beefcake::Message
-  end
+##
+# Message Classes
+#
+class EncryptedAppTicket < ::Protobuf::Message; end
 
-  class EncryptedAppTicket
-    optional :ticket_version_no, :uint32, 1
-    optional :crc_encryptedticket, :uint32, 2
-    optional :cb_encrypteduserdata, :uint32, 3
-    optional :cb_encrypted_appownershipticket, :uint32, 4
-    optional :encrypted_ticket, :bytes, 5
-  end
+
+##
+# Message Fields
+#
+class EncryptedAppTicket
+  optional :uint32, :ticket_version_no, 1
+  optional :uint32, :crc_encryptedticket, 2
+  optional :uint32, :cb_encrypteduserdata, 3
+  optional :uint32, :cb_encrypted_appownershipticket, 4
+  optional :bytes, :encrypted_ticket, 5
 end
+

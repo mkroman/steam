@@ -1,100 +1,106 @@
-## Generated from steammessages_base.proto for 
-require "beefcake"
+##
+# This file is auto-generated. DO NOT EDIT!
+#
+require 'protobuf/message'
 
-module Steam
 
-  class CMsgProtoBufHeader
-    include Beefcake::Message
-  end
+##
+# Imports
+#
+require 'steam/protobuf/google/protobuf/descriptor.pb'
 
-  class CMsgMulti
-    include Beefcake::Message
-  end
 
-  class CMsgProtobufWrapped
-    include Beefcake::Message
-  end
+##
+# Message Classes
+#
+class CMsgProtoBufHeader < ::Protobuf::Message; end
+class CMsgMulti < ::Protobuf::Message; end
+class CMsgProtobufWrapped < ::Protobuf::Message; end
+class CMsgAuthTicket < ::Protobuf::Message; end
+class CCDDBAppDetailCommon < ::Protobuf::Message; end
+class CMsgAppRights < ::Protobuf::Message; end
 
-  class CMsgAuthTicket
-    include Beefcake::Message
-  end
 
-  class CCDDBAppDetailCommon
-    include Beefcake::Message
-  end
-
-  class CMsgAppRights
-    include Beefcake::Message
-  end
-
-  class CMsgProtoBufHeader
-    optional :steamid, :fixed64, 1
-    optional :client_sessionid, :int32, 2
-    optional :routing_appid, :uint32, 3
-    optional :jobid_source, :fixed64, 10, :default => 18446744073709551615
-    optional :jobid_target, :fixed64, 11, :default => 18446744073709551615
-    optional :target_job_name, :string, 12
-    optional :seq_num, :int32, 24
-    optional :eresult, :int32, 13, :default => 2
-    optional :error_message, :string, 14
-    optional :ip, :uint32, 15
-    optional :auth_account_flags, :uint32, 16
-    optional :token_source, :uint32, 22
-    optional :admin_spoofing_user, :bool, 23
-    optional :transport_error, :int32, 17, :default => 1
-    optional :messageid, :uint64, 18, :default => 18446744073709551615
-    optional :publisher_group_id, :uint32, 19
-    optional :sysid, :uint32, 20
-    optional :trace_tag, :uint64, 21
-  end
-
-  class CMsgMulti
-    optional :size_unzipped, :uint32, 1
-    optional :message_body, :bytes, 2
-  end
-
-  class CMsgProtobufWrapped
-    optional :message_body, :bytes, 1
-  end
-
-  class CMsgAuthTicket
-    optional :estate, :uint32, 1
-    optional :eresult, :uint32, 2, :default => 2
-    optional :steamid, :fixed64, 3
-    optional :gameid, :fixed64, 4
-    optional :h_steam_pipe, :uint32, 5
-    optional :ticket_crc, :uint32, 6
-    optional :ticket, :bytes, 7
-  end
-
-  class CCDDBAppDetailCommon
-    optional :appid, :uint32, 1
-    optional :name, :string, 2
-    optional :icon, :string, 3
-    optional :logo, :string, 4
-    optional :logo_small, :string, 5
-    optional :tool, :bool, 6
-    optional :demo, :bool, 7
-    optional :media, :bool, 8
-    optional :community_visible_stats, :bool, 9
-    optional :friendly_name, :string, 10
-    optional :propagation, :string, 11
-    optional :has_adult_content, :bool, 12
-  end
-
-  class CMsgAppRights
-    optional :edit_info, :bool, 1
-    optional :publish, :bool, 2
-    optional :view_error_data, :bool, 3
-    optional :download, :bool, 4
-    optional :upload_cdkeys, :bool, 5
-    optional :generate_cdkeys, :bool, 6
-    optional :view_financials, :bool, 7
-    optional :manage_ceg, :bool, 8
-    optional :manage_signing, :bool, 9
-    optional :manage_cdkeys, :bool, 10
-    optional :edit_marketing, :bool, 11
-    optional :economy_support, :bool, 12
-    optional :economy_support_supervisor, :bool, 13
-  end
+##
+# Message Fields
+#
+class CMsgProtoBufHeader
+  optional :fixed64, :steamid, 1
+  optional :int32, :client_sessionid, 2
+  optional :uint32, :routing_appid, 3
+  optional :fixed64, :jobid_source, 10, :default => 18446744073709551615
+  optional :fixed64, :jobid_target, 11, :default => 18446744073709551615
+  optional :string, :target_job_name, 12
+  optional :int32, :seq_num, 24
+  optional :int32, :eresult, 13, :default => 2
+  optional :string, :error_message, 14
+  optional :uint32, :ip, 15
+  optional :uint32, :auth_account_flags, 16
+  optional :uint32, :token_source, 22
+  optional :bool, :admin_spoofing_user, 23
+  optional :int32, :transport_error, 17, :default => 1
+  optional :uint64, :messageid, 18, :default => 18446744073709551615
+  optional :uint32, :publisher_group_id, 19
+  optional :uint32, :sysid, 20
+  optional :uint64, :trace_tag, 21
 end
+
+class CMsgMulti
+  optional :uint32, :size_unzipped, 1
+  optional :bytes, :message_body, 2
+end
+
+class CMsgProtobufWrapped
+  optional :bytes, :message_body, 1
+end
+
+class CMsgAuthTicket
+  optional :uint32, :estate, 1
+  optional :uint32, :eresult, 2, :default => 2
+  optional :fixed64, :steamid, 3
+  optional :fixed64, :gameid, 4
+  optional :uint32, :h_steam_pipe, 5
+  optional :uint32, :ticket_crc, 6
+  optional :bytes, :ticket, 7
+end
+
+class CCDDBAppDetailCommon
+  optional :uint32, :appid, 1
+  optional :string, :name, 2
+  optional :string, :icon, 3
+  optional :string, :logo, 4
+  optional :string, :logo_small, 5
+  optional :bool, :tool, 6
+  optional :bool, :demo, 7
+  optional :bool, :media, 8
+  optional :bool, :community_visible_stats, 9
+  optional :string, :friendly_name, 10
+  optional :string, :propagation, 11
+  optional :bool, :has_adult_content, 12
+end
+
+class CMsgAppRights
+  optional :bool, :edit_info, 1
+  optional :bool, :publish, 2
+  optional :bool, :view_error_data, 3
+  optional :bool, :download, 4
+  optional :bool, :upload_cdkeys, 5
+  optional :bool, :generate_cdkeys, 6
+  optional :bool, :view_financials, 7
+  optional :bool, :manage_ceg, 8
+  optional :bool, :manage_signing, 9
+  optional :bool, :manage_cdkeys, 10
+  optional :bool, :edit_marketing, 11
+  optional :bool, :economy_support, 12
+  optional :bool, :economy_support_supervisor, 13
+end
+
+
+##
+# Extended Message Fields
+#
+class ::Google::Protobuf::MessageOptions < ::Protobuf::Message
+  optional :int32, :msgpool_soft_limit, 50000, :default => 32, :extension => true
+  optional :int32, :msgpool_hard_limit, 50001, :default => 384, :extension => true
+end
+

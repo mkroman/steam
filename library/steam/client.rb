@@ -64,6 +64,7 @@ module Steam
     def handle_channel_encrypt_request packet
       log.debug "Reading public key"
       public_key_path = File.join File.dirname(__FILE__) + '/public.key'
+      p decrypt packet.body, @session_key
 
       if File.readable? public_key_path
         public_key = OpenSSL::PKey::RSA.new File.read public_key_path
@@ -88,6 +89,7 @@ module Steam
     end
 
     def handle_client_log_on_response packet
+      p packet.body, packet.body.class
       response = CMsgClientLogonResponse.decode packet.body
 
       p response
