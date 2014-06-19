@@ -3,6 +3,7 @@
 module Steam
   module Result
     Invalid = 0
+    
     OK = 1
     Fail = 2
     NoConnection = 3
@@ -58,9 +59,9 @@ module Steam
     DiskFull = 54
     RemoteCallFailed = 55
     PasswordNotSet = 56
-    PSNAccountNotLinked = 57
-    InvalidPSNTicket = 58
-    PSNAccountAlreadyLinked = 59
+    ExternalAccountUnlinked = 57
+    PSNTicketInvalid = 58
+    ExternalAccountAlreadyLinked = 59
     RemoteFileConflict = 60
     IllegalPassword = 61
     SameAsPreviousValue = 62
@@ -80,5 +81,13 @@ module Steam
     BadResponse = 76
     RequirePasswordReEntry = 77
     ValueOutOfRange = 78
+    UnexpectedError = 79
+    Disabled = 80
+    InvalidCEGSubmission = 81
+    RestrictedDevice = 82
+    RegionLocked = 83
+    RateLimitExceeded = 84
+    AccountLogonDeniedNeedTwoFactorCode = 85
+    ItemOrEntryHasBeenDeleted = 86
   end
 end
