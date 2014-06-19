@@ -4,7 +4,7 @@ module Steam
   module Messages
     Invalid = 0
     Multi = 1
-
+    
     BaseGeneral = 100
     GenericReply = 100
     DestJobFailed = 113
@@ -35,7 +35,7 @@ module Steam
     InvalidateDBOCacheItems = 145
     ServiceMethod = 146
     ServiceMethodResponse = 147
-
+    
     BaseShell = 200
     AssignSysID = 200
     Exit = 201
@@ -58,7 +58,7 @@ module Steam
     ShellCheckWindowsUpdates = 237
     ShellCheckWindowsUpdatesResponse = 238
     ShellFlushUserLicenseCache = 239
-
+    
     BaseGM = 300
     Heartbeat = 300
     ShellFailed = 301
@@ -80,7 +80,7 @@ module Steam
     GMSchemaConversionResults = 327
     GMSchemaConversionResultsResponse = 328
     GMWriteShellFailureToSQL = 329
-
+    
     BaseAIS = 400
     AISRefreshContentDescription = 401
     AISRequestContentDescription = 402
@@ -110,7 +110,7 @@ module Steam
     AIGetAppInfoResponse = 428
     AISGetCouponDefinition = 429
     AISGetCouponDefinitionResponse = 430
-
+    
     BaseAM = 500
     AMUpdateUserBanRequest = 504
     AMAddLicense = 505
@@ -130,7 +130,6 @@ module Steam
     AMCompletePurchase = 521
     AMCancelPurchase = 522
     AMNewChallenge = 523
-    AMFixPendingPurchase = 526
     AMFixPendingPurchaseResponse = 526
     AMIsUserBanned = 527
     AMRegisterKey = 528
@@ -192,7 +191,7 @@ module Steam
     AMP2PIntroducerMessage = 596
     ClientChatAction = 597
     AMClientChatActionRelay = 598
-
+    
     BaseVS = 600
     ReqChallenge = 600
     VACResponse = 601
@@ -205,7 +204,7 @@ module Steam
     VSReportLingerer = 609
     VSRequestManagedChallenge = 610
     VSLoadDBFinished = 611
-
+    
     BaseDRMS = 625
     DRMBuildBlobRequest = 628
     DRMBuildBlobResponse = 629
@@ -225,16 +224,16 @@ module Steam
     DRMProcessFileResponse = 644
     DRMEmptyGuidCache = 645
     DRMEmptyGuidCacheResponse = 646
-
+    
     BaseCS = 650
     CSUserContentRequest = 652
-
+    
     BaseClient = 700
     ClientLogOn_Deprecated = 701
     ClientAnonLogOn_Deprecated = 702
     ClientHeartBeat = 703
     ClientVACResponse = 704
-
+    ClientGamesPlayed_obsolete = 705
     ClientLogOff = 706
     ClientNoUDPConnectivity = 707
     ClientInformOfCreateAccount = 708
@@ -247,21 +246,21 @@ module Steam
     ClientChangeStatus = 716
     ClientVacStatusResponse = 717
     ClientFriendMsg = 718
-
-
-
+    ClientGameConnect_obsolete = 719
+    ClientGamesPlayed2_obsolete = 720
+    ClientGameEnded_obsolete = 721
     ClientGetFinalPrice = 722
     ClientSystemIM = 726
     ClientSystemIMAck = 727
     ClientGetLicenses = 728
     ClientCancelLicense = 729
     ClientGetLegacyGameKey = 730
-    ClientContentServerLogOn_Deprecated = 731 
+    ClientContentServerLogOn_Deprecated = 731
     ClientAckVACBan2 = 732
     ClientAckMessageByGID = 735
     ClientGetPurchaseReceipts = 736
     ClientAckPurchaseReceipt = 737
-
+    ClientGamesPlayed3_obsolete = 738
     ClientSendGuestPass = 739
     ClientAckGuestPass = 740
     ClientRedeemGuestPass = 741
@@ -316,7 +315,7 @@ module Steam
     ClientChatInvite = 800
     ClientJoinChat = 801
     ClientChatMemberInfo = 802
-    ClientLogOnWithCredentials_Deprecated = 803 
+    ClientLogOnWithCredentials_Deprecated = 803
     ClientPasswordChangeResponse = 805
     ClientChatEnter = 807
     ClientFriendRemovedFromSource = 808
@@ -363,7 +362,7 @@ module Steam
     ClientDRMBlobResponse = 897
     ClientLookupKey = 898
     ClientLookupKeyResponse = 899
-
+    
     BaseGameServer = 900
     GSDisconnectNotice = 901
     GSStatus = 903
@@ -386,7 +385,7 @@ module Steam
     GSAssociateWithClanResponse = 939
     GSComputeNewPlayerCompatibility = 940
     GSComputeNewPlayerCompatibilityResponse = 941
-
+    
     BaseAdmin = 1000
     AdminCmd = 1000
     AdminCmdResponse = 1004
@@ -408,7 +407,7 @@ module Steam
     AdminGCGetCommandListResponse = 1026
     FBSConnectionData = 1027
     AdminMsgSpew = 1028
-
+    
     BaseFBS = 1100
     FBSReqVersion = 1100
     FBSVersionInfo = 1101
@@ -423,7 +422,7 @@ module Steam
     FBSRebootBox = 1110
     FBSSetBigBrotherMode = 1111
     FBSMinidumpServer = 1112
-
+    FBSSetShellCount_obsolete = 1113
     FBSDeployHotFixPackage = 1114
     FBSDeployHotFixResponse = 1115
     FBSDownloadHotFix = 1116
@@ -444,14 +443,14 @@ module Steam
     FBSBootstrapperGetPackageChunkResponse = 1131
     FBSBootstrapperPackageTransferProgress = 1132
     FBSRestartBootstrapper = 1133
-
+    
     BaseFileXfer = 1200
     FileXferRequest = 1200
     FileXferResponse = 1201
     FileXferData = 1202
     FileXferEnd = 1203
     FileXferDataAck = 1204
-
+    
     BaseChannelAuth = 1300
     ChannelAuthChallenge = 1300
     ChannelAuthResponse = 1301
@@ -459,11 +458,10 @@ module Steam
     ChannelEncryptRequest = 1303
     ChannelEncryptResponse = 1304
     ChannelEncryptResult = 1305
-
+    
     BaseBS = 1400
     BSPurchaseStart = 1401
     BSPurchaseResponse = 1402
-    BSSettleStart = 1404 
     BSSettleNOVA = 1404
     BSSettleComplete = 1406
     BSBannedRequest = 1407
@@ -484,9 +482,7 @@ module Steam
     BSQueryGCBankXferTxn = 1423
     BSQueryGCBankXferTxnResponse = 1424
     BSCommitGCTxn = 1425
-    BSQueryGCOrderStatus = 1426 
     BSQueryTransactionStatus = 1426
-    BSQueryGCOrderStatusResponse = 1427 
     BSQueryTransactionStatusResponse = 1427
     BSQueryCBOrderStatus = 1428
     BSQueryCBOrderStatusResponse = 1429
@@ -497,9 +493,7 @@ module Steam
     BSQueryTxnExtendedInfoResponse = 1434
     BSUpdateConversionRates = 1435
     BSProcessUSBankReports = 1436
-    BSPurchaseMicroTxn = 1437 
     BSPurchaseRunFraudChecks = 1437
-    BSPurchaseMicroTxnResponse = 1438 
     BSPurchaseRunFraudChecksResponse = 1438
     BSStartShippingJobs = 1439
     BSQueryBankInformation = 1440
@@ -554,7 +548,7 @@ module Steam
     BSBoaCompraConfirmProductDeliveryResponse = 1495
     BSGenerateBoaCompraMD5 = 1496
     BSGenerateBoaCompraMD5Response = 1497
-
+    
     BaseATS = 1500
     ATSStartStressTest = 1501
     ATSStopStressTest = 1502
@@ -575,14 +569,13 @@ module Steam
     ATSStarted = 1517
     ATSCSPerfTestTask = 1518
     ATSCSPerfTestResponse = 1519
-
+    
     BaseDP = 1600
     DPSetPublishingState = 1601
     DPGamePlayedStats = 1602
     DPUniquePlayersStat = 1603
     DPVacInfractionStats = 1605
     DPVacBanStats = 1606
-    DPCoplayStats = 1607 
     DPBlockingStats = 1607
     DPNatTraversalStats = 1608
     DPSteamUsageEvent = 1609
@@ -604,13 +597,12 @@ module Steam
     ClientDPUpdateAppJobReport = 1625
     ClientDPSteam2AppStarted = 1627
     DPUpdateContentEvent = 1626
-
+    
     BaseCM = 1700
     CMSetAllowState = 1701
     CMSpewAllowState = 1702
-    CMAppInfoResponse = 1703 
     CMAppInfoResponseDeprecated = 1703
-
+    
     BaseDSS = 1800
     DSSNewFile = 1801
     DSSCurrentFileList = 1802
@@ -618,12 +610,12 @@ module Steam
     DSSSynchListResponse = 1804
     DSSSynchSubscribe = 1805
     DSSSynchUnsubscribe = 1806
-
+    
     BaseEPM = 1900
     EPMStartProcess = 1901
     EPMStopProcess = 1902
     EPMRestartProcess = 1903
-
+    
     BaseGC = 2200
     GCSendClient = 2200
     AMRelayToGC = 2201
@@ -642,10 +634,10 @@ module Steam
     GCValidateSession = 2214
     GCValidateSessionResponse = 2215
     GCCmdStatus = 2216
-    GCRegisterWebInterfaces = 2217 
-    GCRegisterWebInterfaces_Deprecated = 2217 
-    GCGetAccountDetails = 2218 
-    GCGetAccountDetails_DEPRECATED = 2218 
+    GCRegisterWebInterfaces = 2217
+    GCRegisterWebInterfaces_Deprecated = 2217
+    GCGetAccountDetails = 2218
+    GCGetAccountDetails_DEPRECATED = 2218
     GCInterAppMessage = 2219
     GCGetEmailTemplate = 2220
     GCGetEmailTemplateResponse = 2221
@@ -655,10 +647,10 @@ module Steam
     GCHRequestUpdateSession = 2225
     GCHRequestStatus = 2226
     GCHRequestStatusResponse = 2227
-
+    
     BaseP2P = 2500
     P2PIntroducerMessage = 2502
-
+    
     BaseSM = 2900
     SMExpensiveReport = 2902
     SMHourlyReport = 2903
@@ -667,12 +659,12 @@ module Steam
     SMMonitorSpace = 2906
     SMGetSchemaConversionResults = 2907
     SMGetSchemaConversionResultsResponse = 2908
-
+    
     BaseTest = 3000
     FailServer = 3000
     JobHeartbeatTest = 3001
     JobHeartbeatTestResponse = 3002
-
+    
     BaseFTSRange = 3100
     FTSGetBrowseCounts = 3101
     FTSGetBrowseCountsResponse = 3102
@@ -692,7 +684,7 @@ module Steam
     FTSGetGSPlayStatsForServer = 3116
     FTSGetGSPlayStatsForServerResponse = 3117
     FTSReportIPUpdates = 3118
-
+    
     BaseCCSRange = 3150
     CCSGetComments = 3151
     CCSGetCommentsResponse = 3152
@@ -704,11 +696,9 @@ module Steam
     CCSNotifyCommentCount = 3158
     CCSGetCommentsForNews = 3159
     CCSGetCommentsForNewsResponse = 3160
-    CCSDeleteAllComments = 3161 
     CCSDeleteAllCommentsByAuthor = 3161
-    CCSDeleteAllCommentsResponse = 3162 
     CCSDeleteAllCommentsByAuthorResponse = 3162
-
+    
     BaseLBSRange = 3200
     LBSSetScore = 3201
     LBSSetScoreResponse = 3202
@@ -722,7 +712,7 @@ module Steam
     LBSDeleteLB = 3210
     LBSDeleteLBEntry = 3211
     LBSResetLB = 3212
-
+    
     BaseOGS = 3400
     OGSBeginSession = 3401
     OGSBeginSessionResponse = 3402
@@ -751,7 +741,7 @@ module Steam
     BRPPruneCardUsageStatsResponse = 3618
     BRPCheckActivationCodes = 3619
     BRPCheckActivationCodesResponse = 3620
-
+    
     BaseAMRange2 = 4000
     AMCreateChat = 4001
     AMCreateChatResponse = 4002
@@ -892,7 +882,6 @@ module Steam
     AMGetLobbyListResponse = 4137
     AMGetLobbyMetadata = 4138
     AMGetLobbyMetadataResponse = 4139
-    AMAddFriendNews = 4140 
     CommunityAddFriendNews = 4140
     AMAddClanNews = 4141
     AMWriteNews = 4142
@@ -908,7 +897,6 @@ module Steam
     AMSendQueuedEmails = 4152
     AMSetLicenseFlags = 4153
     AMGetUserHistory = 4154
-    AMDeleteUserNews = 4155 
     CommunityDeleteUserNews = 4155
     AMAllowUserFilesRequest = 4156
     AMAllowUserFilesResponse = 4157
@@ -921,7 +909,6 @@ module Steam
     AMGetFriendsLobbies = 4165
     AMGetFriendsLobbiesResponse = 4166
     AMGetUserFriendNewsResponse = 4172
-    AMGetUserFriendNews = 4173 
     CommunityGetUserFriendNews = 4173
     AMGetUserClansNewsResponse = 4174
     AMGetUserClansNews = 4175
@@ -1071,16 +1058,13 @@ module Steam
     AMGetAccountCommunityBanInfoResponse = 4339
     AMGameServerAccountChangePassword = 4340
     AMGameServerAccountDeleteAccount = 4341
-    AMRenewLicenseResponse = 4342 
     AMRenewAgreement = 4342
     AMSendEmail = 4343
     AMXsollaPayment = 4344
     AMXsollaPaymentResponse = 4345
     AMAcctAllowedToPurchase = 4346
     AMAcctAllowedToPurchaseResponse = 4347
-    AMSwapXsollaDeposit = 4348 
     AMSwapKioskDeposit = 4348
-    AMSwapXsollaDepositResponse = 4349 
     AMSwapKioskDepositResponse = 4349
     AMSetUserGiftUnowned = 4350
     AMSetUserGiftUnownedResponse = 4351
@@ -1120,7 +1104,7 @@ module Steam
     AMPayelpPaymentResponse = 4388
     AMPlayerGetClanBasicDetails = 4389
     AMPlayerGetClanBasicDetailsResponse = 4390
-
+    
     BasePSRange = 5000
     PSCreateShoppingCart = 5001
     PSCreateShoppingCartResponse = 5002
@@ -1134,7 +1118,7 @@ module Steam
     PSGetShoppingCartContentsResponse = 5010
     PSAddWalletCreditToShoppingCart = 5011
     PSAddWalletCreditToShoppingCartResponse = 5012
-
+    
     BaseUFSRange = 5200
     ClientUFSUploadFileRequest = 5202
     ClientUFSUploadFileResponse = 5203
@@ -1183,7 +1167,7 @@ module Steam
     UFSFlushURLCache = 5250
     UFSUploadCommit = 5251
     UFSUploadCommitResponse = 5252
-
+    
     BaseClient2 = 5400
     ClientRequestForgottenPasswordEmail = 5401
     ClientRequestForgottenPasswordEmailResponse = 5402
@@ -1193,7 +1177,7 @@ module Steam
     ClientCreateAccount2 = 5406
     ClientInformOfResetForgottenPassword = 5407
     ClientInformOfResetForgottenPasswordResponse = 5408
-    ClientAnonUserLogOn_Deprecated = 5409 
+    ClientAnonUserLogOn_Deprecated = 5409
     ClientGamesPlayedWithDataBlob = 5410
     ClientUpdateUserGameInfo = 5411
     ClientFileToDownload = 5412
@@ -1241,7 +1225,7 @@ module Steam
     ClientCreateAccount3 = 5462
     ClientNewLoginKey = 5463
     ClientNewLoginKeyAccepted = 5464
-    ClientLogOnWithHash_Deprecated = 5465 
+    ClientLogOnWithHash_Deprecated = 5465
     ClientStoreUserStats2 = 5466
     ClientStatsUpdated = 5467
     ClientActivateOEMLicense = 5468
@@ -1355,6 +1339,8 @@ module Steam
     AMClientSetPlayerNicknameResponse = 5589
     ClientRequestOAuthTokenForApp = 5590
     ClientRequestOAuthTokenForAppResponse = 5591
+    ClientCreateAccountProto = 5590
+    ClientCreateAccountProtoResponse = 5591
     ClientGetNumberOfCurrentPlayersDP = 5592
     ClientGetNumberOfCurrentPlayersDPResponse = 5593
     ClientServiceMethod = 5594
@@ -1363,7 +1349,7 @@ module Steam
     ClientCurrentUIMode = 5597
     ClientVanityURLChangedNotification = 5598
     ClientUserNotifications = 5599
-
+    
     BaseDFS = 5600
     DFSGetFile = 5601
     DFSInstallLocalFile = 5602
@@ -1384,7 +1370,7 @@ module Steam
     ClientDFSDownloadStatus = 5617
     DFSStartTransfer = 5618
     DFSTransferComplete = 5619
-
+    
     BaseMDS = 5800
     ClientMDSLoginRequest = 5801
     ClientMDSLoginResponse = 5802
@@ -1402,6 +1388,8 @@ module Steam
     MDSGetVersionsForDepotResponse = 5815
     MDSSetPublicVersionForDepot = 5816
     MDSSetPublicVersionForDepotResponse = 5817
+    ClientMDSInitWorkshopBuildRequest = 5816
+    ClientMDSInitWorkshopBuildResponse = 5817
     ClientMDSGetDepotManifest = 5818
     ClientMDSGetDepotManifestResponse = 5819
     ClientMDSGetDepotManifestChunk = 5820
@@ -1429,11 +1417,11 @@ module Steam
     MDSToCSFlushChunk = 5844
     ClientMDSSignInstallScript = 5845
     ClientMDSSignInstallScriptResponse = 5846
-
+    
     CSBase = 6200
     CSPing = 6201
     CSPingResponse = 6202
-
+    
     GMSBase = 6400
     GMSGameServerReplicate = 6401
     ClientGMSServerQuery = 6403
@@ -1441,13 +1429,15 @@ module Steam
     AMGMSGameServerUpdate = 6405
     AMGMSGameServerRemove = 6406
     GameServerOutOfDate = 6407
-
+    
     ClientAuthorizeLocalDeviceRequest = 6501
     ClientAuthorizeLocalDevice = 6502
-    ClientDeauthorizeLocalDeviceRequest = 6503
-    ClientDeauthorizeLocalDevice = 6504
+    ClientDeauthorizeDeviceRequest = 6503
+    ClientDeauthorizeDevice = 6504
     ClientUseLocalDeviceAuthorizations = 6505
-
+    ClientGetAuthorizedDevices = 6506
+    ClientGetAuthorizedDevicesResponse = 6507
+    
     MMSBase = 6600
     ClientMMSCreateLobby = 6601
     ClientMMSCreateLobbyResponse = 6602
@@ -1473,7 +1463,7 @@ module Steam
     ClientMMSFlushFrenemyListCache = 6622
     ClientMMSFlushFrenemyListCacheResponse = 6623
     ClientMMSSetLobbyLinked = 6624
-
+    
     NonStdMsgBase = 6800
     NonStdMsgMemcached = 6801
     NonStdMsgHTTPServer = 6802
@@ -1486,7 +1476,7 @@ module Steam
     NonStdMsgUMQpipeAAPL = 6809
     NonStdMsgSyslog = 6810
     NonStdMsgLogsink = 6811
-
+    
     UDSBase = 7000
     ClientUDSP2PSessionStarted = 7001
     ClientUDSP2PSessionEnded = 7002
@@ -1498,7 +1488,7 @@ module Steam
 
     MPASBase = 7100
     MPASVacBanReset = 7101
-
+    
     KGSBase = 7200
     KGSAllocateKeyRange = 7201
     KGSAllocateKeyRangeResponse = 7202
@@ -1508,7 +1498,7 @@ module Steam
     KGSRemapKeysResponse = 7206
     KGSGenerateGameStopWCKeys = 7207
     KGSGenerateGameStopWCKeysResponse = 7208
-
+    
     UCMBase = 7300
     ClientUCMAddScreenshot = 7301
     ClientUCMAddScreenshotResponse = 7302
@@ -1588,7 +1578,8 @@ module Steam
     ClientUCMEnumerateUserSubscribedFilesWithUpdates = 7378
     ClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse = 7379
     UCMPublishedFileContentUpdated = 7380
-
+    UCMPublishedFileUpdated = 7381
+    
     FSBase = 7500
     ClientRichPresenceUpload = 7501
     ClientRichPresenceRequest = 7502
@@ -1619,7 +1610,7 @@ module Steam
     ClientFSGetFriendMessageHistoryForOfflineMessages = 7527
     ClientFSGetFriendsSteamLevels = 7528
     ClientFSGetFriendsSteamLevelsResponse = 7529
-
+    
     DRMRange2 = 7600
     CEGVersionSetEnableDisableRequest = 7600
     CEGVersionSetEnableDisableResponse = 7601
@@ -1629,7 +1620,7 @@ module Steam
     CEGWhackFailureReportResponse = 7605
     DRMSFetchVersionSet = 7606
     DRMSFetchVersionSetResponse = 7607
-
+    
     EconBase = 7700
     EconTrading_InitiateTradeRequest = 7701
     EconTrading_InitiateTradeProposed = 7702
@@ -1643,14 +1634,14 @@ module Steam
     EconCDKeyProcessTransactionResponse = 7712
     EconGetErrorLogs = 7713
     EconGetErrorLogsResponse = 7714
-
+    
     RMRange = 7800
     RMTestVerisignOTP = 7800
     RMTestVerisignOTPResponse = 7801
     RMDeleteMemcachedKeys = 7803
     RMRemoteInvoke = 7804
     BadLoginIPList = 7805
-
+    
     UGSBase = 7900
     UGSUpdateGlobalStats = 7900
     ClientUGSGetGlobalStats = 7901
@@ -1716,14 +1707,14 @@ module Steam
 
     LogsinkBase = 8800
     LogsinkWriteReport = 8800
-
+    
     PICSBase = 8900
-    PICSChangesSinceRequest = 8901
-    PICSChangesSinceResponse = 8902
-    PICSProductInfoRequest = 8903
-    PICSProductInfoResponse = 8904
-    PICSAccessTokenRequest = 8905
-    PICSAccessTokenResponse = 8906
+    ClientPICSChangesSinceRequest = 8901
+    ClientPICSChangesSinceResponse = 8902
+    ClientPICSProductInfoRequest = 8903
+    ClientPICSProductInfoResponse = 8904
+    ClientPICSAccessTokenRequest = 8905
+    ClientPICSAccessTokenResponse = 8906
 
     WorkerProcess = 9000
     WorkerProcessPingRequest = 9000
@@ -1771,12 +1762,20 @@ module Steam
     TestWorkerProcessLoadUnloadModuleResponse = 9201
     TestWorkerProcessServiceModuleCallRequest = 9202
     TestWorkerProcessServiceModuleCallResponse = 9203
-
+    
     ClientGetEmoticonList = 9330
     ClientEmoticonList = 9331
-
-    ClientSharedLicenses = 9400
+    
+    ClientSharedLibraryBase = 9400
     ClientSharedLicensesLockStatus = 9403
     ClientSharedLicensesStopPlaying = 9404
+    ClientSharedLibraryLockStatus = 9405
+    ClientSharedLibraryStopPlaying = 9406
+    
+    ClientUnlockStreaming = 9507
+    ClientUnlockStreamingResponse = 9508
+    
+    ClientPlayingSessionState = 9600
+    ClientKickPlayingSession = 9601
   end
 end
